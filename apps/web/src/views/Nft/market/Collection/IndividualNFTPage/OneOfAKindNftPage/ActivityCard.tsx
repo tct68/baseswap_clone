@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Flex, Card, Text, Table, Th, ArrowBackIcon, ArrowForwardIcon, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Card, Text, Table, Th, ArrowBackIcon, ArrowForwardIcon, useMatchBreakpoints } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import useTheme from 'hooks/useTheme'
 import { Activity, NftToken } from 'state/nftMarket/types'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'

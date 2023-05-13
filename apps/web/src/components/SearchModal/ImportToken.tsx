@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import { Token, Currency, ChainId } from '@pancakeswap/sdk'
-import { Button, Text, ErrorIcon, Flex, Message, Checkbox, Link, Tag, Grid } from '@pancakeswap/uikit'
+import { Token, Currency, ChainId } from '@baseswap/sdk'
+import { Button, Text, ErrorIcon, Flex, Message, Checkbox, Link, Tag, Grid } from '@baseswap/uikit'
 import { AutoColumn } from 'components/Layout/Column'
 import { useAddUserToken } from 'state/user/hooks'
 import { getBlockExploreLink, getBlockExploreName } from 'utils'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import truncateHash from '@baseswap/utils/truncateHash'
 import { useCombinedInactiveList } from 'state/lists/hooks'
 import { ListLogo } from 'components/Logo'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { chains } from 'utils/wagmi'
 import { useActiveChainId } from 'hooks/useActiveChainId'
-import { WrappedTokenInfo } from '@pancakeswap/token-lists'
+import { WrappedTokenInfo } from '@baseswap/token-lists'
 
 interface ImportProps {
   tokens: Token[]

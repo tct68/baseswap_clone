@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Currency, CurrencyAmount } from '@pancakeswap/sdk'
-import { Spinner, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { Currency, CurrencyAmount } from '@baseswap/sdk'
+import { Spinner, Text } from '@baseswap/uikit'
 import { AutoColumn, ColumnCenter } from 'components/Layout/Column'
 import styled from 'styled-components'
 

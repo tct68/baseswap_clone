@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
-import { useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { useToast } from '@baseswap/uikit'
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/providers'
 import { ToastDescriptionWithTx } from 'components/Toast'
 

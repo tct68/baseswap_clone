@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/wagmi",
+  "name": "@baseswap/wagmi",
   "version": "0.0.5",
   "license": "WAGMIT",
   "description": "wagmi adaptor for pancakeswap",

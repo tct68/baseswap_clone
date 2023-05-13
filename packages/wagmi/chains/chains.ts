@@ -1,6 +1,6 @@
 import { mainnet, goerli, localhost } from 'wagmi/chains'
 import { Chain } from 'wagmi'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 
 export const zeta: Chain = {
   id: 7001,

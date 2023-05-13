@@ -2,7 +2,7 @@ import addresses from 'config/constants/contracts'
 
 import { GRAPH_API_PREDICTION_CAKE, GRAPH_API_PREDICTION_BNB } from 'config/constants/endpoints'
 import { getAddress } from 'utils/addressHelpers'
-import { baseGoerliTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@baseswap/tokens'
 
 export default {
   BNB: {

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Card, Farm as FarmUI, Flex, Skeleton, Text, ExpandableSectionButton } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { Card, Farm as FarmUI, Flex, Skeleton, Text, ExpandableSectionButton } from '@baseswap/uikit'
 import BigNumber from 'bignumber.js'
 import { multiChainPaths } from 'state/info/constant'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'

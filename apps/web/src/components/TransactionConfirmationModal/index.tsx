@@ -1,5 +1,5 @@
 import { ReactElement, useCallback } from 'react'
-import { ChainId, Currency, Token } from '@pancakeswap/sdk'
+import { ChainId, Currency, Token } from '@baseswap/sdk'
 import styled from 'styled-components'
 import {
   Button,
@@ -13,10 +13,10 @@ import {
   Modal,
   InjectedModalProps,
   ModalProps,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
-import { WrappedTokenInfo } from '@pancakeswap/token-lists'
+import { WrappedTokenInfo } from '@baseswap/token-lists'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { AutoColumn, ColumnCenter } from '../Layout/Column'
 import { getBlockExploreLink, getBlockExploreName } from '../../utils'

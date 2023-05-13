@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
-import { Flex, Box, Text } from '@pancakeswap/uikit'
+import { Flex, Box, Text } from '@baseswap/uikit'
 import { TokenImage } from 'components/TokenImage'
 import { LightGreyCard } from 'components/Card'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { Ifo } from 'config/constants/types'
-import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
+import { getFullDisplayBalance } from '@baseswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 
 interface TotalAvailableClaimProps {

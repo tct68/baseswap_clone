@@ -1,4 +1,4 @@
-import { ContextApi } from '@pancakeswap/localization'
+import { ContextApi } from '@baseswap/localization'
 
 const bunniesConfig = (t: ContextApi['t']) => {
   return {

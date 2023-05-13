@@ -1,5 +1,5 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { getBalanceNumber } from "@pancakeswap/utils/formatBalance";
+import { useTranslation } from "@baseswap/localization";
+import { getBalanceNumber } from "@baseswap/utils/formatBalance";
 import BigNumber from "bignumber.js";
 import { useEffect, useMemo, useRef } from "react";
 import styled from "styled-components";

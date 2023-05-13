@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Text, Link, LinkExternal } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { Text, Link, LinkExternal } from '@baseswap/uikit'
 
 const BTTWarning = () => {
   const { t } = useTranslation()

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { Text } from '@baseswap/uikit'
 import { SVG, WonSlice, LostSlice, Wrapper, Info } from './PnlChartStyles'
 
 /**

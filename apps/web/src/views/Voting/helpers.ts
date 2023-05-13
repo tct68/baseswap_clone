@@ -1,5 +1,5 @@
 import { JsonRpcProvider } from '@ethersproject/providers'
-import { baseGoerliTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@baseswap/tokens'
 import BigNumber from 'bignumber.js'
 import cakeVaultAbiV2 from 'config/abi/cakeVaultV2.json'
 import { SNAPSHOT_HUB_API } from 'config/constants/endpoints'

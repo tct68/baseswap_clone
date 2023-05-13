@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import PageSection from 'components/PageSection'
 import useTheme from 'hooks/useTheme'
 import { PageMeta } from 'components/Layout/Page'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { useActiveChainId } from 'hooks/useActiveChainId'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 import Hero from './components/Hero'
 import {
   swapSectionData,

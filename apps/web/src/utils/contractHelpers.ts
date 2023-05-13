@@ -4,7 +4,7 @@ import { provider } from 'utils/wagmi'
 import { Contract } from '@ethersproject/contracts'
 import poolsConfig from 'config/constants/pools'
 import { PoolCategory } from 'config/constants/types'
-import { SNAP } from '@pancakeswap/tokens'
+import { SNAP } from '@baseswap/tokens'
 
 // Addresses
 import {
@@ -131,7 +131,7 @@ import type {
   CrossFarmingReceiver,
   CrossFarmingProxy,
 } from 'config/abi/types'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 
 export const getContract = ({
   abi,

@@ -1,4 +1,4 @@
-# @pancakeswap/sdk
+# @baseswap/sdk
 
 ## 3.1.1
 

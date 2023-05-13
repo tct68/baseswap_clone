@@ -8,13 +8,13 @@ import {
   useMatchBreakpoints,
   VisibilityOff,
   VisibilityOn,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import { useProfile } from 'state/profile/hooks'
 import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
-import { useTranslation } from '@pancakeswap/localization'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import { useTranslation } from '@baseswap/localization'
+import truncateHash from '@baseswap/utils/truncateHash'
 import useGetUsernameWithVisibility from 'hooks/useUsernameWithVisibility'
 
 const Desktop = styled(Flex)`

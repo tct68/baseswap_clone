@@ -1,5 +1,5 @@
-import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import { LandingBodyWrapper } from '../styles'
 import config from './config'
 

@@ -1,6 +1,6 @@
 import { getAddress } from '@ethersproject/address'
 import memoize from 'lodash/memoize'
-import { ChainId, Token } from '@pancakeswap/sdk'
+import { ChainId, Token } from '@baseswap/sdk'
 
 const mapping = {
   [ChainId.BASE_GOERLI]: 'baseGoerli',

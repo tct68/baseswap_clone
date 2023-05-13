@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 import { useActiveIfoWithBlocks } from 'hooks/useActiveIfoWithBlocks'
 import { useChainCurrentBlock } from 'state/block/hooks'
 import { getStatus } from 'views/Ifos/hooks/helpers'

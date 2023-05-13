@@ -1,5 +1,5 @@
-import { multicallAddresses } from '@pancakeswap/multicall'
-import { ChainId } from '@pancakeswap/sdk'
+import { multicallAddresses } from '@baseswap/multicall'
+import { ChainId } from '@baseswap/sdk'
 
 export default {
   masterChef: {

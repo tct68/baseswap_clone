@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import {
   LinkExternal,
   Text,
@@ -6,7 +6,7 @@ import {
   Farm as FarmUI,
   FarmTableLiquidityProps,
   FarmTableMultiplierProps,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { useContext } from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { getBlockExploreLink } from 'utils'

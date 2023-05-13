@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { DeserializedFarm } from '@pancakeswap/farms'
+import { DeserializedFarm } from '@baseswap/farms'
 
 export type TableProps = {
   data?: TableDataTypes[]

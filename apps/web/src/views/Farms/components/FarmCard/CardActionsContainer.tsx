@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, Skeleton, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { Flex, Skeleton, Text } from '@baseswap/uikit'
 import BigNumber from 'bignumber.js'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useContext } from 'react'

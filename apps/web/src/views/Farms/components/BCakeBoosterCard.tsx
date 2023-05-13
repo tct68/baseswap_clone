@@ -11,10 +11,10 @@ import {
   Text,
   useTooltip,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import NextLink from 'next/link'
 import styled, { useTheme } from 'styled-components'
 import { useBCakeProxyContractAddress } from '../hooks/useBCakeProxyContractAddress'

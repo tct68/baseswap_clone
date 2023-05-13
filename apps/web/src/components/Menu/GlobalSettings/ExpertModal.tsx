@@ -8,9 +8,9 @@ import {
   InjectedModalProps,
   Checkbox,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { useExpertModeManager } from 'state/user/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 
 interface ExpertModalProps extends InjectedModalProps {
   setShowConfirmExpertModal: (boolean) => void

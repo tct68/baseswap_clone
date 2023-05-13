@@ -1,10 +1,10 @@
 import React from 'react'
-import { Flex, Link, Text, TimerIcon, Balance } from '@pancakeswap/uikit'
+import { Flex, Link, Text, TimerIcon, Balance } from '@baseswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import BigNumber from 'bignumber.js'
-import { useTranslation } from '@pancakeswap/localization'
-import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
-import { Token } from '@pancakeswap/sdk'
+import { useTranslation } from '@baseswap/localization'
+import { getFullDisplayBalance } from '@baseswap/utils/formatBalance'
+import { Token } from '@baseswap/sdk'
 
 interface MaxStakeRowProps {
   small?: boolean

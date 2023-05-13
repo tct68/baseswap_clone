@@ -8,8 +8,8 @@ import {
   ShareIcon,
   MoreIcon,
   DropdownMenuItems,
-} from '@pancakeswap/uikit'
-import { ContextApi } from '@pancakeswap/localization'
+} from '@baseswap/uikit'
+import { ContextApi } from '@baseswap/localization'
 import { SUPPORT_ONLY_BSC } from 'config/constants/supportChains'
 
 export type ConfigMenuDropDownItemsType = DropdownMenuItems & { hideSubNav?: boolean }

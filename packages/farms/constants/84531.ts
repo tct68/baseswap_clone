@@ -1,5 +1,5 @@
-import { baseGoerliTokens } from '@pancakeswap/tokens'
-import { SerializedFarmConfig } from '@pancakeswap/farms'
+import { baseGoerliTokens } from '@baseswap/tokens'
+import { SerializedFarmConfig } from '@baseswap/farms'
 
 const farms: SerializedFarmConfig[] = [
   {

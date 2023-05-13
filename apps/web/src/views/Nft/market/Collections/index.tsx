@@ -18,7 +18,7 @@ import {
   Select,
   OptionProps,
   NextLinkFromReactRouter,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import useSWRImmutable from 'swr/immutable'
 import orderBy from 'lodash/orderBy'
 import { getLeastMostPriceInCollection } from 'state/nftMarket/helpers'
@@ -28,7 +28,7 @@ import styled from 'styled-components'
 import { laggyMiddleware } from 'hooks/useSWRContract'
 import { FetchStatus } from 'config/constants/types'
 import { useGetShuffledCollections } from 'state/nftMarket/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import Page from 'components/Layout/Page'
 import { nftsBaseUrl } from 'views/Nft/market/constants'
 import PageLoader from 'components/Loader/PageLoader'

@@ -1,4 +1,4 @@
-import { Token } from '@pancakeswap/sdk'
+import { Token } from '@baseswap/sdk'
 
 interface WarningTokenList {
   [key: string]: Token

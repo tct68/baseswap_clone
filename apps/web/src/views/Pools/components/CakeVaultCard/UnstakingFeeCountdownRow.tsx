@@ -1,6 +1,6 @@
-import { Flex, Text, TooltipText, useTooltip } from '@pancakeswap/uikit'
+import { Flex, Text, TooltipText, useTooltip } from '@baseswap/uikit'
 import { useAccount } from 'wagmi'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import useWithdrawalFeeTimer from 'views/Pools/hooks/useWithdrawalFeeTimer'
 import { secondsToHours } from 'date-fns'
 import { useVaultPoolByKey } from 'state/pools/hooks'

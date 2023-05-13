@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Button, Heading, Text, LogoIcon } from '@pancakeswap/uikit'
+import { Button, Heading, Text, LogoIcon } from '@baseswap/uikit'
 import Page from 'components/Layout/Page'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import Link from 'next/link'
 
 const StyledNotFound = styled.div`

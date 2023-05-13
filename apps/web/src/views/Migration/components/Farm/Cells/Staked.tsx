@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Flex, Text, useMatchBreakpoints, Pool } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { formatLpBalance } from '@pancakeswap/utils/formatBalance'
+import { Flex, Text, useMatchBreakpoints, Pool } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { formatLpBalance } from '@baseswap/utils/formatBalance'
 
 const StyledCell = styled(Pool.BaseCell)`
   flex: 0;

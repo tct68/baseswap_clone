@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 import { BLOCKS_PER_YEAR } from 'config'
 import lpAprs84531 from 'config/constants/lpAprs/84531.json'
 

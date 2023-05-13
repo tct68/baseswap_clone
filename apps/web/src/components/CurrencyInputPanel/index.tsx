@@ -1,12 +1,12 @@
-import { Currency, Pair, Token } from '@pancakeswap/sdk'
-import { Button, ChevronDownIcon, Text, useModal, Flex, Box, NumericalInput, CopyButton } from '@pancakeswap/uikit'
+import { Currency, Pair, Token } from '@baseswap/sdk'
+import { Button, ChevronDownIcon, Text, useModal, Flex, Box, NumericalInput, CopyButton } from '@baseswap/uikit'
 import styled, { css } from 'styled-components'
 import { isAddress } from 'utils'
-import { useTranslation } from '@pancakeswap/localization'
-import { WrappedTokenInfo } from '@pancakeswap/token-lists'
+import { useTranslation } from '@baseswap/localization'
+import { WrappedTokenInfo } from '@baseswap/token-lists'
 
 import { useBUSDCurrencyAmount } from 'hooks/useBUSDPrice'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import { formatNumber } from '@baseswap/utils/formatBalance'
 import { StablePair } from 'views/AddLiquidity/AddStableLiquidity/hooks/useStableLPDerivedMintInfo'
 
 import { useAccount } from 'wagmi'

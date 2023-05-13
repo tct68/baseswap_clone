@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
-import { Flex, Box, Text, LinkExternal, RefreshIcon, WarningIcon } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Box, Text, LinkExternal, RefreshIcon, WarningIcon } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import { chains } from 'utils/wagmi'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { getBlockExploreLink, getBlockExploreName } from 'utils'

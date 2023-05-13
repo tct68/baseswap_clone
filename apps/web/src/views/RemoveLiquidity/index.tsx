@@ -4,7 +4,7 @@ import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useRouter } from 'next/router'
-import { Currency, Percent, WNATIVE } from '@pancakeswap/sdk'
+import { Currency, Percent, WNATIVE } from '@baseswap/sdk'
 import {
   Button,
   Text,
@@ -19,8 +19,8 @@ import {
   TooltipText,
   useTooltip,
   useToast,
-} from '@pancakeswap/uikit'
-import { useWeb3LibraryContext } from '@pancakeswap/wagmi'
+} from '@baseswap/uikit'
+import { useWeb3LibraryContext } from '@baseswap/wagmi'
 import { BigNumber } from '@ethersproject/bignumber'
 import { callWithEstimateGas } from 'utils/calls'
 import { getLPSymbol } from 'utils/getLpSymbol'
@@ -28,7 +28,7 @@ import useNativeCurrency from 'hooks/useNativeCurrency'
 import { getZapAddress } from 'utils/addressHelpers'
 import { ZapCheckbox } from 'components/CurrencyInputPanel/ZapCheckbox'
 import { CommitButton } from 'components/CommitButton'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { ROUTER_ADDRESS } from 'config/constants/exchange'
 import { transactionErrorToUserReadableMessage } from 'utils/transactionErrorToUserReadableMessage'
 import { useLPApr } from 'state/swap/useLPApr'

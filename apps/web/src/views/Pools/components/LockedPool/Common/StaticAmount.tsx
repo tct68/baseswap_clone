@@ -1,6 +1,6 @@
-import { Text, Flex, Image, Box, BalanceWithLoading } from '@pancakeswap/uikit'
+import { Text, Flex, Image, Box, BalanceWithLoading } from '@baseswap/uikit'
 import Divider from 'components/Divider'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { StaticAmountPropsType } from '../types'
 
 const StaticAmount: React.FC<React.PropsWithChildren<StaticAmountPropsType>> = ({

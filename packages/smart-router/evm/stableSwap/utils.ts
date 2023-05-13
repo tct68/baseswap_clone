@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Percent, Price, Trade, TradeType } from '@pancakeswap/sdk'
+import { Currency, CurrencyAmount, Pair, Percent, Price, Trade, TradeType } from '@baseswap/sdk'
 import invariant from 'tiny-invariant'
 
 import { RouteType, RouteWithStableSwap, StableSwapFeeRaw, StableSwapPair, StableSwapFeePercent } from '../types'

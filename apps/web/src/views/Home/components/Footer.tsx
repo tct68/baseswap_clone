@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Flex, Heading, Text, Link, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Heading, Text, Link, useMatchBreakpoints } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Container from 'components/Layout/Container'
 import { useAccount } from 'wagmi'

@@ -8,10 +8,10 @@ import {
   UserMenuItem,
   Text,
   NextLinkFromReactRouter,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { useCallback } from 'react'
-import { ChainId } from '@pancakeswap/sdk'
-import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@baseswap/sdk'
+import { useTranslation } from '@baseswap/localization'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Search from 'views/Info/components/InfoSearch'
@@ -20,7 +20,7 @@ import { multiChainId, multiChainPaths } from 'state/info/constant'
 import { chains } from 'utils/wagmi'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { useAccount } from 'wagmi'
-import { mainnet } from '@pancakeswap/wagmi/chains'
+import { mainnet } from '@baseswap/wagmi/chains'
 
 const NavWrapper = styled(Flex)`
   background: ${({ theme }) => theme.colors.gradientCardHeader};

@@ -1,5 +1,5 @@
-import '@pancakeswap/ui/css/reset.css'
-import { ResetCSS, ToastListener, ScrollToTopButtonV2 } from '@pancakeswap/uikit'
+import '@baseswap/ui/css/reset.css'
+import { ResetCSS, ToastListener, ScrollToTopButtonV2 } from '@baseswap/uikit'
 import BigNumber from 'bignumber.js'
 import { NetworkModal } from 'components/NetworkModal'
 import { FixedSubgraphHealthIndicator } from 'components/SubgraphHealthIndicator/FixedSubgraphHealthIndicator'

@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/smart-router",
+  "name": "@baseswap/smart-router",
   "version": "0.6.0",
   "description": "A SDK for getting best routes from AMM",
   "repository": {
@@ -14,19 +14,19 @@
     "clean": "rimraf node_modules  dist .turbo"
   },
   "peerDependencies": {
-    "@pancakeswap/sdk": "^3.1.0"
+    "@baseswap/sdk": "^3.1.0"
   },
   "dependencies": {
     "@ethersproject/providers": "^5.0.0",
     "@ethersproject/bignumber": "^5.0.0",
-    "@pancakeswap/multicall": "^0.0.2",
+    "@baseswap/multicall": "^0.0.2",
     "lodash": "^4.17.21",
     "tiny-invariant": "^1.1.0"
   },
   "devDependencies": {
-    "@pancakeswap/sdk": "^3.1.0",
-    "@pancakeswap/tokens": "*",
-    "@pancakeswap/token-lists": "*",
+    "@baseswap/sdk": "^3.1.0",
+    "@baseswap/tokens": "*",
+    "@baseswap/token-lists": "*",
     "@types/lodash": "^4.14.178",
     "tsconfig": "*",
     "tsup": "^5.10.1",

@@ -1,6 +1,6 @@
-import { Flex, Text, TooltipText, useTooltip, BalanceWithLoading } from '@pancakeswap/uikit'
+import { Flex, Text, TooltipText, useTooltip, BalanceWithLoading } from '@baseswap/uikit'
 import { useVaultApy } from 'hooks/useVaultApy'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 
 const YieldBoostRow = ({ secondDuration }) => {
   const { boostFactor } = useVaultApy({ duration: secondDuration })

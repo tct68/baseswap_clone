@@ -1,5 +1,5 @@
 import { getAddress } from '@ethersproject/address'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import {
   ArrowBackIcon,
   ArrowForwardIcon,
@@ -11,7 +11,7 @@ import {
   SortArrowIcon,
   Text,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 
 import Logo from 'components/Logo/Logo'
 import { useActiveChainId } from 'hooks/useActiveChainId'

@@ -1,4 +1,4 @@
-import { Flex, Text } from '@pancakeswap/uikit'
+import { Flex, Text } from '@baseswap/uikit'
 import { useTheme } from 'styled-components'
 import Image from 'next/image'
 

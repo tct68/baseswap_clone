@@ -1,5 +1,5 @@
-import { Flex, Text, Message } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Text, Message } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import styled from 'styled-components'
 
 const StyledAnchor = styled.a`

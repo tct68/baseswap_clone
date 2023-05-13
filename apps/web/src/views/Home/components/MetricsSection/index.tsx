@@ -1,5 +1,5 @@
-import { Heading, Flex, Text, ChartIcon, CommunityIcon, SwapIcon } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Heading, Flex, Text, ChartIcon, CommunityIcon, SwapIcon } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import useTheme from 'hooks/useTheme'
 import IconCard, { IconCardData } from '../IconCard'
 import StatCardContent from './StatCardContent'

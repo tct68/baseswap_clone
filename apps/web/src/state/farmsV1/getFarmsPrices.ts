@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
-import { BIG_ONE, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { filterFarmsByQuoteToken, SerializedFarm } from '@pancakeswap/farms'
-import { baseGoerliTokens } from '@pancakeswap/tokens'
+import { BIG_ONE, BIG_ZERO } from '@baseswap/utils/bigNumber'
+import { filterFarmsByQuoteToken, SerializedFarm } from '@baseswap/farms'
+import { baseGoerliTokens } from '@baseswap/tokens'
 
 const getFarmFromTokenSymbol = (
   farms: SerializedFarm[],

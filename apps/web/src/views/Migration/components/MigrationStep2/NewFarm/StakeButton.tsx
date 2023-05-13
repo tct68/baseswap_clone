@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import {
   AddIcon,
   Button,
@@ -8,7 +8,7 @@ import {
   useModal,
   useToast,
   Farm as FarmUI,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 import FarmsBaseGoerliPriceHelper from './84531'
 
 export const getFarmsPriceHelperLpFiles = (chainId: ChainId) => {

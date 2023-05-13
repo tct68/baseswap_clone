@@ -1,4 +1,4 @@
-import { baseGoerliTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@baseswap/tokens'
 import IfoContainer from './components/IfoContainer'
 import IfoSteps from './components/IfoSteps'
 import ComingSoonSection from './components/ComingSoonSection'

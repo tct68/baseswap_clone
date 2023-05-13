@@ -12,8 +12,8 @@ import {
   InputGroup,
   SearchIcon,
   CloseIcon,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import orderBy from 'lodash/orderBy'
 import { useGetNftFilters } from 'state/nftMarket/hooks'
 import { useNftStorage } from 'state/nftMarket/storage'

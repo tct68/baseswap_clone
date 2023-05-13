@@ -1,7 +1,7 @@
-import { Flex, Text, Button, Modal, InjectedModalProps, useToast } from '@pancakeswap/uikit'
+import { Flex, Text, Button, Modal, InjectedModalProps, useToast } from '@baseswap/uikit'
 import confetti from 'canvas-confetti'
 import delay from 'lodash/delay'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { useEffect, useState } from 'react'
 import { useBunnySpecialXmasContract } from 'hooks/useContract'
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { Flex, TooltipText, useTooltip } from "@pancakeswap/uikit";
-import { useTranslation } from "@pancakeswap/localization";
+import { Flex, TooltipText, useTooltip } from "@baseswap/uikit";
+import { useTranslation } from "@baseswap/localization";
 
 export const AprRowWithToolTip: React.FC<React.PropsWithChildren<{ isVaultKey: boolean }>> = ({
   children,

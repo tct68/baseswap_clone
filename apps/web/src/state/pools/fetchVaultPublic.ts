@@ -3,9 +3,9 @@ import { multicallv2, multicallv3 } from 'utils/multicall'
 import cakeAbi from 'config/abi/cake.json'
 import cakeVaultAbi from 'config/abi/cakeVaultV2.json'
 import { getCakeVaultAddress } from 'utils/addressHelpers'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { ChainId } from '@pancakeswap/sdk'
-import { SNAP } from '@pancakeswap/tokens'
+import { BIG_ZERO } from '@baseswap/utils/bigNumber'
+import { ChainId } from '@baseswap/sdk'
+import { SNAP } from '@baseswap/tokens'
 
 const cakeVaultV2 = getCakeVaultAddress()
 export const fetchPublicVaultData = async (cakeVaultAddress = cakeVaultV2) => {

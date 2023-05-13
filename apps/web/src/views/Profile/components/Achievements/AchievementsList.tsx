@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Flex, Heading, Skeleton, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Heading, Skeleton, useMatchBreakpoints } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import { Achievement } from 'state/types'
 import AchievementCard from './AchievementCard'
 

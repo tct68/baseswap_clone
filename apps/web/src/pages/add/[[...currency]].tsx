@@ -1,4 +1,4 @@
-import { SNAP, USDC } from '@pancakeswap/tokens'
+import { SNAP, USDC } from '@baseswap/tokens'
 import { useCurrency } from 'hooks/Tokens'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { GetStaticPaths, GetStaticProps } from 'next'

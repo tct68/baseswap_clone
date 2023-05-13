@@ -1,4 +1,4 @@
-import { ChainId, ERC20Token } from '@pancakeswap/sdk'
+import { ChainId, ERC20Token } from '@baseswap/sdk'
 
 export const SNAP_MAINNET = new ERC20Token(
   ChainId.BASE_GOERLI,

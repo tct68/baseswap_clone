@@ -8,4 +8,4 @@ export * from './router'
 
 export { computePriceImpact } from './utils'
 
-export * from '@pancakeswap/swap-sdk-core'
+export * from '@baseswap/swap-sdk-core'

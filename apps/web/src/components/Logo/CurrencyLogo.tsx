@@ -1,8 +1,8 @@
-import { Currency } from '@pancakeswap/sdk'
+import { Currency } from '@baseswap/sdk'
 import { useMemo } from 'react'
-import { WrappedTokenInfo } from '@pancakeswap/token-lists'
+import { WrappedTokenInfo } from '@baseswap/token-lists'
 import styled from 'styled-components'
-import { useHttpLocations } from '@pancakeswap/hooks'
+import { useHttpLocations } from '@baseswap/hooks'
 import getTokenLogoURL from '../../utils/getTokenLogoURL'
 import Logo from './Logo'
 

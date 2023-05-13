@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import {
   Box,
   Breadcrumbs,
@@ -16,7 +16,7 @@ import {
   Text,
   useMatchBreakpoints,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import Page from 'components/Layout/Page'
 import { useState } from 'react'
 import { multiChainId, multiChainScan } from 'state/info/constant'

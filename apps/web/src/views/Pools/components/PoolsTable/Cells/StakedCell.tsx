@@ -1,12 +1,12 @@
-import { Box, Flex, Skeleton, Text, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
+import { Box, Flex, Skeleton, Text, useMatchBreakpoints, Balance, Pool } from '@baseswap/uikit'
 import BigNumber from 'bignumber.js'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { VaultKey } from 'state/types'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import { Token } from '@pancakeswap/sdk'
+import { BIG_ZERO } from '@baseswap/utils/bigNumber'
+import { getBalanceNumber } from '@baseswap/utils/formatBalance'
+import { Token } from '@baseswap/sdk'
 
 interface StakedCellProps {
   pool: Pool.DeserializedPool<Token>

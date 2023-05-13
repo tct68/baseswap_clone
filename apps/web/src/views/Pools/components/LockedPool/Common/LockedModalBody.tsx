@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
-import { Button, AutoRenewIcon, Box, Flex, Message, MessageText, Text } from '@pancakeswap/uikit'
+import { Button, AutoRenewIcon, Box, Flex, Message, MessageText, Text } from '@baseswap/uikit'
 import _noop from 'lodash/noop'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { MAX_LOCK_DURATION } from 'config/constants/pools'
-import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
+import { getBalanceAmount } from '@baseswap/utils/formatBalance'
 import { useIfoCeiling } from 'state/pools/hooks'
 
 import { LockedModalBodyPropsType, ModalValidator } from '../types'

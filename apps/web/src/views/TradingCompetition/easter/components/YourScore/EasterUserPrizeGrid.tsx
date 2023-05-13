@@ -9,8 +9,8 @@ import {
   TeamPlayerIcon,
   TrophyGoldIcon,
   Skeleton,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import { useCompetitionCakeRewards, getEasterRewardGroupAchievements } from '../../../helpers'
 import { BoldTd, Td, StyledPrizeTable } from '../../../components/StyledPrizeTable'
 

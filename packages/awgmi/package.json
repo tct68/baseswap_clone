@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/awgmi",
+  "name": "@baseswap/awgmi",
   "license": "MIT",
   "version": "0.0.10",
   "main": "./dist/index.js",

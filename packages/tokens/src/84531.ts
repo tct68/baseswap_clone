@@ -1,4 +1,4 @@
-import { ChainId, WBNB, ERC20Token } from '@pancakeswap/sdk'
+import { ChainId, WBNB, ERC20Token } from '@baseswap/sdk'
 
 export const baseGoerliTokens = {
   wcmp: WBNB[ChainId.BASE_GOERLI],

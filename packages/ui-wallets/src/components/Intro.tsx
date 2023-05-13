@@ -1,6 +1,6 @@
-import { Trans } from '@pancakeswap/localization'
-import { AtomBox } from '@pancakeswap/ui/components/AtomBox'
-import { Button, Heading, Image, LinkExternal, Text } from '@pancakeswap/uikit'
+import { Trans } from '@baseswap/localization'
+import { AtomBox } from '@baseswap/ui/components/AtomBox'
+import { Button, Heading, Image, LinkExternal, Text } from '@baseswap/uikit'
 import { useState } from 'react'
 
 const IntroSteps = [

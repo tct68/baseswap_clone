@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Flex, Heading, Text, Link, useTooltip } from '@pancakeswap/uikit'
+import { Flex, Heading, Text, Link, useTooltip } from '@baseswap/uikit'
 import { getBlockExploreLink } from 'utils'
-import { useTranslation, ContextApi } from '@pancakeswap/localization'
+import { useTranslation, ContextApi } from '@baseswap/localization'
 
 export interface TimerProps {
   prefix?: string

@@ -9,17 +9,17 @@ const withBundleAnalyzer = BundleAnalyzer({
 })
 
 const withTM = NextTranspileModules([
-  '@pancakeswap/ui',
-  '@pancakeswap/uikit',
-  '@pancakeswap/swap-sdk-core',
-  '@pancakeswap/farms',
-  '@pancakeswap/localization',
-  '@pancakeswap/hooks',
-  '@pancakeswap/multicall',
-  '@pancakeswap/token-lists',
-  '@pancakeswap/utils',
-  '@pancakeswap/tokens',
-  '@pancakeswap/smart-router',
+  '@baseswap/ui',
+  '@baseswap/uikit',
+  '@baseswap/swap-sdk-core',
+  '@baseswap/farms',
+  '@baseswap/localization',
+  '@baseswap/hooks',
+  '@baseswap/multicall',
+  '@baseswap/token-lists',
+  '@baseswap/utils',
+  '@baseswap/tokens',
+  '@baseswap/smart-router',
 ])
 
 const withVanillaExtract = createVanillaExtractPlugin()

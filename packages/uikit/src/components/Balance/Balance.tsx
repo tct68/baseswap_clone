@@ -1,4 +1,4 @@
-import { Text, TextProps } from "@pancakeswap/uikit";
+import { Text, TextProps } from "@baseswap/uikit";
 import { useMemo } from "react";
 import CountUp from "react-countup";
 import _toNumber from "lodash/toNumber";

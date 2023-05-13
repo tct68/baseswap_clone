@@ -16,14 +16,14 @@ import {
   OptionProps,
   FlexLayout,
   PageHeader,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import styled from 'styled-components'
 import Page from 'components/Layout/Page'
 import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
 import { useCakeVaultUserData } from 'state/pools/hooks'
-import { useIntersectionObserver } from '@pancakeswap/hooks'
-import { DeserializedFarm } from '@pancakeswap/farms'
-import { useTranslation } from '@pancakeswap/localization'
+import { useIntersectionObserver } from '@baseswap/hooks'
+import { DeserializedFarm } from '@baseswap/farms'
+import { useTranslation } from '@baseswap/localization'
 import { getFarmApr } from 'utils/apr'
 import orderBy from 'lodash/orderBy'
 import { latinise } from 'utils/latinise'

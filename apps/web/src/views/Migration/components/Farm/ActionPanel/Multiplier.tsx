@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, Text, HelpIcon, useTooltip } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { Flex, Text, HelpIcon, useTooltip } from '@baseswap/uikit'
 import { MultiplierProps } from '../Cells/Multiplier'
 
 const Containter = styled(Flex)`

@@ -1,4 +1,4 @@
-import { baseGoerliTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@baseswap/tokens'
 
 import { StableSwapPool } from '../../types/pool'
 

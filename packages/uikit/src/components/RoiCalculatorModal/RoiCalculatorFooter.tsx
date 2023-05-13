@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import styled from "styled-components";
-import { useTranslation } from "@pancakeswap/localization";
-import { getApy } from "@pancakeswap/utils/compoundApyHelpers";
+import { useTranslation } from "@baseswap/localization";
+import { getApy } from "@baseswap/utils/compoundApyHelpers";
 
 import { Flex, Box, Grid } from "../Box";
 import { Text } from "../Text";

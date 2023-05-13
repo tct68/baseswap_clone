@@ -1,6 +1,6 @@
-import { Text, Heading, IconButton, ArrowBackIcon, QuestionHelper } from "@pancakeswap/uikit";
+import { Text, Heading, IconButton, ArrowBackIcon, QuestionHelper } from "@baseswap/uikit";
 import Link from "next/link";
-import { AtomBox } from "@pancakeswap/ui";
+import { AtomBox } from "@baseswap/ui";
 import styled from "styled-components";
 
 interface LiquidityCardHeaderProps {

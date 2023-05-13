@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import {
   Box,
   Breadcrumbs,
@@ -14,8 +14,8 @@ import {
   Text,
   useMatchBreakpoints,
   NextLinkFromReactRouter,
-} from '@pancakeswap/uikit'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+} from '@baseswap/uikit'
+import truncateHash from '@baseswap/utils/truncateHash'
 import Page from 'components/Layout/Page'
 import { ONE_HOUR_SECONDS } from 'config/constants/info'
 import { Duration } from 'date-fns'

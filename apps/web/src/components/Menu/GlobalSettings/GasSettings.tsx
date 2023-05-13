@@ -1,5 +1,5 @@
-import { Flex, Button, Text, QuestionHelper } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Button, Text, QuestionHelper } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import { useGasPriceManager } from 'state/user/hooks'
 import { GAS_PRICE_GWEI, GAS_PRICE } from 'state/types'
 

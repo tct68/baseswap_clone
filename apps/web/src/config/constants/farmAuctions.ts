@@ -1,5 +1,5 @@
 import getLpAddress from 'utils/getLpAddress'
-import { baseGoerliTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@baseswap/tokens'
 import { FarmAuctionBidderConfig } from './types'
 
 export const whitelistedBidders: FarmAuctionBidderConfig[] = [].map((bidderConfig) => ({

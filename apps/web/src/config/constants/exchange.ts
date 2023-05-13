@@ -1,6 +1,6 @@
-import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
+import { ChainId, JSBI, Percent, Token, WNATIVE } from '@baseswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { USDC, USDT, BUSD, WBTC_BASE } from '@pancakeswap/tokens'
+import { USDC, USDT, BUSD, WBTC_BASE } from '@baseswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {

@@ -1,4 +1,4 @@
-import { avalandche, fantomOpera } from '@pancakeswap/wagmi/chains'
+import { avalandche, fantomOpera } from '@baseswap/wagmi/chains'
 import { arbitrum, mainnet, optimism, polygon } from 'wagmi/chains'
 
 const VERSION = '0.0.25-mainnet.20'

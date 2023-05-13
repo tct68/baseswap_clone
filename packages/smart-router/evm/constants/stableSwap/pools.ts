@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 
 import { StableSwapPool } from '../../types/pool'
 import { pools as baseGoerliPools } from './84531'

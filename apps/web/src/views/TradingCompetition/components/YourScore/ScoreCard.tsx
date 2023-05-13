@@ -11,11 +11,11 @@ import {
   LaurelLeftIcon,
   LaurelRightIcon,
   CheckmarkCircleIcon,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { CLAIM, OVER } from 'config/constants/trading-competition/phases'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import CardUserInfo from './CardUserInfo'
 import ShareImageModal from '../ShareImageModal'
 import { YourScoreProps } from '../../types'

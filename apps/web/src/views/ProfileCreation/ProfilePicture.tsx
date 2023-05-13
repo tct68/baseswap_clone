@@ -10,11 +10,11 @@ import {
   Text,
   useToast,
   NextLinkFromReactRouter,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { useAccount, useSigner } from 'wagmi'
 import { getPancakeProfileAddress } from 'utils/addressHelpers'
 import { getErc721Contract } from 'utils/contractHelpers'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import { useProfileContract } from 'hooks/useContract'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'

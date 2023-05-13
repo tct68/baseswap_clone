@@ -12,8 +12,8 @@ import {
   BunnyPlaceholderIcon,
   Spinner,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import AuctionLeaderboardTable from './AuctionLeaderboard/AuctionLeaderboardTable'
 import { useFarmAuction } from '../hooks/useFarmAuction'
 

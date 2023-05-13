@@ -1,4 +1,4 @@
-import { Flex } from '@pancakeswap/uikit'
+import { Flex } from '@baseswap/uikit'
 import Image from 'next/legacy/image'
 import useTheme from 'hooks/useTheme'
 import PageSection from 'components/PageSection'

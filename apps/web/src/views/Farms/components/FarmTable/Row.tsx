@@ -10,10 +10,10 @@ import {
   FarmTableLiquidityProps,
   FarmTableMultiplierProps,
   FarmTableFarmTokenInfoProps,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import { useFarmUser } from 'state/farms/hooks'
-import { useDelayedUnmount } from '@pancakeswap/hooks'
+import { useDelayedUnmount } from '@baseswap/hooks'
 
 import Apr, { AprProps } from './Apr'
 import Farm from './Farm'

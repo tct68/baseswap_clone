@@ -1,4 +1,4 @@
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { getBalanceNumber } from '@baseswap/utils/formatBalance'
 import { easterPrizes, PrizesConfig } from 'config/constants/trading-competition/prizes'
 import BigNumber from 'bignumber.js'
 import { useCakeBusdPrice } from 'hooks/useBUSDPrice'

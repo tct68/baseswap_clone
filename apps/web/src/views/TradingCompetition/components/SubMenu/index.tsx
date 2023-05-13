@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { useRouter } from 'next/router'
-import { SubMenuItems } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { SubMenuItems } from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 
 const SubMenu: React.FC<React.PropsWithChildren> = () => {
   const { pathname } = useRouter()

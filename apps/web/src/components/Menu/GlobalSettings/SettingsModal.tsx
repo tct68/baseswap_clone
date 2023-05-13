@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 import {
   Box,
   Flex,
@@ -9,7 +9,7 @@ import {
   Text,
   ThemeSwitcher,
   Toggle,
-} from '@pancakeswap/uikit'
+} from '@baseswap/uikit'
 import { SUPPORT_ZAP } from 'config/constants/supportChains'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useTheme from 'hooks/useTheme'

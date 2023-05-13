@@ -1,4 +1,4 @@
-# @pancakeswap/wagmi
+# @baseswap/wagmi
 
 ## 0.0.5
 

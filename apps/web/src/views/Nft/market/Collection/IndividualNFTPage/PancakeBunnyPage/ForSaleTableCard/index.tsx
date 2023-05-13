@@ -14,8 +14,8 @@ import {
   ArrowDownIcon,
   Spinner,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@baseswap/uikit'
+import { useTranslation } from '@baseswap/localization'
 import useTheme from 'hooks/useTheme'
 import { ApiResponseCollectionTokens } from 'state/nftMarket/types'
 import ForSaleTableRows from './ForSaleTableRows'

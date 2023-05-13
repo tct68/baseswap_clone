@@ -5,7 +5,7 @@ import fs from 'fs'
 import farm84531 from '../constants/84531'
 
 import lpHelpers84531 from '../constants/priceHelperLps/84531'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@baseswap/sdk'
 
 const chains = [
   [ChainId.BASE_GOERLI, farm84531, lpHelpers84531],

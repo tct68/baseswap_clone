@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoRenewIcon, Button, useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@baseswap/localization'
+import { AutoRenewIcon, Button, useToast } from '@baseswap/uikit'
 import BigNumber from 'bignumber.js'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { PoolIds } from 'config/constants/types'

@@ -1,7 +1,7 @@
-import { Token } from '@pancakeswap/sdk'
-import { Modal, Box, InjectedModalProps } from '@pancakeswap/uikit'
+import { Token } from '@baseswap/sdk'
+import { Modal, Box, InjectedModalProps } from '@baseswap/uikit'
 import ImportToken from 'components/SearchModal/ImportToken'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@baseswap/localization'
 
 interface Props extends InjectedModalProps {
   tokens: Token[]
