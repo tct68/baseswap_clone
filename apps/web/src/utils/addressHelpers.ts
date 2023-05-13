@@ -16,12 +16,7 @@ export const getMasterChefV1Address = () => {
 export const getMulticallAddress = (chainId?: number) => {
   return getAddress(addresses.multiCall, chainId)
 }
-export const getLotteryV2Address = () => {
-  return getAddress(addresses.lotteryV2)
-}
-export const getPancakeProfileAddress = () => {
-  return getAddress(addresses.pancakeProfile)
-}
+
 export const getPancakeBunniesAddress = () => {
   return getAddress(addresses.pancakeBunnies)
 }
@@ -70,19 +65,13 @@ export const getCakeVaultAddress = () => {
   return getAddress(addresses.cakeVault)
 }
 
-export const getCakeFlexibleSideVaultAddress = () => {
-  return getAddress(addresses.cakeFlexibleSideVault)
-}
-
 export const getBunnySpecialCakeVaultAddress = () => {
   return getAddress(addresses.bunnySpecialCakeVault)
 }
 export const getBunnySpecialPredictionAddress = () => {
   return getAddress(addresses.bunnySpecialPrediction)
 }
-export const getBunnySpecialLotteryAddress = () => {
-  return getAddress(addresses.bunnySpecialLottery)
-}
+
 export const getBunnySpecialXmasAddress = () => {
   return getAddress(addresses.bunnySpecialXmas)
 }
@@ -99,11 +88,9 @@ export const getNftMarketAddress = () => {
 export const getNftSaleAddress = () => {
   return getAddress(addresses.nftSale)
 }
+
 export const getPancakeSquadAddress = () => {
   return getAddress(addresses.pancakeSquad)
-}
-export const getPotteryDrawAddress = () => {
-  return getAddress(addresses.potteryDraw)
 }
 
 export const getZapAddress = (chainId?: number) => {

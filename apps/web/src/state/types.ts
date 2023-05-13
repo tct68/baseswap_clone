@@ -5,7 +5,7 @@ import { Token } from '@pancakeswap/sdk'
 import { SerializedWrappedToken } from '@pancakeswap/token-lists'
 import { Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import { CampaignType, FetchStatus, LotteryStatus, LotteryTicket, Team, TranslatableText } from 'config/constants/types'
+import { CampaignType, FetchStatus, Team, TranslatableText } from 'config/constants/types'
 import { NftToken } from './nftMarket/types'
 
 export enum GAS_PRICE {
@@ -445,77 +445,10 @@ export interface Vote {
   vp: number
 }
 
-export interface LotteryRoundUserTickets {
-  isLoading?: boolean
-  tickets?: LotteryTicket[]
-}
-
-interface LotteryRoundGenerics {
-  isLoading?: boolean
-  lotteryId: string
-  status: LotteryStatus
-  startTime: string
-  endTime: string
-  treasuryFee: string
-  firstTicketId: string
-  lastTicketId: string
-  finalNumber: number
-}
-
-export interface LotteryRound extends LotteryRoundGenerics {
-  userTickets?: LotteryRoundUserTickets
-  priceTicketInCake: BigNumber
-  discountDivisor: BigNumber
-  amountCollectedInCake: BigNumber
-  cakePerBracket: string[]
-  countWinnersPerBracket: string[]
-  rewardsBreakdown: string[]
-}
-
-export interface LotteryResponse extends LotteryRoundGenerics {
-  priceTicketInCake: SerializedBigNumber
-  discountDivisor: SerializedBigNumber
-  amountCollectedInCake: SerializedBigNumber
-  cakePerBracket: SerializedBigNumber[]
-  countWinnersPerBracket: SerializedBigNumber[]
-  rewardsBreakdown: SerializedBigNumber[]
-}
-
-export interface LotteryState {
-  currentLotteryId: string
-  maxNumberTicketsPerBuyOrClaim: string
-  isTransitioning: boolean
-  currentRound: LotteryResponse & { userTickets?: LotteryRoundUserTickets }
-  lotteriesData?: LotteryRoundGraphEntity[]
-  userLotteryData?: LotteryUserGraphEntity
-}
-
-export interface LotteryRoundGraphEntity {
-  id: string
-  totalUsers: string
-  totalTickets: string
-  winningTickets: string
-  status: LotteryStatus
-  finalNumber: string
-  startTime: string
-  endTime: string
-  ticketPrice: SerializedBigNumber
-}
-
-export interface LotteryUserGraphEntity {
-  account: string
-  totalCake: string
-  totalTickets: string
-  rounds: UserRound[]
-}
-
 export interface UserRound {
   claimed: boolean
-  lotteryId: string
-  status: LotteryStatus
   endTime: string
   totalTickets: string
-  tickets?: LotteryTicket[]
 }
 
 export interface PredictionConfig {
@@ -526,31 +459,9 @@ export interface PredictionConfig {
   token: Token
 }
 
-// Pottery
-export interface PotteryState {
-  lastVaultAddress: string
-  publicData: SerializedPotteryPublicData
-  userData: SerializedPotteryUserData
-  finishedRoundInfo: PotteryRoundInfo
-}
-
-export interface SerializedPotteryPublicData {
-  lastDrawId: string
-  totalPrize: string
-  getStatus: PotteryDepositStatus
-  totalLockCake: string
-  totalSupply: string
-  lockStartTime: string
-  lockTime: number
-  totalLockedValue: string
-  latestRoundId: string
-  maxTotalDeposit: string
-}
-
 export interface DeserializedPublicData {
   lastDrawId: string
   totalPrize: BigNumber
-  getStatus: PotteryDepositStatus
   totalLockCake: BigNumber
   totalSupply: BigNumber
   lockStartTime: string
@@ -560,63 +471,9 @@ export interface DeserializedPublicData {
   maxTotalDeposit: BigNumber
 }
 
-export interface SerializedPotteryUserData {
-  isLoading?: boolean
-  allowance: string
-  previewDepositBalance: string
-  stakingTokenBalance: string
-  rewards: string
-  winCount: string
-  withdrawAbleData: PotteryWithdrawAbleData[]
-}
-
-export interface DeserializedPotteryUserData {
-  isLoading?: boolean
-  allowance: BigNumber
-  previewDepositBalance: BigNumber
-  stakingTokenBalance: BigNumber
-  rewards: BigNumber
-  winCount: string
-  withdrawAbleData: PotteryWithdrawAbleData[]
-}
-
-export interface PotteryRoundInfo {
-  isFetched: boolean
-  roundId: string
-  drawDate: string
-  prizePot: string
-  totalPlayers: string
-  txid: string
-  winners: Array<string>
-  lockDate: string
-}
-
-export enum PotteryDepositStatus {
-  BEFORE_LOCK = 0,
-  LOCK = 1,
-  UNLOCK = 2,
-}
-
-export interface PotteryWithdrawAbleData {
-  id: string
-  shares: string
-  depositDate: string
-  previewRedeem: string
-  status: PotteryDepositStatus
-  potteryVaultAddress: string
-  totalSupply: string
-  totalLockCake: string
-  lockedDate: string
-  balanceOf: string
-}
-
-// Global state
-
 export interface State {
   farms: SerializedFarmsState
   farmsV1: SerializedFarmsState
   pools: PoolsState
   predictions: PredictionsState
-  lottery: LotteryState
-  pottery: PotteryState
 }

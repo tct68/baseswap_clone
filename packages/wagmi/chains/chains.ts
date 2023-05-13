@@ -35,7 +35,7 @@ export const baseGoerli: Chain = {
     decimals: 18,
   },
   multicall: {
-    address: '0x4200000000000000000000000000000000000006',
+    address: '0xca11bde05977b3631167028862be2a173976ca11',
     blockCreated: 4244264,
   },
 }

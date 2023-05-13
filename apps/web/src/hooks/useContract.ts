@@ -22,11 +22,9 @@ import {
   getBunnyFactoryContract,
   getBunnySpecialCakeVaultContract,
   getBunnySpecialContract,
-  getBunnySpecialLotteryContract,
   getBunnySpecialPredictionContract,
   getBunnySpecialXmasContract,
   getCakeContract,
-  getCakeFlexibleSideVaultV2Contract,
   getCakePredictionsContract,
   getCakeVaultV2Contract,
   getChainlinkOracleContract,
@@ -38,7 +36,6 @@ import {
   getIfoV1Contract,
   getIfoV2Contract,
   getIfoV3Contract,
-  getLotteryV2Contract,
   getMasterchefContract,
   getMasterchefV1Contract,
   getNftMarketContract,
@@ -46,8 +43,6 @@ import {
   getPancakeBunniesContract,
   getPancakeSquadContract,
   getPointCenterIfoContract,
-  getPotteryDrawContract,
-  getPotteryVaultContract,
   getPredictionsContract,
   getPredictionsV1Contract,
   getProfileContract,
@@ -134,11 +129,6 @@ export const useProfileContract = (withSignerIfPossible = true) => {
   return useMemo(() => getProfileContract(providerOrSigner), [providerOrSigner])
 }
 
-export const useLotteryV2Contract = () => {
-  const providerOrSigner = useProviderOrSigner(true, true)
-  return useMemo(() => getLotteryV2Contract(providerOrSigner), [providerOrSigner])
-}
-
 export const useMasterchef = (withSignerIfPossible = true) => {
   const { chainId } = useActiveChainId()
   const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
@@ -195,19 +185,6 @@ export const useEasterNftContract = () => {
   return useMemo(() => getEasterNftContract(signer), [signer])
 }
 
-export const useVaultPoolContract = (vaultKey: VaultKey): CakeVaultV2 | CakeFlexibleSideVaultV2 => {
-  const { data: signer } = useSigner()
-  return useMemo(() => {
-    if (vaultKey === VaultKey.CakeVault) {
-      return getCakeVaultV2Contract(signer)
-    }
-    if (vaultKey === VaultKey.CakeFlexibleSideVault) {
-      return getCakeFlexibleSideVaultV2Contract(signer)
-    }
-    return null
-  }, [signer, vaultKey])
-}
-
 export const useCakeVaultContract = (withSignerIfPossible = true) => {
   const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
   return useMemo(() => getCakeVaultV2Contract(providerOrSigner), [providerOrSigner])
@@ -244,19 +221,9 @@ export const useSpecialBunnyPredictionContract = () => {
   return useMemo(() => getBunnySpecialPredictionContract(signer), [signer])
 }
 
-export const useBunnySpecialLotteryContract = () => {
-  const { data: signer } = useSigner()
-  return useMemo(() => getBunnySpecialLotteryContract(signer), [signer])
-}
-
 export const useBunnySpecialXmasContract = () => {
   const { data: signer } = useSigner()
   return useMemo(() => getBunnySpecialXmasContract(signer), [signer])
-}
-
-export const useAnniversaryAchievementContract = (withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible, true)
-  return useMemo(() => getAnniversaryAchievementContract(providerOrSigner), [providerOrSigner])
 }
 
 export const useNftSaleContract = () => {
@@ -336,16 +303,6 @@ export function useMulticallContract() {
   const { chainId } = useActiveChainId()
   const address = getMulticallAddress(chainId)
   return useContract<Multicall>(address, multiCallAbi, false)
-}
-
-export const usePotterytVaultContract = (address) => {
-  const { data: signer } = useSigner()
-  return useMemo(() => getPotteryVaultContract(address, signer), [address, signer])
-}
-
-export const usePotterytDrawContract = () => {
-  const { data: signer } = useSigner()
-  return useMemo(() => getPotteryDrawContract(signer), [signer])
 }
 
 export function useZapContract(withSignerIfPossible = true) {

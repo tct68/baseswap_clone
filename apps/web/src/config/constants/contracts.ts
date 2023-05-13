@@ -11,9 +11,6 @@ export default {
   sousChef: {
     [ChainId.BASE_GOERLI]: '',
   },
-  lotteryV2: {
-    [ChainId.BASE_GOERLI]: '',
-  },
   multiCall: multicallAddresses,
   pancakeProfile: {
     [ChainId.BASE_GOERLI]: '0x843887ac63f97dA742d35C7e150069ff5827Cf80',
@@ -51,9 +48,6 @@ export default {
   cakeVault: {
     [ChainId.BASE_GOERLI]: '',
   },
-  cakeFlexibleSideVault: {
-    [ChainId.BASE_GOERLI]: '',
-  },
   predictionsBNB: {
     [ChainId.BASE_GOERLI]: '',
   },
@@ -75,9 +69,6 @@ export default {
   bunnySpecialPrediction: {
     [ChainId.BASE_GOERLI]: '',
   },
-  bunnySpecialLottery: {
-    [ChainId.BASE_GOERLI]: '',
-  },
   bunnySpecialXmas: {
     [ChainId.BASE_GOERLI]: '',
   },
@@ -95,9 +86,6 @@ export default {
   },
   pancakeSquad: {
     [ChainId.BASE_GOERLI]: '0xEdFa035C3db4709ebcFDd88E722B012fcCDd2139',
-  },
-  potteryDraw: {
-    [ChainId.BASE_GOERLI]: '0x4203646a8C1e452C54AC59ee34Bb1D101607Cac5',
   },
   // TODO: multi
   zap: {

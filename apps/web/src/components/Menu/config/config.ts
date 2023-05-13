@@ -95,57 +95,6 @@ const config: (
         */
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    // {
-    //   label: t('Win'),
-    //   href: '/prediction',
-    //   icon: TrophyIcon,
-    //   fillIcon: TrophyFillIcon,
-    //   supportChainIds: SUPPORT_ONLY_BSC,
-    //   items: [
-    //     {
-    //       label: t('Trading Competition'),
-    //       href: '/competition',
-    //       image: '/images/decorations/tc.png',
-    //       hideSubNav: true,
-    //     },
-    //     {
-    //       label: t('Prediction (BETA)'),
-    //       href: '/prediction',
-    //       image: '/images/decorations/prediction.png',
-    //     },
-    //     {
-    //       label: t('Lottery'),
-    //       href: '/lottery',
-    //       image: '/images/decorations/lottery.png',
-    //     },
-    //     {
-    //       label: t('Pottery (BETA)'),
-    //       href: '/pottery',
-    //       image: '/images/decorations/lottery.png',
-    //     },
-    //   ],
-    // },
-    // {
-    //   label: t('NFT'),
-    //   href: '/404',
-    //   icon: NftIcon,
-    //   fillIcon: NftFillIcon,
-    //   image: '/images/decorations/nft.png',
-    //   items: [
-    // {
-    //   label: t('Overview'),
-    //   href: `${nftsBaseUrl}`,
-    // },
-    // {
-    //   label: t('Collections'),
-    //   href: `${nftsBaseUrl}/collections`,
-    // },
-    // {
-    //   label: t('Activity'),
-    //   href: `${nftsBaseUrl}/activity`,
-    // },
-    //   ],
-    // },
     {
       label: 'Docs',
       href: 'https://towerswap.gitbook.io/towerswap-finance',

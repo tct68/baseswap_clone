@@ -107,29 +107,6 @@ export type PageMeta = {
   image?: string
 }
 
-export enum LotteryStatus {
-  PENDING = 'pending',
-  OPEN = 'open',
-  CLOSE = 'close',
-  CLAIMABLE = 'claimable',
-}
-
-export interface LotteryTicket {
-  id: string
-  number: string
-  status: boolean
-  rewardBracket?: number
-  roundId?: string
-  cakeReward?: string
-}
-
-export interface LotteryTicketClaimData {
-  ticketsWithUnclaimedRewards: LotteryTicket[]
-  allWinningTickets: LotteryTicket[]
-  cakeTotal: BigNumber
-  roundId: string
-}
-
 // Farm Auction
 export interface FarmAuctionBidderConfig {
   account: string

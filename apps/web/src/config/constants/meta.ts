@@ -30,7 +30,6 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/farms': { title: t('Farms') },
       '/farms/auction': { title: t('Farm Auctions') },
       '/pools': { title: t('Pools') },
-      '/lottery': { title: t('Lottery') },
       '/ifo': { title: t('Initial Farm Offering') },
       '/teams': { basePath: true, title: t('Leaderboard') },
       '/voting': { basePath: true, title: t('Voting') },
@@ -42,8 +41,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/nfts/collections': { basePath: true, title: t('Collections') },
       '/nfts/activity': { title: t('Activity') },
       '/profile': { basePath: true, title: t('Profile') },
-      '/pancake-squad': { basePath: true, title: t('Tower Squad') },
-      '/pottery': { basePath: true, title: t('Pottery') },
+      '/pancake-squad': { basePath: true, title: t('Tower Squad') }
     },
     defaultTitleSuffix: t('TowerSwap'),
   }

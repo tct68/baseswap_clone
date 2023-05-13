@@ -1,7 +1,6 @@
 import '@pancakeswap/ui/css/reset.css'
 import { ResetCSS, ToastListener, ScrollToTopButtonV2 } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import GlobalCheckClaimStatus from 'components/GlobalCheckClaimStatus'
 import { NetworkModal } from 'components/NetworkModal'
 import { FixedSubgraphHealthIndicator } from 'components/SubgraphHealthIndicator/FixedSubgraphHealthIndicator'
 import { useAccountEventListener } from 'hooks/useAccountEventListener'
@@ -63,14 +62,10 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
         />
         <meta
           name="description"
-          content="PancakeSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
+          content="PancakeSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi for CAKE."
         />
         <meta name="theme-color" content="#1FC7D4" />
         <meta name="twitter:image" content="https://towerswap.finance/images/hero.png" />
-        <meta
-          name="twitter:description"
-          content="The new DeFi AMM on Caduceus! Earn SNAP through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by PancakeSwap), NFTs, and more, on a platform you can trust."
-        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="🗼TowerSwap - A next evolution DeFi exchange on Caduceus Chain (CMP)" />
         <title>TowerSwap</title>
@@ -84,7 +79,6 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           {(Component as NextPageWithLayout).mp ? <MPGlobalHooks /> : <GlobalHooks />}
           <ResetCSS />
           <GlobalStyle />
-          <GlobalCheckClaimStatus excludeLocations={[]} />
           <PersistGate loading={null} persistor={persistor}>
             <Updaters />
             <App {...props} />
