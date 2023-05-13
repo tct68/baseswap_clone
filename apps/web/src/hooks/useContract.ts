@@ -334,7 +334,8 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 
 export function useMulticallContract() {
   const { chainId } = useActiveChainId()
-  return useContract<Multicall>(getMulticallAddress(chainId), multiCallAbi, false)
+  const address = getMulticallAddress(chainId)
+  return useContract<Multicall>(address, multiCallAbi, false)
 }
 
 export const usePotterytVaultContract = (address) => {

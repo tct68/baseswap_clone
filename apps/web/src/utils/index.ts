@@ -5,7 +5,7 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import type { Provider } from '@ethersproject/providers'
 import { ChainId, Currency } from '@pancakeswap/sdk'
-import { cmpTestnet } from '@pancakeswap/wagmi/chains'
+import { zeta } from '@pancakeswap/wagmi/chains'
 import memoize from 'lodash/memoize'
 import { TokenAddressMap } from '@pancakeswap/token-lists'
 import { chains } from './wagmi'
@@ -13,6 +13,8 @@ import { chains } from './wagmi'
 // returns the checksummed address if the address is valid, otherwise returns false
 export const isAddress = memoize((value: any): string | false => {
   try {
+    console.log(`${value} -- `);
+    
     return getAddress(value)
   } catch {
     return false
@@ -26,7 +28,7 @@ export function getBlockExploreLink(
 ): string {
   const chainId = chainIdOverride || ChainId.CMP
   const chain = chains.find((c) => c.id === chainId)
-  if (!chain) return cmpTestnet.blockExplorers.default.url
+  if (!chain) return zeta.blockExplorers.default.url
   switch (type) {
     case 'transaction': {
       return `${chain.blockExplorers.default.url}/tx/${data}`
@@ -50,11 +52,11 @@ export function getBlockExploreName(chainIdOverride?: number) {
   const chainId = chainIdOverride || ChainId.CMP
   const chain = chains.find((c) => c.id === chainId)
 
-  return chain?.blockExplorers?.default.name || cmpTestnet.blockExplorers.default.name
+  return chain?.blockExplorers?.default.name || zeta.blockExplorers.default.name
 }
 
 export function getBscScanLinkForNft(collectionAddress: string, tokenId: string): string {
-  return `${cmpTestnet.blockExplorers.default.url}/token/${collectionAddress}?a=${tokenId}`
+  return `${zeta.blockExplorers.default.url}/token/${collectionAddress}?a=${tokenId}`
 }
 
 // add 10%

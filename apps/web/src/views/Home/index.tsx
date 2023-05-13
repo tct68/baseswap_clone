@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import PageSection from 'components/PageSection'
-import { useAccount } from 'wagmi'
 import useTheme from 'hooks/useTheme'
 import { PageMeta } from 'components/Layout/Page'
 import { useTranslation } from '@pancakeswap/localization'
@@ -32,7 +31,6 @@ const StyledHeroSection = styled(PageSection)`
 
 const Home: React.FC<React.PropsWithChildren> = () => {
   const { theme } = useTheme()
-  const { address: account } = useAccount()
   const { chainId } = useActiveChainId()
 
   const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }

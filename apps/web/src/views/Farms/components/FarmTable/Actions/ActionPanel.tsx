@@ -7,11 +7,10 @@ import {
   FarmTableLiquidityProps,
   FarmTableMultiplierProps,
 } from '@pancakeswap/uikit'
-import { useContext, useMemo } from 'react'
+import { useContext } from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { getBlockExploreLink } from 'utils'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import { multiChainPaths } from 'state/info/constant'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { FarmWithStakedValue } from '../../types'
 
@@ -135,7 +134,7 @@ const ActionPanel: React.FunctionComponent<React.PropsWithChildren<ActionPanelPr
     currentLanguage: { locale },
   } = useTranslation()
   const isActive = farm.multiplier !== '0X'
-  const { quoteToken, token, stableSwapAddress } = farm
+  const { quoteToken, token } = farm
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('TOWER', '')
   const liquidityUrlPathParts = getLiquidityUrlPathParts({
     quoteTokenAddress: quoteToken.address,
@@ -145,13 +144,6 @@ const ActionPanel: React.FunctionComponent<React.PropsWithChildren<ActionPanelPr
   const { lpAddress } = farm
   const bsc = getBlockExploreLink(lpAddress, 'address', chainId)
   const { stakedBalance, tokenBalance, proxy } = farm.userData
-
-  /* const infoUrl = useMemo(() => {
-    if (farm.isStable) {
-      return `/info${multiChainPaths[chainId]}/pairs/${stableSwapAddress}?type=stableSwap`
-    }
-    return `/info${multiChainPaths[chainId]}/pairs/${lpAddress}`
-  }, [chainId, farm.isStable, lpAddress, stableSwapAddress]) */
 
   return (
     <Container expanded={expanded}>

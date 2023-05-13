@@ -18,30 +18,6 @@ export const zeta: Chain = {
   },
 }
 
-const bscExplorer = { name: 'BscScan', url: 'https://bscscan.com' }
-
-export const cmpTestnet: Chain = {
-  id: 512512,
-  name: 'Caduceus Testnet',
-  network: 'cmp_testnet',
-  rpcUrls: {
-    public: 'https://galaxy.block.caduceus.foundation',
-    default: 'https://galaxy.block.caduceus.foundation',
-  },
-  blockExplorers: {
-    default: { name: 'CMP_Testnet Explorer', url: 'https://galaxy.scan.caduceus.foundation' },
-  },
-  nativeCurrency: {
-    name: 'Cadeceus',
-    symbol: 'CMP',
-    decimals: 18,
-  },
-  multicall: {
-    address: '0x3dc18345e131a673e11401696a35e7927673eeea',
-    blockCreated: 10275844,
-  },
-}
-
 export const baseGoerli: Chain = {
   id: ChainId.BASE_GOERLI,
   name: 'Base Goerli',
@@ -60,7 +36,7 @@ export const baseGoerli: Chain = {
   },
   multicall: {
     address: '0x4200000000000000000000000000000000000006',
-    blockCreated: 10275844,
+    blockCreated: 4244264,
   },
 }
 

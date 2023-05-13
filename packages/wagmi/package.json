@@ -15,7 +15,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "prepublishOnly": "yarn run build",
-    "clean": " .turbo &&  node_modules &&  dist"
+    "clean": "rimraf node_modules  dist .turbo"
   },
   "peerDependencies": {
     "swr": "^1.3.0",

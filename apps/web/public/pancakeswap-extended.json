@@ -28,7 +28,7 @@
     {
       "name": "Tower BUSD",
       "symbol": "BUSD",
-      "address": "0xB21668048d42d7d6423B070B278F5Af14e1f1600",
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
       "chainId": 512512,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/SmartDev1990/tower-asset-icon/main/icon/BUSD.png"

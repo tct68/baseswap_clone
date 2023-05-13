@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import {
   Flex,
   Text,
@@ -7,12 +6,7 @@ import {
   NextLinkFromReactRouter,
 } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import { useIntersectionObserver } from '@pancakeswap/hooks'
-import { usePriceCakeBusd } from 'state/farms/hooks'
 import styled from 'styled-components'
-import { fetchLottery, fetchCurrentLotteryId } from 'state/lottery/helpers'
-import { SLOW_INTERVAL } from 'config/constants'
-import useSWRImmutable from 'swr/immutable'
 
 const StyledLink = styled(NextLinkFromReactRouter)`
   width: 100%;
@@ -20,30 +14,6 @@ const StyledLink = styled(NextLinkFromReactRouter)`
 
 const LotteryCardContent = () => {
   const { t } = useTranslation()
-  const { isIntersecting } = useIntersectionObserver()
-  const [loadData, setLoadData] = useState(false)
-  const cakePriceBusd = usePriceCakeBusd({ forceMainnet: true })
-  const { data: currentLotteryId } = useSWRImmutable(loadData ? ['currentLotteryId'] : null, fetchCurrentLotteryId, {
-    refreshInterval: SLOW_INTERVAL,
-  })
-  const { data: currentLottery } = useSWRImmutable(
-    currentLotteryId ? ['currentLottery'] : null,
-    async () => fetchLottery(currentLotteryId.toString()),
-    {
-      refreshInterval: SLOW_INTERVAL,
-    },
-  )
-
-  const cakePrizesText = t('%cakePrizeInUsd% in CAKE prizes this round', { cakePrizeInUsd: cakePriceBusd.toString() })
-  const [pretext, prizesThisRound] = cakePrizesText.split(cakePriceBusd.toString())
-  const amountCollectedInCake = currentLottery ? parseFloat(currentLottery.amountCollectedInCake) : null
-
-  useEffect(() => {
-    if (isIntersecting) {
-      setLoadData(true)
-    }
-  }, [isIntersecting])
-
   return (
     <>
       <Flex flexDirection="column" alignItems="center" justifyContent="center" mt="10px">
