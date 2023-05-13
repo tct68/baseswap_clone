@@ -3,7 +3,7 @@ import { Pool } from '@pancakeswap/uikit'
 import { SerializedWrappedToken } from '@pancakeswap/token-lists'
 import Trans from 'components/Trans'
 import { VaultKey } from 'state/types'
-import { mainnetTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@pancakeswap/tokens'
 import { PoolCategory } from './types'
 
 export const MAX_LOCK_DURATION = 31536000
@@ -19,27 +19,27 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 5000,
     gasLimit: 380000,
     tokenImage: {
-      primarySrc: `/images/tokens/${mainnetTokens.tw.address}.svg`,
+      primarySrc: `/images/tokens/${baseGoerliTokens.tw.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
   [VaultKey.CakeVault]: {
-    name: <Trans>Stake TW</Trans>,
+    name: <Trans>Stake SNAP</Trans>,
     description: <Trans>Stake, Earn – And more!</Trans>,
     autoCompoundFrequency: 5000,
     gasLimit: 600000,
     tokenImage: {
-      primarySrc: `/images/tokens/${mainnetTokens.tw.address}.svg`,
+      primarySrc: `/images/tokens/${baseGoerliTokens.tw.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
   [VaultKey.CakeFlexibleSideVault]: {
-    name: <Trans>Flexible TW</Trans>,
+    name: <Trans>Flexible SNAP</Trans>,
     description: <Trans>Flexible staking on the side.</Trans>,
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${mainnetTokens.tw.address}.svg`,
+      primarySrc: `/images/tokens/${baseGoerliTokens.tw.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
@@ -49,18 +49,18 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 1,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${mainnetTokens.tw.address}.svg`,
+      primarySrc: `/images/tokens/${baseGoerliTokens.tw.address}.svg`,
       secondarySrc: `/images/tokens/ifo-pool-icon.svg`,
     },
   },
 } as const
 
 export const livePools: Pool.SerializedPoolConfig<SerializedWrappedToken>[] = [
-  // Auto TW: 512512: '0x86AF084E7d9Ca3D7a435F69295cDFB34416A7eBd',
+  // Auto SNAP: 512512: '0x86AF084E7d9Ca3D7a435F69295cDFB34416A7eBd',
   {
     sousId: 0,
-    stakingToken: mainnetTokens.tw,
-    earningToken: mainnetTokens.tw,
+    stakingToken: baseGoerliTokens.tw,
+    earningToken: baseGoerliTokens.tw,
     contractAddress: {
       256256: '0xd964CB5A5cE6B7c8fA26796760F8A5AeE9bee1a1',
       512512: '',
@@ -72,8 +72,8 @@ export const livePools: Pool.SerializedPoolConfig<SerializedWrappedToken>[] = [
   /*
   {
     sousId: 1,
-    stakingToken: mainnetTokens.wcmp,
-    earningToken: mainnetTokens.tw,
+    stakingToken: baseGoerliTokens.wcmp,
+    earningToken: baseGoerliTokens.tw,
     contractAddress: {
       256256: '0xb865b267163eC850507DA3aed079Cc1938f6777B',
       512512: '',
@@ -85,8 +85,8 @@ export const livePools: Pool.SerializedPoolConfig<SerializedWrappedToken>[] = [
   /*
   {
     sousId: 2,
-    stakingToken: mainnetTokens.busd,
-    earningToken: mainnetTokens.tw,
+    stakingToken: baseGoerliTokens.busd,
+    earningToken: baseGoerliTokens.tw,
     contractAddress: {
       256256: '',
       512512: '0xF9f7F84cD9DC507cb71D5a037E89e8A94a68A74b',
@@ -97,8 +97,8 @@ export const livePools: Pool.SerializedPoolConfig<SerializedWrappedToken>[] = [
   },
   {
     sousId: 3,
-    stakingToken: mainnetTokens.wcmp,
-    earningToken: mainnetTokens.busd,
+    stakingToken: baseGoerliTokens.wcmp,
+    earningToken: baseGoerliTokens.busd,
     contractAddress: {
       256256: '',
       512512: '0x9e91b078BEf5a0AC4B532AbB3F7819914451b3a8',
@@ -110,8 +110,8 @@ export const livePools: Pool.SerializedPoolConfig<SerializedWrappedToken>[] = [
   /*
   {
     sousId: 2,
-    stakingToken: mainnetTokens.tw,
-    earningToken: mainnetTokens.busd,
+    stakingToken: baseGoerliTokens.tw,
+    earningToken: baseGoerliTokens.busd,
     contractAddress: {
       256256: '',
       512512: '0x2132921e45139Ca153992555bDCf7F3C0c63E004',
@@ -123,8 +123,8 @@ export const livePools: Pool.SerializedPoolConfig<SerializedWrappedToken>[] = [
   /*
   {
     sousId: 3,
-    stakingToken: mainnetTokens.tw,
-    earningToken: mainnetTokens.busd,
+    stakingToken: baseGoerliTokens.tw,
+    earningToken: baseGoerliTokens.busd,
     contractAddress: {
       256256: '',
       512512: '0xEBAb681E2453aa7e8BD9666AE3ff3e59B88db091',
@@ -136,8 +136,8 @@ export const livePools: Pool.SerializedPoolConfig<SerializedWrappedToken>[] = [
   /*
   {
     sousId: 3,
-    stakingToken: mainnetTokens.cake,
-    earningToken: mainnetTokens.busd,
+    stakingToken: baseGoerliTokens.tw,
+    earningToken: baseGoerliTokens.busd,
     contractAddress: {
       256256: '0xdd25bdce10e6c7d4bb4804fe1f5d2aa04aac8d01',
       56: '0xdd25bdce10e6c7d4bb4804fe1f5d2aa04aac8d01',

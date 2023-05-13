@@ -95,7 +95,7 @@ const StartPage: React.FC<React.PropsWithChildren<StartPageProps>> = ({ goToAppr
         <>
           <Message variant="warning" mb="16px">
             <MessageText>
-              {t("Before editing your profile, please make sure you've claimed all the unspent TW from previous IFOs!")}
+              {t("Before editing your profile, please make sure you've claimed all the unspent SNAP from previous IFOs!")}
             </MessageText>
           </Message>
           <Button

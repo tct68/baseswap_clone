@@ -4,7 +4,7 @@ import { provider } from 'utils/wagmi'
 import { Contract } from '@ethersproject/contracts'
 import poolsConfig from 'config/constants/pools'
 import { PoolCategory } from 'config/constants/types'
-import { TW } from '@pancakeswap/tokens'
+import { SNAP } from '@pancakeswap/tokens'
 
 // Addresses
 import {
@@ -153,7 +153,7 @@ import { ChainId } from '@pancakeswap/sdk'
 export const getContract = ({
   abi,
   address,
-  chainId = ChainId.CMP,
+  chainId = ChainId.BASE_GOERLI,
   signer,
 }: {
   abi: any
@@ -162,6 +162,7 @@ export const getContract = ({
   signer?: Signer | Provider
 }) => {
   const signerOrProvider = signer ?? provider({ chainId })
+  console.log(address);
   return new Contract(address, abi, signerOrProvider)
 }
 
@@ -199,7 +200,7 @@ export const getPointCenterIfoContract = (signer?: Signer | Provider) => {
 export const getCakeContract = (signer?: Signer | Provider, chainId?: number) => {
   return getContract({
     abi: cakeAbi,
-    address: chainId ? TW[chainId].address : TW[ChainId.CMP].address,
+    address: chainId ? SNAP[chainId].address : SNAP[ChainId.BASE_GOERLI].address,
     signer,
   }) as Cake
 }

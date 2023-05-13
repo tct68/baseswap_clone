@@ -1,6 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
 import { ChainId } from '@pancakeswap/sdk'
-import { Order } from '@gelatonetwork/limit-orders-lib'
 
 export type TransactionType =
   | 'approve'
@@ -71,7 +70,6 @@ export const addTransaction = createAction<{
   summary?: string
   translatableSummary?: { text: string; data?: Record<string, string | number> }
   type?: TransactionType
-  order?: Order
   nonBscFarm?: NonBscFarmTransactionType
 }>('transactions/addTransaction')
 export const clearAllTransactions = createAction('transactions/clearAllTransactions')

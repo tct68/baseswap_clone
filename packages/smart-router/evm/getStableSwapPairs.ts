@@ -6,11 +6,6 @@ import { createStableSwapPair } from './stableSwap'
 import { getStableSwapPools } from './constants/stableSwap'
 
 export function getStableSwapPairs(chainId: ChainId): StableSwapPair[] {
-  // Stable swap is only supported on BSC chain & BSC testnet
-  if (chainId !== ChainId.BSC && chainId !== ChainId.BSC_TESTNET) {
-    return []
-  }
-
   const pools = getStableSwapPools(chainId)
   return pools.map(({ token, quoteToken, stableSwapAddress }) => {
     const token0 = deserializeToken(token)

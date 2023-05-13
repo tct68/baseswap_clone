@@ -22,13 +22,11 @@ export const multiChainStartTime = {
 }
 
 export const multiChainId = {
-  BSC: ChainId.BSC,
-  ETH: ChainId.ETHEREUM,
+  BASE_GOERLI: ChainId.BASE_GOERLI
 }
 
 export const multiChainPaths = {
-  [ChainId.BSC]: '',
-  [ChainId.ETHEREUM]: '/eth',
+  [ChainId.BASE_GOERLI]: '/eth',
 }
 
 export const multiChainQueryClient = {

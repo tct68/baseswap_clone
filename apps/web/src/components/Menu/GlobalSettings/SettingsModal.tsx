@@ -1,5 +1,4 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { ChainId } from '@pancakeswap/sdk'
 import {
   Box,
   Flex,
@@ -28,7 +27,6 @@ import {
 import { useStableSwapByDefault } from 'state/user/smartRouter'
 import styled from 'styled-components'
 import ExpertModal from './ExpertModal'
-import GasSettings from './GasSettings'
 import TransactionSettings from './TransactionSettings'
 import { SettingsMode } from './types'
 
@@ -154,7 +152,6 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                   }}
                 />
               </Flex>
-              {chainId === ChainId.CMP && <GasSettings />}
             </Flex>
           </>
         )}
@@ -164,9 +161,6 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
               <Text bold textTransform="uppercase" fontSize="18px" color="secondary" mb="24px">
                 {t('Swaps & Liquidity')}
               </Text>
-              <Flex justifyContent="space-between" alignItems="center" mb="24px">
-                {chainId === ChainId.CMP && <GasSettings />}
-              </Flex>
               <TransactionSettings />
             </Flex>
             {SUPPORT_ZAP.includes(chainId) && (

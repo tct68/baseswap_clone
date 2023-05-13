@@ -94,7 +94,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <SalesSection {...bridgeSectionData(t)} />
         {/* TODO: until we are enable fetch multi-chain farms */}
-        {chainId === ChainId.BSC && <FarmsPoolsRow />}
+        {chainId === ChainId.BASE_GOERLI && <FarmsPoolsRow />}
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
@@ -112,7 +112,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <SalesSection {...moreSectionData(t)} />
         {/* TODO: until we are enable fetch multi-chain farms */}
-        {chainId === ChainId.BSC && <FarmsPoolsRow />}
+        {chainId === ChainId.BASE_GOERLI && <FarmsPoolsRow />}
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}

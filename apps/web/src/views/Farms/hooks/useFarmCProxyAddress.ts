@@ -4,7 +4,7 @@ import { fetchCProxyAddress } from 'state/farms/fetchFarmUser'
 import { farmFetcher } from 'state/farms'
 
 export const useFarmCProxyAddress = (account?: string, chainId?: number) => {
-  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.CMP_TESTNET : ChainId.CMP
+  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI
   const { data } = useSWR(account && chainId && ['cProxyAddress', account, chainId], async () =>
     fetchCProxyAddress(account, multiCallChainId),
   )

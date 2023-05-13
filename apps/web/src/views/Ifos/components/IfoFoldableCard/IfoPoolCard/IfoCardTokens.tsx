@@ -18,7 +18,7 @@ import {
 import { useAccount } from 'wagmi'
 import { Token } from '@pancakeswap/sdk'
 import { Ifo, PoolIds } from 'config/constants/types'
-import { bscTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@pancakeswap/tokens'
 import { cakeBnbLpToken } from 'config/constants/ifo'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 import { useTranslation } from '@pancakeswap/localization'
@@ -78,7 +78,7 @@ const CommitTokenSection: React.FC<React.PropsWithChildren<TokenSectionProps & {
   ...props
 }) => {
   if (commitToken.equals(cakeBnbLpToken)) {
-    return <TokenSection primaryToken={bscTokens.cake} secondaryToken={bscTokens.wbnb} {...props} />
+    return <TokenSection primaryToken={baseGoerliTokens.tw} secondaryToken={baseGoerliTokens.usdt} {...props} />
   }
   return <TokenSection primaryToken={commitToken} {...props} />
 }

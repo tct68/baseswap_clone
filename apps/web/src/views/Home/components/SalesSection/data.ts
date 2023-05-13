@@ -33,7 +33,7 @@ export const bridgeSectionData = (t: TranslateFunction): SalesSectionProps => ({
   bodyText: t(
     'Towerswap provides NFT marketplace service, ' +
       'Everyone can buy, sell and trade their NFT here. Towerswap does not charge a listing fee. ' +
-      'a fee of 2% of each trade will be taken to buy back TW tokens and burned. ',
+      'a fee of 2% of each trade will be taken to buy back SNAP tokens and burned. ',
   ),
   reverse: true,
   primaryButton: {

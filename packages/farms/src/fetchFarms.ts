@@ -10,7 +10,7 @@ import { isStableFarm, SerializedFarmConfig } from './types'
 import { getFullDecimalMultiplier } from './getFullDecimalMultiplier'
 
 const evmNativeStableLpMap = {
-  [ChainId.CMP]: {
+  [ChainId.BASE_GOERLI]: {
     address: '0x6b9dB0B7504e04E2a4E5C4B6B22bD84E9a8710fd',
     wNative: 'WBNB',
     stable: 'BUSD',
@@ -172,7 +172,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicallv2({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.CMP_TESTNET : ChainId.CMP,
+      chainId: isTestnet ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -223,7 +223,7 @@ export const fetchMasterChefV2Data = async ({
           params: [true],
         },
       ],
-      chainId: isTestnet ? ChainId.CMP_TESTNET : ChainId.CMP,
+      chainId: isTestnet ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI,
     })
 
     return {

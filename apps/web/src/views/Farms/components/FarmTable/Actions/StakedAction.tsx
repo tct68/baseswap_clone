@@ -217,7 +217,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
             {
               step: 2,
               tx: '',
-              chainId: ChainId.CMP,
+              chainId: ChainId.BASE_GOERLI,
               status: FarmTransactionStatus.PENDING,
             },
           ],
@@ -273,7 +273,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
             },
             {
               step: 2,
-              chainId: ChainId.CMP,
+              chainId: ChainId.BASE_GOERLI,
               tx: '',
               status: FarmTransactionStatus.PENDING,
             },
@@ -326,7 +326,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
       cakePrice={cakePrice}
       showActiveBooster={boosterState === YieldBoosterState.ACTIVE}
       bCakeMultiplier={bCakeMultiplier}
-      showCrossChainFarmWarning={chainId !== ChainId.CMP_TESTNET && chainId !== ChainId.CMP}
+      showCrossChainFarmWarning={chainId !== ChainId.BASE_GOERLI && chainId !== ChainId.BASE_GOERLI}
       crossChainWarningText={crossChainWarningText}
       decimals={18}
       allowance={allowance}
@@ -347,7 +347,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
       onConfirm={handleUnstake}
       tokenName={lpSymbol}
       decimals={18}
-      showCrossChainFarmWarning={chainId !== ChainId.CMP_TESTNET && chainId !== ChainId.CMP}
+      showCrossChainFarmWarning={chainId !== ChainId.BASE_GOERLI && chainId !== ChainId.BASE_GOERLI}
     />,
   )
 

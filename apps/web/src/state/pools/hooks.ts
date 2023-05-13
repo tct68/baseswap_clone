@@ -48,7 +48,7 @@ const getActiveFarms = async (chainId: number) => {
     .filter(
       ({ token, pid, quoteToken }) =>
         pid !== 0 &&
-        ((token.symbol === 'TW' && quoteToken.symbol === 'WCMP') ||
+        ((token.symbol === 'SNAP' && quoteToken.symbol === 'WCMP') ||
           (token.symbol === 'USDT' && quoteToken.symbol === 'WCMP') ||
           lPoolAddresses.find((poolAddress) => poolAddress === token.address)),
     )
@@ -61,7 +61,7 @@ const getCakePriceFarms = async (chainId: number) => {
     .filter(
       ({ token, pid, quoteToken }) =>
         pid !== 0 &&
-        ((token.symbol === 'TW' && quoteToken.symbol === 'WCMP') ||
+        ((token.symbol === 'SNAP' && quoteToken.symbol === 'WCMP') ||
           (token.symbol === 'USDT' && quoteToken.symbol === 'WCMP')),
     )
     .map((farm) => farm.pid)

@@ -19,7 +19,7 @@
     },
     {
       "name": "TowerTestnet Token",
-      "symbol": "TW",
+      "symbol": "SNAP",
       "address": "0x09FB691A786284e99D122D2B68dE40D253fec299",
       "chainId": 512512,
       "decimals": 18,

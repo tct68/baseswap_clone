@@ -1,7 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createReducer } from '@reduxjs/toolkit'
-import { Order } from '@gelatonetwork/limit-orders-lib'
-import { confirmOrderCancellation, confirmOrderSubmission, saveOrder } from 'utils/localStorageOrders'
 import {
   addTransaction,
   checkedTransaction,
@@ -21,7 +19,6 @@ export interface TransactionDetails {
   hash: string
   approval?: { tokenAddress: string; spender: string }
   type?: TransactionType
-  order?: Order
   summary?: string
   translatableSummary?: { text: string; data?: Record<string, string | number> }
   claim?: { recipient: string }
@@ -47,7 +44,7 @@ export default createReducer(initialState, (builder) =>
       addTransaction,
       (
         transactions,
-        { payload: { chainId, from, hash, approval, summary, translatableSummary, claim, type, order, nonBscFarm } },
+        { payload: { chainId, from, hash, approval, summary, translatableSummary, claim, type, nonBscFarm } },
       ) => {
         if (transactions[chainId]?.[hash]) {
           throw Error('Attempted to add existing transaction.')
@@ -62,11 +59,9 @@ export default createReducer(initialState, (builder) =>
           from,
           addedTime: now(),
           type,
-          order,
           nonBscFarm,
         }
         transactions[chainId] = txs
-        if (order) saveOrder(chainId, from, order, true)
       },
     )
     .addCase(clearAllTransactions, () => {
@@ -95,11 +90,7 @@ export default createReducer(initialState, (builder) =>
       tx.receipt = receipt
       tx.confirmedTime = now()
 
-      if (tx.type === 'limit-order-submission') {
-        confirmOrderSubmission(chainId, receipt.from, hash, receipt.status !== 0)
-      } else if (tx.type === 'limit-order-cancellation') {
-        confirmOrderCancellation(chainId, receipt.from, hash, receipt.status !== 0)
-      } else if (tx.type === 'non-bsc-farm') {
+      if (tx.type === 'non-bsc-farm') {
         if (tx.nonBscFarm.steps[0].status === FarmTransactionStatus.PENDING) {
           if (receipt.status === FarmTransactionStatus.FAIL) {
             tx.nonBscFarm = { ...tx.nonBscFarm, status: receipt.status }

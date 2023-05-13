@@ -39,12 +39,9 @@ export const ACCESS_RISK_API = 'https://red.alert.pancakeswap.com/red-api'
 export const CELER_API = 'https://api.celerscan.com/scan'
 
 export const INFO_CLIENT_WITH_CHAIN = {
-  [ChainId.CMP_TESTNET]: INFO_CLIENT,
   [ChainId.BASE_GOERLI]: INFO_CLIENT,
-  [ChainId.ETHEREUM]: INFO_CLIENT_ETH,
 }
 
 export const BLOCKS_CLIENT_WITH_CHAIN = {
   [ChainId.BASE_GOERLI]: BLOCKS_CLIENT,
-  [ChainId.ETHEREUM]: BLOCKS_CLIENT_ETH,
 }

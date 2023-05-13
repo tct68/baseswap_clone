@@ -2,27 +2,13 @@
 /* eslint-disable no-restricted-syntax */
 import path from 'path'
 import fs from 'fs'
-import farm1 from '../constants/1'
-import farm5 from '../constants/5'
-import farm97 from '../constants/97'
-import farm56 from '../constants/56'
-import farm256256 from '../constants/256256'
-import farm512512 from '../constants/512512'
+import farm84531 from '../constants/84531'
 
-import lpHelpers1 from '../constants/priceHelperLps/1'
-import lpHelpers5 from '../constants/priceHelperLps/5'
-import lpHelpers97 from '../constants/priceHelperLps/97'
-import lpHelpers56 from '../constants/priceHelperLps/56'
-import lpHelpers256256 from '../constants/priceHelperLps/256256'
-import lpHelpers512512 from '../constants/priceHelperLps/512512'
+import lpHelpers84531 from '../constants/priceHelperLps/84531'
+import { ChainId } from '@pancakeswap/sdk'
 
 const chains = [
-  [1, farm1, lpHelpers1],
-  [5, farm5, lpHelpers5],
-  [56, farm56, lpHelpers56],
-  [97, farm97, lpHelpers97],
-  [512512, farm512512, lpHelpers512512],
-  [256256, farm256256, lpHelpers256256],
+  [ChainId.BASE_GOERLI, farm84531, lpHelpers84531],
 ]
 
 export const saveList = async () => {

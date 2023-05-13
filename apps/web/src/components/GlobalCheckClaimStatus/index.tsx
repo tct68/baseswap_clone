@@ -1,5 +1,4 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { ChainId } from '@pancakeswap/sdk'
 import { useModal, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
@@ -14,14 +13,8 @@ interface GlobalCheckClaimStatusProps {
   excludeLocations: string[]
 }
 
-// change it to true if we have events to check claim status
-const enable = false
-
 const GlobalCheckClaimStatus: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusProps>> = (props) => {
-  const { account, chainId } = useActiveWeb3React()
-  if (!enable || chainId !== ChainId.CMP) {
-    return null
-  }
+  const { account } = useActiveWeb3React()
   return <GlobalCheckClaim key={account} {...props} />
 }
 

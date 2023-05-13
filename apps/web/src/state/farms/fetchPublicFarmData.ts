@@ -47,7 +47,7 @@ const fetchFarmCalls = (farm: SerializedFarm, chainId: number) => {
 
 export const fetchPublicFarmsData = async (
   farms: SerializedFarmConfig[],
-  chainId = ChainId.CMP,
+  chainId = ChainId.BASE_GOERLI,
 ): Promise<any[]> => {
   const farmCalls = farms.flatMap((farm) => fetchFarmCalls(farm, chainId))
   const chunkSize = farmCalls.length / farms.length

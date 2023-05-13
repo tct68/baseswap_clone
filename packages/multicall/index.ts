@@ -65,7 +65,7 @@ export type MultiCall = <T = any>(abi: any[], calls: Call[], chainId?: ChainId) 
 export function createMulticall<TProvider extends Provider>(
   provider: ({ chainId }: { chainId?: number | undefined }) => TProvider,
 ) {
-  const multicall: MultiCall = async (abi: any[], calls: Call[], chainId = ChainId.CMP_TESTNET) => {
+  const multicall: MultiCall = async (abi: any[], calls: Call[], chainId = ChainId.BASE_GOERLI) => {
     const multi = getMulticallContract(chainId, provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
     const itf = new Interface(abi)
@@ -84,7 +84,7 @@ export function createMulticall<TProvider extends Provider>(
   const multicallv2: MultiCallV2 = async ({
     abi,
     calls,
-    chainId = ChainId.CMP_TESTNET,
+    chainId = ChainId.BASE_GOERLI,
     options,
     provider: _provider,
   }) => {

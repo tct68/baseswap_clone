@@ -2,13 +2,10 @@ import { baseGoerliTokens } from '@pancakeswap/tokens'
 import { SerializedFarmConfig } from '@pancakeswap/farms'
 
 const farms: SerializedFarmConfig[] = [
-  /**
-   * These 3 farms (PID 0, 2, 3) should always be at the top of the file.
-   */
   {
     pid: 0,
     v1pid: 0,
-    lpSymbol: 'TW',
+    lpSymbol: 'SNAP',
     lpAddress: '0x09FB691A786284e99D122D2B68dE40D253fec299',
     token: baseGoerliTokens.syrup,
     quoteToken: baseGoerliTokens.wcmp,
@@ -16,7 +13,7 @@ const farms: SerializedFarmConfig[] = [
   {
     pid: 1,
     v1pid: 1,
-    lpSymbol: 'TW-WCMP LP',
+    lpSymbol: 'SNAP-WCMP LP',
     lpAddress: '0xCF506651b80796D34085dADb1c761ebF71BB2b8d',
     token: baseGoerliTokens.tw,
     quoteToken: baseGoerliTokens.wcmp,
@@ -24,7 +21,7 @@ const farms: SerializedFarmConfig[] = [
   {
     pid: 2,
     v1pid: 2,
-    lpSymbol: 'TW-BUSD LP',
+    lpSymbol: 'SNAP-BUSD LP',
     lpAddress: '0xa4B690F4F53caC099549e57e6309A11c79C6Bf56',
     token: baseGoerliTokens.tw,
     quoteToken: baseGoerliTokens.usdt,
@@ -37,6 +34,6 @@ const farms: SerializedFarmConfig[] = [
     token: baseGoerliTokens.usdt,
     quoteToken: baseGoerliTokens.wcmp,
   },
-].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))
+].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken?.serialize }))
 
 export default farms

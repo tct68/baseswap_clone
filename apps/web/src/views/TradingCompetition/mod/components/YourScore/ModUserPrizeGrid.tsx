@@ -20,7 +20,7 @@ const ModUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformatio
   const { t } = useTranslation()
   const { userRewardGroup, userCakeRewards, userDarRewards, userPointReward, canClaimNFT } = userTradingInformation
   const canClaimSpecialNFT = useCanClaimSpecialNFT()
-  const { cakeReward, darReward, dollarValueOfTokensReward } = useModCompetitionRewards({
+  const { cakeReward, dollarValueOfTokensReward } = useModCompetitionRewards({
     userCakeRewards,
     userDarRewards,
   })
@@ -42,7 +42,6 @@ const ModUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformatio
           <BoldTd>
             <Flex flexDirection="column">
               <Text bold>{cakeReward.toFixed(4)} CAKE</Text>
-              <Text bold>{darReward.toFixed(4)} DAR</Text>
               <UserPrizeGridDollar dollarValueOfTokensReward={dollarValueOfTokensReward} />
             </Flex>
           </BoldTd>

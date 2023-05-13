@@ -1,6 +1,6 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
 import { BloctoConnector } from '@pancakeswap/wagmi/connectors/blocto'
-import { zeta, mainnet, localhost, baseGoerli } from '@pancakeswap/wagmi/chains'
+import { mainnet, baseGoerli } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -10,7 +10,7 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
-const CHAINS = [zeta, localhost, baseGoerli]
+const CHAINS = [baseGoerli]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null

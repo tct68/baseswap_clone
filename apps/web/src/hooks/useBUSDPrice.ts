@@ -11,7 +11,7 @@ import {
   ERC20Token,
 } from '@pancakeswap/sdk'
 import { FAST_INTERVAL } from 'config/constants'
-import { BUSD, TW, USDC } from '@pancakeswap/tokens'
+import { BUSD, SNAP, USDC } from '@pancakeswap/tokens'
 import { useMemo } from 'react'
 import useSWR from 'swr'
 import getLpAddress from 'utils/getLpAddress'
@@ -170,7 +170,7 @@ export const useCakeBusdPrice = (
   const { chainId } = useActiveChainId()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet cake if chain is testnet
-  const cake: Token = isTestnet ? TW[ChainId.CMP_TESTNET] : TW[ChainId.CMP]
+  const cake: Token = isTestnet ? SNAP[ChainId.BASE_GOERLI] : SNAP[ChainId.BASE_GOERLI]
   return usePriceByPairs(BUSD[cake.chainId], cake)
 }
 
@@ -181,6 +181,6 @@ export const useBNBBusdPrice = (
   const { chainId } = useActiveChainId()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet wbnb if chain is testnet
-  const wbnb: Token = isTestnet ? WBNB[ChainId.CMP_TESTNET] : WBNB[ChainId.CMP]
+  const wbnb: Token = isTestnet ? WBNB[ChainId.BASE_GOERLI] : WBNB[ChainId.BASE_GOERLI]
   return usePriceByPairs(BUSD[wbnb.chainId], wbnb)
 }

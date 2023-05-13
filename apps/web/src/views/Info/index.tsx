@@ -16,10 +16,8 @@ export const InfoPageLayout = ({ children }) => {
   const { t } = useTranslation()
 
   useEffect(() => {
-    if (account && chainId === ChainId.CMP && router.query.chainName === 'eth')
+    if (account && chainId === ChainId.BASE_GOERLI && router.query.chainName === 'eth')
       router.replace('/info', undefined, { shallow: true })
-    if (account && chainId === ChainId.ETHEREUM && router.query.chainName !== 'eth')
-      router.replace('/info/eth', undefined, { shallow: true })
   }, [chainId, account, chainName, router])
 
   const isStableSwap = router.query.type === 'stableSwap'

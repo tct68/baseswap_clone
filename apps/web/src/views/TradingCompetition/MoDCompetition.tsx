@@ -122,7 +122,7 @@ const MoDCompetition = () => {
       }
     }
 
-    if (chainId === ChainId.BSC) {
+    if (chainId === ChainId.BASE_GOERLI) {
       fetchCompetitionInfoContract()
       if (account) {
         fetchUserContract()

@@ -13,8 +13,6 @@ import { chains } from './wagmi'
 // returns the checksummed address if the address is valid, otherwise returns false
 export const isAddress = memoize((value: any): string | false => {
   try {
-    console.log(`${value} -- `);
-    
     return getAddress(value)
   } catch {
     return false
@@ -26,7 +24,7 @@ export function getBlockExploreLink(
   type: 'transaction' | 'token' | 'address' | 'block' | 'countdown',
   chainIdOverride?: number,
 ): string {
-  const chainId = chainIdOverride || ChainId.CMP
+  const chainId = chainIdOverride || ChainId.BASE_GOERLI
   const chain = chains.find((c) => c.id === chainId)
   if (!chain) return zeta.blockExplorers.default.url
   switch (type) {
@@ -49,7 +47,7 @@ export function getBlockExploreLink(
 }
 
 export function getBlockExploreName(chainIdOverride?: number) {
-  const chainId = chainIdOverride || ChainId.CMP
+  const chainId = chainIdOverride || ChainId.BASE_GOERLI
   const chain = chains.find((c) => c.id === chainId)
 
   return chain?.blockExplorers?.default.name || zeta.blockExplorers.default.name

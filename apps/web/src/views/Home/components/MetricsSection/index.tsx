@@ -44,12 +44,12 @@ const Stats = () => {
           />
         </IconCard>
         <IconCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
-          <StatCardContent headingText={t('Symbol')} bodyText={t('TW')} highlightColor={theme.colors.primary} />
+          <StatCardContent headingText={t('Symbol')} bodyText={t('SNAP')} highlightColor={theme.colors.primary} />
         </IconCard>
         <IconCard {...StakedCardData}>
           <StatCardContent
             headingText={t('Supply')}
-            bodyText={t('12.000.000 TW')}
+            bodyText={t('12.000.000 SNAP')}
             highlightColor={theme.colors.failure}
           />
         </IconCard>

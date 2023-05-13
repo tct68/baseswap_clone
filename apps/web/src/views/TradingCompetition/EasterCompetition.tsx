@@ -115,7 +115,7 @@ const EasterCompetition = () => {
       setUserTradingInformation(userObject)
     }
 
-    if (chainId === ChainId.BSC) {
+    if (chainId === ChainId.BASE_GOERLI) {
       fetchCompetitionInfoContract()
       if (account) {
         fetchUserContract()

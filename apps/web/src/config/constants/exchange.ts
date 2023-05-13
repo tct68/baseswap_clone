@@ -1,30 +1,15 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { USDC, USDT, BUSD, WBTC_ETH } from '@pancakeswap/tokens'
+import { USDC, USDT, BUSD, WBTC_BASE } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.ETHEREUM]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
-  [ChainId.RINKEBY]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
-  [ChainId.GOERLI]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
-  [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
-  [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
-  [ChainId.CMP]: '0xb0240848456412D1a33792DF4A1178053b9aecAa',
-  [ChainId.CMP_TESTNET]: '0x09FB691A786284e99D122D2B68dE40D253fec299',
   [ChainId.BASE_GOERLI]: '0x09FB691A786284e99D122D2B68dE40D253fec299',
 }
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
-  [ChainId.ETHEREUM]: [WNATIVE[ChainId.ETHEREUM], USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WBTC_ETH],
-  [ChainId.RINKEBY]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  [ChainId.GOERLI]: [WNATIVE[ChainId.RINKEBY], USDC[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
-  [ChainId.BSC]: [
-  ],
-  [ChainId.BSC_TESTNET]: [],
-  [ChainId.CMP_TESTNET]: [],
-  [ChainId.BASE_GOERLI]: [],
-  [ChainId.CMP]: [],
+  [ChainId.BASE_GOERLI]: [WNATIVE[ChainId.BASE_GOERLI], USDC[ChainId.BASE_GOERLI], BUSD[ChainId.BASE_GOERLI]],
 }
 
 /**
@@ -37,46 +22,27 @@ export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]
 /**
  * Some tokens can only be swapped via certain pairs, so we override the list of bases that are considered for these
  * tokens.
- * @example [AMPL.address]: [DAI, WNATIVE[ChainId.BSC]]
+ * @example [AMPL.address]: [DAI, WNATIVE[ChainId.BASE_GOERLI]]
  */
 export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
-  [ChainId.BSC]: {},
 }
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WNATIVE[ChainId.ETHEREUM], WBTC_ETH],
-  [ChainId.RINKEBY]: [USDC[ChainId.RINKEBY], WNATIVE[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
-  [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  [ChainId.BSC]: [],
-  [ChainId.BSC_TESTNET]: [],
-  [ChainId.CMP_TESTNET]: [],
-  [ChainId.BASE_GOERLI]: [],
-  [ChainId.CMP]: [],
+  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], WBTC_BASE],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], WNATIVE[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WBTC_ETH],
-  [ChainId.RINKEBY]: [USDC[ChainId.RINKEBY], WNATIVE[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
-  [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  [ChainId.BSC]: [],
-  [ChainId.BSC_TESTNET]: [],
-  [ChainId.CMP_TESTNET]: [],
-  [ChainId.BASE_GOERLI]: [],
-  [ChainId.CMP]: [],
+  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI], WBTC_BASE],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
-  [ChainId.ETHEREUM]: [
-    [WNATIVE[ChainId.ETHEREUM], USDC[ChainId.ETHEREUM]],
-    [WBTC_ETH, WNATIVE[ChainId.ETHEREUM]],
-    [WNATIVE[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM]],
+  [ChainId.BASE_GOERLI]: [
+    [WNATIVE[ChainId.BASE_GOERLI], USDC[ChainId.BASE_GOERLI]],
+    [WBTC_BASE, WNATIVE[ChainId.BASE_GOERLI]],
+    [WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
   ],
-  [ChainId.BSC]: [
-  ],
-  [ChainId.CMP_TESTNET]: [],
-  [ChainId.CMP]: [],
 }
 
 export const BIG_INT_ZERO = JSBI.BigInt(0)

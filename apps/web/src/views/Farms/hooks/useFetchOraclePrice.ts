@@ -5,8 +5,7 @@ import { Zero } from '@ethersproject/constants'
 
 const getOracleAddress = (chainId: number) => {
   switch (chainId) {
-    case ChainId.ETHEREUM:
-    case ChainId.GOERLI:
+    case ChainId.BASE_GOERLI:
       return '0x63D407F32Aa72E63C7209ce1c2F5dA40b3AaE726' // ETH/BNB pair
     default:
       return ''
@@ -15,7 +14,7 @@ const getOracleAddress = (chainId: number) => {
 
 export const useOraclePrice = (chainId: number) => {
   const tokenAddress = getOracleAddress(chainId)
-  const chainlinkOracleContract = getChainlinkOracleContract(tokenAddress, null, ChainId.BSC)
+  const chainlinkOracleContract = getChainlinkOracleContract(tokenAddress, null, ChainId.BASE_GOERLI)
   // Can refactor to subscription later
   const { data: price } = useSWRContract([chainlinkOracleContract, 'latestAnswer'], {
     refreshWhenHidden: true,

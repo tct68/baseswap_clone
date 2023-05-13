@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { bscTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@pancakeswap/tokens'
 import styled from 'styled-components'
 import { Text, Flex, Box, Skeleton, TooltipText, useTooltip } from '@pancakeswap/uikit'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
@@ -61,7 +61,7 @@ const FooterEntry: React.FC<React.PropsWithChildren<FooterEntryProps>> = ({ labe
 }
 
 const MaxTokenEntry = ({ maxToken, ifo, poolId }: { maxToken: number; ifo: Ifo; poolId: PoolIds }) => {
-  const isCurrencyCake = ifo.currency === bscTokens.cake
+  const isCurrencyCake = ifo.currency === baseGoerliTokens.tw
   const isV3 = ifo.version >= 3
   const { t } = useTranslation()
 

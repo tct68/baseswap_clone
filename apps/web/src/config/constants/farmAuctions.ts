@@ -1,5 +1,5 @@
 import getLpAddress from 'utils/getLpAddress'
-import { mainnetTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@pancakeswap/tokens'
 import { FarmAuctionBidderConfig } from './types'
 
 export const whitelistedBidders: FarmAuctionBidderConfig[] = [].map((bidderConfig) => ({
@@ -10,7 +10,7 @@ export const whitelistedBidders: FarmAuctionBidderConfig[] = [].map((bidderConfi
 const UNKNOWN_BIDDER: FarmAuctionBidderConfig = {
   account: '',
   tokenAddress: '',
-  quoteToken: mainnetTokens.wcmp,
+  quoteToken: baseGoerliTokens.wcmp,
   farmName: 'Unknown',
   tokenName: 'Unknown',
 }

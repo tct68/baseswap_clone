@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 import { BIG_ONE, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { filterFarmsByQuoteToken, SerializedFarm } from '@pancakeswap/farms'
-import { mainnetTokens } from '@pancakeswap/tokens'
+import { baseGoerliTokens } from '@pancakeswap/tokens'
 
 const getFarmFromTokenSymbol = (
   farms: SerializedFarm[],
@@ -20,11 +20,11 @@ const getFarmBaseTokenPrice = (
 ): BigNumber => {
   const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
 
-  if (farm.quoteToken.symbol === mainnetTokens.tw.symbol) {
+  if (farm.quoteToken.symbol === baseGoerliTokens.tw.symbol) {
     return hasTokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  if (farm.quoteToken.symbol === mainnetTokens.wcmp.symbol) {
+  if (farm.quoteToken.symbol === baseGoerliTokens.wcmp.symbol) {
     return hasTokenPriceVsQuote ? bnbPriceBusd.times(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
@@ -38,14 +38,14 @@ const getFarmBaseTokenPrice = (
   // If the farm's quote token isn't BUSD or WBNB, we then use the quote token, of the original farm's quote token
   // i.e. for farm PNT - pBTC we use the pBTC farm's quote token - BNB, (pBTC - BNB)
   // from the BNB - pBTC price, we can calculate the PNT - BUSD price
-  if (quoteTokenFarm.quoteToken.symbol === mainnetTokens.wcmp.symbol) {
+  if (quoteTokenFarm.quoteToken.symbol === baseGoerliTokens.wcmp.symbol) {
     const quoteTokenInBusd = bnbPriceBusd.times(quoteTokenFarm.tokenPriceVsQuote)
     return hasTokenPriceVsQuote && quoteTokenInBusd
       ? new BigNumber(farm.tokenPriceVsQuote).times(quoteTokenInBusd)
       : BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === mainnetTokens.tw.symbol) {
+  if (quoteTokenFarm.quoteToken.symbol === baseGoerliTokens.tw.symbol) {
     const quoteTokenInBusd = quoteTokenFarm.tokenPriceVsQuote
     return hasTokenPriceVsQuote && quoteTokenInBusd
       ? new BigNumber(farm.tokenPriceVsQuote).times(quoteTokenInBusd)

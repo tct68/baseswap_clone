@@ -2,7 +2,7 @@ import { FixedNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { getFarmCakeRewardApr, SerializedFarmConfig } from '@pancakeswap/farms'
 import { ChainId, CurrencyAmount, Pair } from '@pancakeswap/sdk'
-import { BUSD, CAKE, TW } from '@pancakeswap/tokens'
+import { BUSD, SNAP } from '@pancakeswap/tokens'
 import { farmFetcher } from './helper'
 import { FarmKV, FarmResult } from './kv'
 import { updateLPsAPR } from './lpApr'
@@ -35,30 +35,15 @@ const pairAbi = [
 ]
 
 const cakeBusdPairMap = {
-  [ChainId.BSC]: {
-    address: Pair.getAddress(CAKE[ChainId.BSC], BUSD[ChainId.BSC]),
-    tokenA: CAKE[ChainId.BSC],
-    tokenB: BUSD[ChainId.BSC],
-  },
-  [ChainId.BSC_TESTNET]: {
-    address: Pair.getAddress(CAKE[ChainId.BSC_TESTNET], BUSD[ChainId.BSC_TESTNET]),
-    tokenA: CAKE[ChainId.BSC_TESTNET],
-    tokenB: BUSD[ChainId.BSC_TESTNET],
-  },
-  [ChainId.CMP_TESTNET]: {
-    address: Pair.getAddress(TW[ChainId.CMP_TESTNET], BUSD[ChainId.CMP_TESTNET]),
-    tokenA: TW[ChainId.CMP_TESTNET],
-    tokenB: BUSD[ChainId.CMP_TESTNET],
-  },
   [ChainId.BASE_GOERLI]: {
-    address: Pair.getAddress(TW[ChainId.BASE_GOERLI], BUSD[ChainId.BASE_GOERLI]),
-    tokenA: TW[ChainId.BASE_GOERLI],
+    address: Pair.getAddress(SNAP[ChainId.BASE_GOERLI], BUSD[ChainId.BASE_GOERLI]),
+    tokenA: SNAP[ChainId.BASE_GOERLI],
     tokenB: BUSD[ChainId.BASE_GOERLI],
   },
 }
 
 const getCakePrice = async (isTestnet: boolean) => {
-  const pairConfig = cakeBusdPairMap[isTestnet ? ChainId.CMP : ChainId.CMP_TESTNET]
+  const pairConfig = cakeBusdPairMap[ChainId.BASE_GOERLI]
   const pairContract = new Contract(pairConfig.address, pairAbi, isTestnet ? bscTestnetProvider : cmptestnetProvider)
   const reserves = await pairContract.getReserves()
   const { reserve0, reserve1 } = reserves

@@ -72,7 +72,7 @@ const FarmResult: React.FC<React.PropsWithChildren<FarmInfoProps>> = ({ pickedDa
         <LinkStyle href="/pools?chainId=56">{t('Pools')}</LinkStyle>
         {t('and')}
         <LinkStyle href="/prediction?chainId=56">{t('Win')}</LinkStyle>
-        {t('with your TW earned.')}
+        {t('with your SNAP earned.')}
       </ListStyle>
     </Flex>,
     { placement: 'top' },

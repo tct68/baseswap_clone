@@ -37,7 +37,7 @@ const config = ({ t }: FAQsType) => [
     title: t('Q2, 2023'),
     icon: '🌐',
     description: [
-      'Tier1 TW token Exchange listing',
+      'Tier1 SNAP token Exchange listing',
       'Launch NFT Marketplace',
       'Launch Caduceus Bridge',
       'Launch Caduceus LaunchPad',
@@ -54,7 +54,7 @@ const config = ({ t }: FAQsType) => [
     title: t('Q4, 2023'),
     icon: '🌔',
     description: [
-      'Tier2 TW token Exchange listing',
+      'Tier2 SNAP token Exchange listing',
       'Starting evaluation for year project, Platform upgrade and adding currency payment system',
     ],
   },

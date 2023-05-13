@@ -14,7 +14,6 @@ import poolsReducer from './pools'
 import swap from './swap/reducer'
 import transactions from './transactions/reducer'
 import user from './user/reducer'
-import limitOrders from './limitOrders/reducer'
 import potteryReducer from './pottery'
 import globalReducer from './global/reducer'
 
@@ -37,9 +36,6 @@ const persistedReducer = persistReducer(
     pools: poolsReducer,
     lottery: lotteryReducer,
     pottery: potteryReducer,
-
-    limitOrders,
-
     // Exchange
     user,
     transactions,

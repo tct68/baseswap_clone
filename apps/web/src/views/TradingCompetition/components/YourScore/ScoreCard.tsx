@@ -1,4 +1,4 @@
-import { ReactNode, useCallback } from 'react'
+import { ReactNode } from 'react'
 import styled from 'styled-components'
 import { StaticImageData } from 'next/dist/client/image'
 import {
@@ -11,13 +11,11 @@ import {
   LaurelLeftIcon,
   LaurelRightIcon,
   CheckmarkCircleIcon,
-  useModal,
 } from '@pancakeswap/uikit'
 import { CLAIM, OVER } from 'config/constants/trading-competition/phases'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
 import { useTranslation } from '@pancakeswap/localization'
-import ClaimModal from '../ClaimModal'
 import CardUserInfo from './CardUserInfo'
 import ShareImageModal from '../ShareImageModal'
 import { YourScoreProps } from '../../types'
@@ -75,15 +73,9 @@ const ScoreCard: React.FC<React.PropsWithChildren<ScoreCardProps>> = ({
   userCanClaimPrizes,
   finishedAndPrizesClaimed,
   finishedAndNothingToClaim,
-  onClaimSuccess,
   subgraphName,
 }) => {
   const { t } = useTranslation()
-  const [onPresentClaimModal] = useModal(
-    <ClaimModal userTradingInformation={userTradingInformation} onClaimSuccess={onClaimSuccess} />,
-    false,
-  )
-  const handleOnClick = useCallback(() => onPresentClaimModal?.(), [onPresentClaimModal])
 
   const isClaimButtonDisabled = Boolean(isLoading || finishedAndPrizesClaimed || finishedAndNothingToClaim)
   const { hasUserClaimed } = userTradingInformation
@@ -142,7 +134,7 @@ const ScoreCard: React.FC<React.PropsWithChildren<ScoreCardProps>> = ({
       {hasRegistered && currentPhase.state === CLAIM && (
         <StyledCardFooter>
           <LaurelLeftIcon />
-          <StyledButton disabled={isClaimButtonDisabled} mx="18px" onClick={handleOnClick}>
+          <StyledButton disabled={isClaimButtonDisabled} mx="18px">
             {getClaimButtonText()}
           </StyledButton>
           <LaurelRightIcon />

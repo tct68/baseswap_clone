@@ -27,7 +27,7 @@ export const TR: Language = { locale: 'tr-TR', language: 'Türkçe', code: 'tr' 
 export const UK: Language = { locale: 'uk-UA', language: 'Українська', code: 'uk' }
 export const VI: Language = { locale: 'vi-VN', language: 'Tiếng Việt', code: 'vi' }
 export const ZHCN: Language = { locale: 'zh-CN', language: '简体中文', code: 'zh-cn' }
-export const ZHTW: Language = { locale: 'zh-TW', language: '繁體中文', code: 'zh-tw' }
+export const ZHTW: Language = { locale: 'zh-SNAP', language: '繁體中文', code: 'zh-tw' }
 
 export const languages: Record<string, Language> = {
   'ar-SA': AR,
@@ -57,7 +57,7 @@ export const languages: Record<string, Language> = {
   'uk-UA': UK,
   'vi-VN': VI,
   'zh-CN': ZHCN,
-  'zh-TW': ZHTW,
+  'zh-SNAP': ZHTW,
 }
 
 const languageList = Object.values(languages)

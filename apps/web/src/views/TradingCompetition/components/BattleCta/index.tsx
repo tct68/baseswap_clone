@@ -18,7 +18,6 @@ import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 import { CompetitionProps } from '../../types'
-import ClaimModal from '../ClaimModal'
 import { Heading2Text } from '../CompetitionHeadingText'
 import RegisterModal from '../RegisterModal'
 
@@ -69,7 +68,6 @@ const BattleCta: React.FC<React.PropsWithChildren<CompetitionProps>> = ({
   isLoading,
   hasCompetitionEnded,
   onRegisterSuccess,
-  onClaimSuccess,
   coinDecoration = null,
 }) => {
   const router = useRouter()
@@ -78,10 +76,7 @@ const BattleCta: React.FC<React.PropsWithChildren<CompetitionProps>> = ({
     <RegisterModal profile={profile} onRegisterSuccess={onRegisterSuccess} />,
     false,
   )
-  const [onPresentClaimModal] = useModal(
-    <ClaimModal userTradingInformation={userTradingInformation} onClaimSuccess={onClaimSuccess} />,
-    false,
-  )
+
   const { hasRegistered, hasUserClaimed } = userTradingInformation
   const registeredAndNotStarted = hasRegistered && !isCompetitionLive && !hasCompetitionEnded
 
@@ -169,16 +164,11 @@ const BattleCta: React.FC<React.PropsWithChildren<CompetitionProps>> = ({
     if (hasRegistered && isCompetitionLive) {
       router.push('/swap')
     }
-    // Registered and competition has finished
-    if (hasRegistered && hasCompetitionEnded) {
-      onPresentClaimModal()
-    }
   }, [
     account,
     hasCompetitionEnded,
     hasRegistered,
     isCompetitionLive,
-    onPresentClaimModal,
     onPresentRegisterModal,
     router,
   ])

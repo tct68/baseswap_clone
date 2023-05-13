@@ -63,7 +63,7 @@ const CakeBenefitsCard: React.FC<React.PropsWithChildren<CakeBenefitsCardProps>>
   } = useTooltip(
     <>
       <Text>
-        {t(`%lockedCake% TW (including rewards) are locked in the TW Pool until %lockedEndTime%`, {
+        {t(`%lockedCake% SNAP (including rewards) are locked in the SNAP Pool until %lockedEndTime%`, {
           lockedCake: cakeBenefits?.lockedCake,
           lockedEndTime: cakeBenefits?.lockedEndTime,
         })}
@@ -87,7 +87,7 @@ const CakeBenefitsCard: React.FC<React.PropsWithChildren<CakeBenefitsCardProps>>
   } = useTooltip(
     <>
       <Text>
-        {t(`iTW allows you to participate in the IFO public sales and commit up to %iCake% amount of TW.`, {
+        {t(`iTW allows you to participate in the IFO public sales and commit up to %iCake% amount of SNAP.`, {
           iCake: cakeBenefits?.iCake,
         })}
       </Text>
@@ -153,7 +153,7 @@ const CakeBenefitsCard: React.FC<React.PropsWithChildren<CakeBenefitsCardProps>>
             <Tag variant="secondary" mr="auto">
               <Flex alignItems="center">
                 <Box as={LockIcon} mr="4px" />
-                {t('No TW locked')}
+                {t('No SNAP locked')}
               </Flex>
             </Tag>
             <Text fontSize="16px">{cakeBenefits?.lockedCake}</Text>
@@ -161,7 +161,7 @@ const CakeBenefitsCard: React.FC<React.PropsWithChildren<CakeBenefitsCardProps>>
           <Message mt="8px" mb="16px" variant="warning">
             <MessageText maxWidth="200px">
               {t(
-                'Lock TW to enjoy the benefits of farm yield boosting, participating in IFOs, voting power boosts, and so much more!',
+                'Lock SNAP to enjoy the benefits of farm yield boosting, participating in IFOs, voting power boosts, and so much more!',
               )}{' '}
               <NextLinkFromReactRouter
                 style={{ textDecoration: 'underline', fontWeight: 'bold' }}
@@ -179,7 +179,7 @@ const CakeBenefitsCard: React.FC<React.PropsWithChildren<CakeBenefitsCardProps>>
             <Tag variant="failure" mr="auto">
               <Flex alignItems="center">
                 <Box as={LockIcon} mr="4px" />
-                {t('TW staking expired')}
+                {t('SNAP staking expired')}
               </Flex>
             </Tag>
             <Text fontSize="16px">{cakeBenefits?.lockedCake}</Text>
@@ -206,7 +206,7 @@ const CakeBenefitsCard: React.FC<React.PropsWithChildren<CakeBenefitsCardProps>>
               <Tag variant="secondary" mr="auto">
                 <Flex alignItems="center">
                   <Box as={LockIcon} mr="4px" />
-                  {t('TW locked')}
+                  {t('SNAP locked')}
                 </Flex>
               </Tag>
               <TooltipText ref={cakeTargetRef} bold fontSize="16px">

@@ -4,7 +4,7 @@ import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { useAppDispatch } from 'state'
 import { updateUserBalance } from 'state/pools'
 import { ChainId, Native } from '@pancakeswap/sdk'
-import { TW } from '@pancakeswap/tokens'
+import { SNAP } from '@pancakeswap/tokens'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { useTradeExactOut } from 'hooks/Trades'
 import { useSwapCallback } from 'hooks/useSwapCallback'
@@ -21,9 +21,9 @@ export const useExtendEnable = () => {
   const isTransactionPending = useIsTransactionPending(transactionHash)
   const swapAmount = useMemo(() => getFullDisplayBalance(ENABLE_EXTEND_LOCK_AMOUNT), [])
 
-  const parsedAmount = tryParseAmount(swapAmount, TW[chainId])
+  const parsedAmount = tryParseAmount(swapAmount, SNAP[chainId])
 
-  const trade = useTradeExactOut(Native.onChain(ChainId.CMP), parsedAmount)
+  const trade = useTradeExactOut(Native.onChain(ChainId.BASE_GOERLI), parsedAmount)
 
   const swapCalls = useSwapCallArguments(trade, INITIAL_ALLOWED_SLIPPAGE, null)
 
