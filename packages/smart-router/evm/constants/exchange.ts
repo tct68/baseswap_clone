@@ -1,10 +1,10 @@
-import { ChainId, Token, WBNB, WNATIVE } from '@baseswap/sdk'
+import { ChainId, Token, WNATIVE } from '@baseswap/sdk'
 import { BUSD, USDC, USDT } from '@baseswap/tokens'
 
 import { ChainMap, ChainTokenList } from '../types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.BASE_GOERLI]: '0x09FB691A786284e99D122D2B68dE40D253fec299',
+  [ChainId.BASE_GOERLI]: '0xCa3d75e318cE84a5bCA0F441B89a6f0E153AAB72',
 }
 
 export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
@@ -33,7 +33,7 @@ export const CUSTOM_BASES: {
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], WBNB[ChainId.BASE_GOERLI], BUSD[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
+  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], BUSD[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend

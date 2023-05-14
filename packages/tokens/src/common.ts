@@ -11,7 +11,7 @@ export const SNAP_MAINNET = new ERC20Token(
 
 export const SNAP_TESTNET = new ERC20Token(
   ChainId.BASE_GOERLI,
-  '0x09FB691A786284e99D122D2B68dE40D253fec299',
+  '0xCa3d75e318cE84a5bCA0F441B89a6f0E153AAB72',
   18,
   'SNAP',
   'TowerTestnet Token',

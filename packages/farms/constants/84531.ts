@@ -6,7 +6,7 @@ const farms: SerializedFarmConfig[] = [
     pid: 0,
     v1pid: 0,
     lpSymbol: 'SNAP',
-    lpAddress: '0x09FB691A786284e99D122D2B68dE40D253fec299',
+    lpAddress: '0xCa3d75e318cE84a5bCA0F441B89a6f0E153AAB72',
     token: baseGoerliTokens.syrup,
     quoteToken: baseGoerliTokens.wcmp,
   },
