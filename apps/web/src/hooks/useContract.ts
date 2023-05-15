@@ -1,7 +1,5 @@
 import {
   Cake,
-  CakeFlexibleSideVaultV2,
-  CakeVaultV2,
   Erc20,
   Erc20Bytes32,
   Erc721collection,
@@ -14,7 +12,6 @@ import { useProviderOrSigner } from 'hooks/useProviderOrSigner'
 import { useMemo } from 'react'
 import { getMulticallAddress, getPredictionsV1Address, getZapAddress } from 'utils/addressHelpers'
 import {
-  getAnniversaryAchievementContract,
   getBCakeFarmBoosterContract,
   getBCakeFarmBoosterProxyFactoryContract,
   getBCakeProxyContract,
@@ -45,7 +42,6 @@ import {
   getPointCenterIfoContract,
   getPredictionsContract,
   getPredictionsV1Contract,
-  getProfileContract,
   getSouschefContract,
   getTradingCompetitionContractEaster,
   getTradingCompetitionContractFanToken,
