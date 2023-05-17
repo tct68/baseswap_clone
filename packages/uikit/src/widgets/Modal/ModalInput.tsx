@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { useTranslation } from "@baseswap/localization";
+import { useTranslation } from "@pancakeswap/localization";
 import { parseUnits } from "@ethersproject/units";
-import { formatBigNumber } from "@baseswap/utils/formatBalance";
+import { formatBigNumber } from "@pancakeswap/utils/formatBalance";
 import { Flex } from "../../components/Box";
 import { Text } from "../../components/Text";
 import { Link } from "../../components/Link";

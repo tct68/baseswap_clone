@@ -13,16 +13,16 @@ import {
   Text,
   useModal,
   useToast,
-} from '@baseswap/uikit'
-import { useWeb3LibraryContext } from '@baseswap/wagmi'
+} from '@pancakeswap/uikit'
+import { useWeb3LibraryContext } from '@pancakeswap/wagmi'
 import snapshot from '@snapshot-labs/snapshot.js'
 import isEmpty from 'lodash/isEmpty'
 import times from 'lodash/times'
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react'
 import { useInitialBlock } from 'state/block/hooks'
 
-import { useTranslation } from '@baseswap/localization'
-import truncateHash from '@baseswap/utils/truncateHash'
+import { useTranslation } from '@pancakeswap/localization'
+import truncateHash from '@pancakeswap/utils/truncateHash'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Container from 'components/Layout/Container'
 import { PageMeta } from 'components/Layout/Page'

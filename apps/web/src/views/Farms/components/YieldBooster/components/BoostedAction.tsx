@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { AutoRenewIcon, NextLinkFromReactRouter, Button } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { AutoRenewIcon, NextLinkFromReactRouter, Button } from '@pancakeswap/uikit'
 import { ReactNode, useCallback, useContext } from 'react'
 
 import BigNumber from 'bignumber.js'
@@ -49,7 +49,7 @@ const BoostedAction: React.FunctionComponent<BoostedActionPropsType> = ({
         return (
           <ActionButton
             title={`${t('Up to')} ${boostMultiplierDisplay}x`}
-            description={t('Lock TWS to activate yield booster')}
+            description={t('Lock LINE to activate yield booster')}
             style={{ whiteSpace: 'nowrap' }}
             button={
               <NextLinkFromReactRouter to="/pools">
@@ -62,7 +62,7 @@ const BoostedAction: React.FunctionComponent<BoostedActionPropsType> = ({
         return (
           <ActionButton
             title={`${t('Up to')} ${boostMultiplierDisplay}x`}
-            description={t('Lock TWS is ended. Re-lock TWS to activate yield booster')}
+            description={t('Lock LINE is ended. Re-lock LINE to activate yield booster')}
             style={{ whiteSpace: 'nowrap' }}
             button={
               <NextLinkFromReactRouter to="/pools">

@@ -9,8 +9,8 @@ import {
   TradeOptions,
   TradeOptionsDeadline,
   TradeType,
-} from '@baseswap/sdk'
-import { isStableSwapPair, Trade, TradeWithStableSwap } from '@baseswap/smart-router/evm'
+} from '@pancakeswap/sdk'
+import { isStableSwapPair, Trade, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { INITIAL_ALLOWED_SLIPPAGE } from 'config/constants'
 import { BIPS_BASE } from 'config/constants/exchange'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

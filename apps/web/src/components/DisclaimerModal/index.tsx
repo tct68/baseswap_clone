@@ -11,8 +11,8 @@ import {
   ModalTitle,
   Heading,
   Box,
-} from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 
 interface CheckType {

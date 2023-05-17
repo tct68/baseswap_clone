@@ -1,10 +1,12 @@
-import { Currency } from '@baseswap/sdk'
+import { Currency } from '@pancakeswap/sdk'
 import useTheme from 'hooks/useTheme'
 import { useCallback, useState } from 'react'
 import BnbWbnbNotice from './BnbWbnbNotice'
 import { BNB_ADDRESS } from './constants'
 import PriceChart from './PriceChart'
 import { getTokenAddress } from './utils'
+import { useActiveChainId } from '../../../../hooks/useActiveChainId'
+import useActiveWeb3React from '../../../../hooks/useActiveWeb3React'
 
 type PriceChartContainerProps = {
   inputCurrencyId: string
@@ -33,8 +35,9 @@ const PriceChartContainer: React.FC<React.PropsWithChildren<PriceChartContainerP
   isFullWidthContainer = false,
   currentSwapPrice,
 }) => {
-  const token0Address = getTokenAddress(inputCurrencyId)
-  const token1Address = getTokenAddress(outputCurrencyId)
+  const { chainId } = useActiveWeb3React()
+  const token0Address = getTokenAddress(inputCurrencyId, chainId)
+  const token1Address = getTokenAddress(outputCurrencyId, chainId)
   const [isPairReversed, setIsPairReversed] = useState(false)
   const togglePairReversed = useCallback(() => setIsPairReversed((prePairReversed) => !prePairReversed), [])
 

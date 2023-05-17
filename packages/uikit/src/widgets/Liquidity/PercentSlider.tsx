@@ -1,9 +1,9 @@
-import { useTranslation } from "@baseswap/localization";
-import { AtomBox } from "@baseswap/ui";
-import { Button, Slider } from "@baseswap/uikit";
+import { useTranslation } from "@pancakeswap/localization";
+import { AtomBox } from "@pancakeswap/ui";
+import { Button, Slider } from "@pancakeswap/uikit";
 
 import { useCallback } from "react";
-import { useDebouncedChangeHandler } from "@baseswap/hooks";
+import { useDebouncedChangeHandler } from "@pancakeswap/hooks";
 
 interface PercentSliderProps {
   onValueChanged: (value: string) => void;

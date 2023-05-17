@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { AddIcon, Button, Flex, IconButton, MinusIcon, useModal, useToast, Farm as FarmUI } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { AddIcon, Button, Flex, IconButton, MinusIcon, useModal, useToast, Farm as FarmUI } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import BCakeCalculator from 'views/Farms/components/YieldBooster/components/BCakeCalculator'
@@ -10,12 +10,12 @@ import { useRouter } from 'next/router'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import { useAppDispatch } from 'state'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { ChainId, WNATIVE, NATIVE } from '@baseswap/sdk'
+import { ChainId, WNATIVE, NATIVE } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import { useIsBloctoETH } from 'views/Farms'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import useNativeCurrency from 'hooks/useNativeCurrency'
-import { formatLpBalance } from '@baseswap/utils/formatBalance'
+import { formatLpBalance } from '@pancakeswap/utils/formatBalance'
 import { pickFarmTransactionTx } from 'state/global/actions'
 import { useTransactionAdder, useNonBscFarmPendingTransaction } from 'state/transactions/hooks'
 import { FarmTransactionStatus, NonBscFarmStepType } from 'state/transactions/actions'
@@ -84,7 +84,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
 
   const crossChainWarningText = useMemo(() => {
     return isFirstTime
-      ? t('A small amount of %nativeToken% is required for the first-time setup of cross-chain TWS farming.', {
+      ? t('A small amount of %nativeToken% is required for the first-time setup of cross-chain LINE farming.', {
           nativeToken: native.symbol,
         })
       : t('For safety, cross-chain transactions will take around 30 minutes to confirm.')
@@ -140,7 +140,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
             {
               step: 2,
               tx: '',
-              chainId: ChainId.BASE_GOERLI,
+              chainId: ChainId.LINEA_TESTNET,
               status: FarmTransactionStatus.PENDING,
             },
           ],
@@ -196,7 +196,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
             },
             {
               step: 2,
-              chainId: ChainId.BASE_GOERLI,
+              chainId: ChainId.LINEA_TESTNET,
               tx: '',
               status: FarmTransactionStatus.PENDING,
             },
@@ -251,7 +251,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
       cakePrice={cakePrice}
       showActiveBooster={boosterState === YieldBoosterState.ACTIVE}
       bCakeMultiplier={bCakeMultiplier}
-      showCrossChainFarmWarning={chainId !== ChainId.BASE_GOERLI && chainId !== ChainId.BASE_GOERLI}
+      showCrossChainFarmWarning={chainId !== ChainId.BSC && chainId !== ChainId.LINEA_TESTNET}
       crossChainWarningText={crossChainWarningText}
       decimals={18}
       allowance={allowance}
@@ -271,7 +271,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
       max={stakedBalance}
       onConfirm={handleUnstake}
       tokenName={lpSymbol}
-      showCrossChainFarmWarning={chainId !== ChainId.BASE_GOERLI && chainId !== ChainId.BASE_GOERLI}
+      showCrossChainFarmWarning={chainId !== ChainId.BSC && chainId !== ChainId.LINEA_TESTNET}
       decimals={18}
     />,
   )

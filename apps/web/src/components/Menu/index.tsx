@@ -1,10 +1,12 @@
 import { useMemo } from 'react'
 import { useRouter } from 'next/router'
-import { Menu as UikitMenu, NextLinkFromReactRouter } from '@baseswap/uikit'
-import { useTranslation, languageList } from '@baseswap/localization'
+import { Menu as UikitMenu, NextLinkFromReactRouter } from '@pancakeswap/uikit'
+import { useTranslation, languageList } from '@pancakeswap/localization'
+// import PhishingWarningBanner from 'components/PhishingWarningBanner'
 import { NetworkSwitcher } from 'components/NetworkSwitcher'
 import useTheme from 'hooks/useTheme'
 import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
+import { usePhishingBannerManager } from 'state/user/hooks'
 import UserMenu from './UserMenu'
 import { useMenuItems } from './hooks/useMenuItems'
 import GlobalSettings from './GlobalSettings'
@@ -17,6 +19,7 @@ const Menu = (props) => {
   const cakePriceUsd = useCakeBusdPrice({ forceMainnet: true })
   const { currentLanguage, setLanguage, t } = useTranslation()
   const { pathname } = useRouter()
+  const [showPhishingWarningBanner] = usePhishingBannerManager()
 
   const menuItems = useMenuItems()
 
@@ -44,6 +47,7 @@ const Menu = (props) => {
             <UserMenu />
           </>
         }
+        // banner={showPhishingWarningBanner && typeof window !== 'undefined' && <PhishingWarningBanner />}
         isDark={isDark}
         toggleTheme={toggleTheme}
         currentLang={currentLanguage.code}
@@ -55,7 +59,7 @@ const Menu = (props) => {
         footerLinks={getFooterLinks}
         activeItem={activeMenuItem?.href}
         activeSubItem={activeSubMenuItem?.href}
-        buyCakeLabel={t('Buy SNAP')}
+        buyCakeLabel={t('Buy LINE')}
         {...props}
       />
     </>

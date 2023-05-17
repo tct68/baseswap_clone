@@ -1,5 +1,5 @@
-import { MultiCallV2 } from '@baseswap/multicall'
-import { ChainId } from '@baseswap/sdk'
+import { MultiCallV2 } from '@pancakeswap/multicall'
+import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import { SerializedFarmPublicData, SerializedFarmConfig } from './types'
 import { nonBSCVaultAddresses } from './const'
@@ -71,7 +71,7 @@ const fetchFarmCalls = (farm: SerializedFarmPublicData, masterChefAddress: strin
 
 export const fetchPublicFarmsData = async (
   farms: SerializedFarmConfig[],
-  chainId = ChainId.BASE_GOERLI,
+  chainId = ChainId.LINEA_TESTNET,
   multicall: MultiCallV2,
   masterChefAddress: string,
 ): Promise<any[]> => {

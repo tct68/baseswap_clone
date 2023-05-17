@@ -11,11 +11,11 @@ import {
   Input,
   ArrowUpIcon,
   ArrowDownIcon,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { Collection, MarketEvent } from 'state/nftMarket/types'
 import { useGetCollections } from 'state/nftMarket/hooks'
 import { useNftStorage } from 'state/nftMarket/storage'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { isAddress } from 'utils'
 import { CloseButton, FilterButton, ListOrderState, SearchWrapper, TriggerButton } from '../ListFilter/styles'
 import { CollectionItemRow } from './styles'

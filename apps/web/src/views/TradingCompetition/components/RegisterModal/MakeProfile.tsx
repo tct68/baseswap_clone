@@ -1,6 +1,6 @@
-import { Button, Heading, Text } from '@baseswap/uikit'
+import { Button, Heading, Text } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { CompetitionProps } from 'views/TradingCompetition/types'
 import { useRouter } from 'next/router'
 

@@ -5,9 +5,9 @@ import { MaxUint256 } from '@ethersproject/constants'
 import { useAppDispatch } from 'state'
 import { updateUserAllowance } from 'state/actions'
 import { VaultKey } from 'state/types'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { useSousChef, useVaultPoolContract } from 'hooks/useContract'
-import { useToast } from '@baseswap/uikit'
+import { useToast } from '@pancakeswap/uikit'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { ToastDescriptionWithTx } from 'components/Toast'
@@ -60,7 +60,7 @@ export const useVaultApprove = (vaultKey: VaultKey, setLastUpdated: () => void) 
   return useCakeApprove(
     setLastUpdated,
     vaultPoolContract?.address,
-    t('You can now stake in the %symbol% vault!', { symbol: 'SNAP' }),
+    t('You can now stake in the %symbol% vault!', { symbol: 'TW' }),
   )
 }
 

@@ -1,7 +1,7 @@
 import { useAccount } from 'wagmi'
-import { Flex, Text, Heading } from '@baseswap/uikit'
+import { Flex, Text, Heading } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import Link from 'next/link'
 import HowToCard from './HowToCard'
 

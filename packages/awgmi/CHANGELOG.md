@@ -1,4 +1,4 @@
-# @baseswap/awgmi
+# @pancakeswap/awgmi
 
 ## 0.0.10
 

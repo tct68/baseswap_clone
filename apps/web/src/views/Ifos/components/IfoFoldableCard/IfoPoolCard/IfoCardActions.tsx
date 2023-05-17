@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { Button, NextLinkFromReactRouter } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Button, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { WalletIfoData, PublicIfoData } from 'views/Ifos/types'

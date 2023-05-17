@@ -12,9 +12,9 @@ import {
   BlockIcon,
   Button,
   useModal,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { REGISTRATION, LIVE } from 'config/constants/trading-competition/phases'
 import useGetUsernameWithVisibility from 'hooks/useUsernameWithVisibility'
 import { YourScoreProps } from '../../types'

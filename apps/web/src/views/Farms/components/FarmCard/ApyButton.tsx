@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useTranslation } from '@baseswap/localization'
-import { Text, TooltipText, useModal, useTooltip, Farm as FarmUI, RoiCalculatorModal } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Text, TooltipText, useModal, useTooltip, Farm as FarmUI, RoiCalculatorModal } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import BCakeCalculator from 'views/Farms/components/YieldBooster/components/BCakeCalculator'
@@ -103,7 +103,7 @@ const ApyButton: React.FC<React.PropsWithChildren<ApyButtonProps>> = ({
         </Text>
       </Text>
       <Text ml="5px">
-        *{t('Base APR (TWS yield only)')}:{' '}
+        *{t('Base APR (LINE yield only)')}:{' '}
         {strikethrough ? (
           <Text style={{ display: 'inline-block' }} color="secondary">{`${(apr * boostMultiplier).toFixed(2)}%`}</Text>
         ) : (
@@ -121,7 +121,7 @@ const ApyButton: React.FC<React.PropsWithChildren<ApyButtonProps>> = ({
           </Text>
         </Text>
       )}
-      {strikethrough && <Text color="secondary">{t('Boost only applies to base APR (TWS yield)')}</Text>}
+      {strikethrough && <Text color="secondary">{t('Boost only applies to base APR (LINE yield)')}</Text>}
     </>,
     {
       placement: 'top',

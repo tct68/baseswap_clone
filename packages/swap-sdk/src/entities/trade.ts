@@ -11,7 +11,7 @@ import {
   Percent,
   Price,
   Token,
-} from '@baseswap/swap-sdk-core'
+} from '@pancakeswap/swap-sdk-core'
 
 import { computePriceImpact, sortedInsert } from '../utils'
 import { Pair } from './pair'

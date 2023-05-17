@@ -1,5 +1,5 @@
-import { Percent } from '@baseswap/sdk'
-import { ContextApi } from '@baseswap/localization'
+import { Percent } from '@pancakeswap/sdk'
+import { ContextApi } from '@pancakeswap/localization'
 import { ALLOWED_PRICE_IMPACT_HIGH, PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN } from 'config/constants/exchange'
 
 /**

@@ -1,11 +1,11 @@
 import memoize from 'lodash/memoize'
-import { ContextApi } from '@baseswap/localization'
+import { ContextApi } from '@pancakeswap/localization'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
   title: 'TowerSwap',
   description:
-    'The most popular AMM on CMP by user count! Earn SNAP through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by PancakeSwap), NFTs, and more, on a platform you can trust.',
+    'The most popular AMM on CMP by user count! Earn TW through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by PancakeSwap), NFTs, and more, on a platform you can trust.',
   image: 'https://towerswap.finance/images/hero.png',
 }
 
@@ -30,6 +30,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/farms': { title: t('Farms') },
       '/farms/auction': { title: t('Farm Auctions') },
       '/pools': { title: t('Pools') },
+      '/lottery': { title: t('Lottery') },
       '/ifo': { title: t('Initial Farm Offering') },
       '/teams': { basePath: true, title: t('Leaderboard') },
       '/voting': { basePath: true, title: t('Voting') },
@@ -41,7 +42,8 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/nfts/collections': { basePath: true, title: t('Collections') },
       '/nfts/activity': { title: t('Activity') },
       '/profile': { basePath: true, title: t('Profile') },
-      '/pancake-squad': { basePath: true, title: t('Tower Squad') }
+      '/pancake-squad': { basePath: true, title: t('Tower Squad') },
+      '/pottery': { basePath: true, title: t('Pottery') },
     },
     defaultTitleSuffix: t('TowerSwap'),
   }

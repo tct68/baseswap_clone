@@ -1,7 +1,7 @@
 import { BigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { formatUnits } from '@ethersproject/units'
-import { Call, MultiCallV2 } from '@baseswap/multicall'
-import { ChainId } from '@baseswap/sdk'
+import { Call, MultiCallV2 } from '@pancakeswap/multicall'
+import { ChainId } from '@pancakeswap/sdk'
 import { FIXED_TWO, FIXED_ZERO } from './const'
 import { getFarmsPrices } from './farmPrices'
 import { fetchPublicFarmsData } from './fetchPublicFarmData'
@@ -10,7 +10,7 @@ import { isStableFarm, SerializedFarmConfig } from './types'
 import { getFullDecimalMultiplier } from './getFullDecimalMultiplier'
 
 const evmNativeStableLpMap = {
-  [ChainId.BASE_GOERLI]: {
+  [ChainId.LINEA_TESTNET]: {
     address: '0x6b9dB0B7504e04E2a4E5C4B6B22bD84E9a8710fd',
     wNative: 'WBNB',
     stable: 'BUSD',
@@ -172,7 +172,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicallv2({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI,
+      chainId: isTestnet ? ChainId.CMP : ChainId.LINEA_TESTNET,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -223,7 +223,7 @@ export const fetchMasterChefV2Data = async ({
           params: [true],
         },
       ],
-      chainId: isTestnet ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI,
+      chainId: isTestnet ? ChainId.CMP : ChainId.LINEA_TESTNET,
     })
 
     return {

@@ -1,5 +1,5 @@
 import PoweredBy from 'components/layerZero/PoweredBy'
-import { LinkExternal } from '@baseswap/uikit'
+import { LinkExternal } from '@pancakeswap/uikit'
 
 const AptosBridgeFooter = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Box, useMatchBreakpoints, Balance, Pool } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { Text, Flex, Box, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 
 interface AutoEarningsCellProps {
   hasEarnings: boolean

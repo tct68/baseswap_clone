@@ -1,6 +1,6 @@
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 
-export const SUPPORT_ONLY_BSC = [ChainId.BASE_GOERLI, ChainId.BASE_GOERLI]
-export const SUPPORT_FARMS = [ChainId.BASE_GOERLI, ChainId.BASE_GOERLI]
+export const SUPPORT_ONLY_BSC = [ChainId.LINEA_TESTNET]
+export const SUPPORT_FARMS = [ChainId.LINEA_TESTNET]
 
-export const SUPPORT_ZAP = []
+export const SUPPORT_ZAP = [ChainId.BSC, ChainId.BSC_TESTNET]

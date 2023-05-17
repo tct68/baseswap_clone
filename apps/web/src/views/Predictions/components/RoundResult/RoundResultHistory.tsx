@@ -1,6 +1,6 @@
-import { BoxProps, Flex, Text } from '@baseswap/uikit'
+import { BoxProps, Flex, Text } from '@pancakeswap/uikit'
 import { BetPosition, Round } from 'state/types'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { formatUsd } from '../History/helpers'
 import PositionTag from '../PositionTag'
 import { LockPriceHistoryRow, PrizePoolHistoryRow, RoundResultBox } from './styles'

@@ -1,112 +1,164 @@
-import { multicallAddresses } from '@baseswap/multicall'
-import { ChainId } from '@baseswap/sdk'
+import { multicallAddresses } from '@pancakeswap/multicall'
+
+// Masterchef v1: 0xbeF35383ce0a377D618f309CCfCA7A702850817d
 
 export default {
   masterChef: {
-    [ChainId.BASE_GOERLI]: '0xd964CB5A5cE6B7c8fA26796760F8A5AeE9bee1a1',
+    59140: '0x86AF084E7d9Ca3D7a435F69295cDFB34416A7eBd',
+    56: '0xd964CB5A5cE6B7c8fA26796760F8A5AeE9bee1a1',
   },
   masterChefV1: {
-    [ChainId.BASE_GOERLI]: '0x60229Cdb2647803c42D9E37E71cDCAB489f6e859',
+    59140: '0x92ebcdA1e2C2d5B388d3f5450cF46930F0D179A0',
+    56: '0x60229Cdb2647803c42D9E37E71cDCAB489f6e859',
   },
   sousChef: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
+  },
+  lotteryV2: {
+    59140: '',
+    56: '',
   },
   multiCall: multicallAddresses,
   pancakeProfile: {
-    [ChainId.BASE_GOERLI]: '0x843887ac63f97dA742d35C7e150069ff5827Cf80',
+    59140: '0x843887ac63f97dA742d35C7e150069ff5827Cf80',
+    56: '',
   },
   pancakeBunnies: {
-    [ChainId.BASE_GOERLI]: '0xadfa8f3558d4937603df64f286d405300d6ee32c',
+    59140: '0xadfa8f3558d4937603df64f286d405300d6ee32c',
+    56: '',
   },
   bunnyFactory: {
-    [ChainId.BASE_GOERLI]: '0x3997b0215D24984A7500645D2aD37ee2417B9e07',
+    59140: '0x3997b0215D24984A7500645D2aD37ee2417B9e07',
+    56: '',
   },
   claimRefund: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   pointCenterIfo: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   bunnySpecial: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   tradingCompetitionEaster: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   tradingCompetitionFanToken: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   tradingCompetitionMobox: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   tradingCompetitionMoD: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   easterNft: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   cakeVault: {
-    [ChainId.BASE_GOERLI]: '',
+    56: '0x72f78a9B330cBA12F046BBf3C7D18610061fC65c',
+    59140: '',
+  },
+  cakeFlexibleSideVault: {
+    56: '0xD962DAE1d0DCF72dEfA8ad4dd37D34837ad61b2d',
+    59140: '',
   },
   predictionsBNB: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   predictionsCAKE: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   chainlinkOracleBNB: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   chainlinkOracleCAKE: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   predictionsV1: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   bunnySpecialCakeVault: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   bunnySpecialPrediction: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
+  },
+  bunnySpecialLottery: {
+    59140: '',
+    56: '',
   },
   bunnySpecialXmas: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   farmAuction: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   AnniversaryAchievement: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   nftMarket: {
-    [ChainId.BASE_GOERLI]: '0xf5d0451128064c1aa5b3dff43fa2608d97c2572d',
+    59140: '0xf5d0451128064c1aa5b3dff43fa2608d97c2572d',
+    56: '',
   },
   nftSale: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   pancakeSquad: {
-    [ChainId.BASE_GOERLI]: '0xEdFa035C3db4709ebcFDd88E722B012fcCDd2139',
+    59140: '0xEdFa035C3db4709ebcFDd88E722B012fcCDd2139',
+    56: '',
+  },
+  potteryDraw: {
+    59140: '0x4203646a8C1e452C54AC59ee34Bb1D101607Cac5',
+    56: '',
   },
   // TODO: multi
   zap: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   iCake: {
-    [ChainId.BASE_GOERLI]: '0x04f7462b2C5418aa93d17CB72921C82560415598',
+    59140: '0x04f7462b2C5418aa93d17CB72921C82560415598',
+    56: '',
   },
   bCakeFarmBooster: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   bCakeFarmBoosterProxyFactory: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   nonBscVault: {
-    [ChainId.BASE_GOERLI]: '0x4EFe0F3A0a4d037b2770Db655C8c9708B15aeC88',
+    59140: '0x4EFe0F3A0a4d037b2770Db655C8c9708B15aeC88',
+    56: '',
   },
   crossFarmingSender: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
   crossFarmingReceiver: {
-    [ChainId.BASE_GOERLI]: '',
+    59140: '',
+    56: '',
   },
 }

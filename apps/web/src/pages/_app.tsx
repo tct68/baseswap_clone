@@ -1,6 +1,7 @@
-import '@baseswap/ui/css/reset.css'
-import { ResetCSS, ToastListener, ScrollToTopButtonV2 } from '@baseswap/uikit'
+import '@pancakeswap/ui/css/reset.css'
+import { ResetCSS, ToastListener, ScrollToTopButtonV2 } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
+import GlobalCheckClaimStatus from 'components/GlobalCheckClaimStatus'
 import { NetworkModal } from 'components/NetworkModal'
 import { FixedSubgraphHealthIndicator } from 'components/SubgraphHealthIndicator/FixedSubgraphHealthIndicator'
 import { useAccountEventListener } from 'hooks/useAccountEventListener'
@@ -13,6 +14,7 @@ import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import Script from 'next/script'
 import { Fragment } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistor, useStore } from 'state'
@@ -25,6 +27,8 @@ import Providers from '../Providers'
 import GlobalStyle from '../style/Global'
 
 const EasterEgg = dynamic(() => import('components/EasterEgg'), { ssr: false })
+
+// This config is required for number formatting
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
   DECIMAL_PLACES: 80,
@@ -62,10 +66,14 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
         />
         <meta
           name="description"
-          content="PancakeSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi for CAKE."
+          content="PancakeSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
         />
         <meta name="theme-color" content="#1FC7D4" />
         <meta name="twitter:image" content="https://towerswap.finance/images/hero.png" />
+        <meta
+          name="twitter:description"
+          content="The new DeFi AMM on Caduceus! Earn TW through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by PancakeSwap), NFTs, and more, on a platform you can trust."
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="🗼TowerSwap - A next evolution DeFi exchange on Caduceus Chain (CMP)" />
         <title>TowerSwap</title>
@@ -79,12 +87,26 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           {(Component as NextPageWithLayout).mp ? <MPGlobalHooks /> : <GlobalHooks />}
           <ResetCSS />
           <GlobalStyle />
+          <GlobalCheckClaimStatus excludeLocations={[]} />
           <PersistGate loading={null} persistor={persistor}>
             <Updaters />
             <App {...props} />
           </PersistGate>
         </Blocklist>
       </Providers>
+      {/* <Script */}
+      {/*   strategy="afterInteractive" */}
+      {/*   id="google-tag" */}
+      {/*   dangerouslySetInnerHTML={{ */}
+      {/*     __html: ` */}
+      {/*       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': */}
+      {/*       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], */}
+      {/*       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= */}
+      {/*       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); */}
+      {/*       })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTAG}'); */}
+      {/*     `, */}
+      {/*   }} */}
+      {/* /> */}
     </>
   )
 }
@@ -97,7 +119,7 @@ type NextPageWithLayout = NextPage & {
   mp?: boolean
   /**
    * allow chain per page, empty array bypass chain block modal
-   * @default [ChainId.BASE_GOERLI]
+   * @default [ChainId.BSC]
    * */
   chains?: number[]
   isShowScrollToTopButton?: true

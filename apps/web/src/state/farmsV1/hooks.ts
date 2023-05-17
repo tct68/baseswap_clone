@@ -1,16 +1,16 @@
 import { useAccount } from 'wagmi'
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
-import { getFarmConfig } from '@baseswap/farms/constants'
+import { getFarmConfig } from '@pancakeswap/farms/constants'
 import { useFastRefreshEffect, useSlowRefreshEffect } from 'hooks/useRefreshEffect'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
 import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
-import { deserializeToken } from '@baseswap/token-lists'
-import { BIG_ZERO } from '@baseswap/utils/bigNumber'
-import { getBalanceAmount } from '@baseswap/utils/formatBalance'
-import { DeserializedFarm, DeserializedFarmsState, DeserializedFarmUserData, SerializedFarm } from '@baseswap/farms'
+import { deserializeToken } from '@pancakeswap/token-lists'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
+import { DeserializedFarm, DeserializedFarmsState, DeserializedFarmUserData, SerializedFarm } from '@pancakeswap/farms'
 import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync } from '.'
 import { State } from '../types'
 
@@ -51,7 +51,7 @@ export const usePollFarmsV1WithUserData = () => {
   const { address: account } = useAccount()
 
   useSlowRefreshEffect(() => {
-    getFarmConfig(ChainId.BASE_GOERLI).then((farmsConfig) => {
+    getFarmConfig(ChainId.BSC).then((farmsConfig) => {
       const pids = farmsConfig.filter((farmToFetch) => farmToFetch.v1pid).map((farmToFetch) => farmToFetch.v1pid)
 
       dispatch(fetchFarmsPublicDataAsync(pids))

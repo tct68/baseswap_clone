@@ -1,11 +1,14 @@
 import { useEffect, useCallback, useState, useMemo, useRef, createContext } from 'react'
 import BigNumber from 'bignumber.js'
+import { ChainId } from '@pancakeswap/sdk'
 import { useAccount } from 'wagmi'
 import {
   Image,
   Heading,
   Toggle,
   Text,
+  Button,
+  ArrowForwardIcon,
   Flex,
   Link,
   Box,
@@ -16,14 +19,15 @@ import {
   OptionProps,
   FlexLayout,
   PageHeader,
-} from '@baseswap/uikit'
+  NextLinkFromReactRouter,
+} from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import Page from 'components/Layout/Page'
 import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
 import { useCakeVaultUserData } from 'state/pools/hooks'
-import { useIntersectionObserver } from '@baseswap/hooks'
-import { DeserializedFarm } from '@baseswap/farms'
-import { useTranslation } from '@baseswap/localization'
+import { useIntersectionObserver } from '@pancakeswap/hooks'
+import { DeserializedFarm } from '@pancakeswap/farms'
+import { useTranslation } from '@pancakeswap/localization'
 import { getFarmApr } from 'utils/apr'
 import orderBy from 'lodash/orderBy'
 import { latinise } from 'utils/latinise'
@@ -34,6 +38,7 @@ import ToggleView from 'components/ToggleView/ToggleView'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import Table from './components/FarmTable/FarmTable'
 import { FarmWithStakedValue } from './components/types'
+import { BCakeBoosterCard } from './components/BCakeBoosterCard'
 import { FarmTypesFilter } from './components/FarmTypesFilter'
 
 const ControlContainer = styled.div`
@@ -373,6 +378,11 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               </Button>
             </NextLinkFromReactRouter> */}
           </Box>
+          {/* {chainId === ChainId.LINEA_TESTNET && (
+            <Box>
+              <BCakeBoosterCard />
+            </Box>
+          )} */}
         </FarmFlexWrapper>
       </PageHeader>
       <Page>

@@ -1,10 +1,10 @@
-import { Flex, Pool, Text } from '@baseswap/uikit'
+import { Flex, Pool, Text } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { VaultKey, DeserializedLockedVaultUser } from 'state/types'
-import { Token } from '@baseswap/sdk'
+import { Token } from '@pancakeswap/sdk'
 import { getCakeVaultEarnings } from 'views/Pools/helpers'
 import RecentCakeProfitBalance from './RecentCakeProfitBalance'
 
@@ -32,7 +32,7 @@ const RecentCakeProfitCountdownRow = ({ pool }: { pool: Pool.DeserializedPool<To
 
   return (
     <Flex alignItems="center" justifyContent="space-between">
-      <Text fontSize="14px">{`${t('Recent TWS profit')}:`}</Text>
+      <Text fontSize="14px">{`${t('Recent LINE profit')}:`}</Text>
       {hasAutoEarnings && <RecentCakeProfitBalance cakeToDisplay={autoCakeToDisplay} pool={pool} account={account} />}
     </Flex>
   )

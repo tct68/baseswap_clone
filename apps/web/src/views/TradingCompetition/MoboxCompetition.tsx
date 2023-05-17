@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { useProfile } from 'state/profile/hooks'
-import { Box, useMatchBreakpoints } from '@baseswap/uikit'
+import { Box, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractMobox } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
 import { PageMeta } from 'components/Layout/Page'
@@ -18,7 +18,7 @@ import {
 } from 'config/constants/trading-competition/phases'
 import PageSection from 'components/PageSection'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import { MIDBLUEBG, MIDBLUEBG_DARK, TRADINGCOMPETITIONBANNER } from './pageSectionStyles'
 import { RulesIcon } from './svgs'
 import Countdown from './components/Countdown'
@@ -133,7 +133,7 @@ const MoboxCompetition = () => {
       }
     }
 
-    if (chainId === ChainId.BASE_GOERLI) {
+    if (chainId === ChainId.BSC) {
       fetchCompetitionInfoContract()
       if (account) {
         setUserTradingInformation({ ...initialUserTradingInformation })

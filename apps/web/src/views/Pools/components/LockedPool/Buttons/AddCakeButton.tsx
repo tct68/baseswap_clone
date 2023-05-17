@@ -1,6 +1,6 @@
 import { useCallback, memo } from 'react'
-import { Button, useModal, Skeleton } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { Button, useModal, Skeleton } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import { usePool } from 'state/pools/hooks'
 import AddAmountModal from '../Modals/AddAmountModal'
 import { AddButtonProps } from '../types'
@@ -42,7 +42,7 @@ const AddCakeButton: React.FC<React.PropsWithChildren<AddButtonProps>> = ({
 
   return userDataLoaded ? (
     <Button onClick={handleClicked} width="100%" style={{ whiteSpace: 'nowrap', paddingLeft: 0, paddingRight: 0 }}>
-      {t('Add SNAP')}
+      {t('Add TW')}
     </Button>
   ) : (
     <Skeleton height={48} />

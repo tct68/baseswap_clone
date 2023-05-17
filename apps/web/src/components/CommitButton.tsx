@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from '@baseswap/uikit'
+import { Button, ButtonProps } from '@pancakeswap/uikit'
 import { useSwitchNetworkLoading } from 'hooks/useSwitchNetworkLoading'
 import { useSetAtom } from 'jotai'
 import { useActiveChainId } from 'hooks/useActiveChainId'

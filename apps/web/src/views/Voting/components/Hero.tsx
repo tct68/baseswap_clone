@@ -1,6 +1,6 @@
-import { Box, Button, Flex, Heading, ProposalIcon } from '@baseswap/uikit'
+import { Box, Button, Flex, Heading, ProposalIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import Container from 'components/Layout/Container'
 import Link from 'next/link'
 import DesktopImage from './DesktopImage'

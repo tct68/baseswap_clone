@@ -1,5 +1,5 @@
-import { BlockIcon, CheckmarkCircleIcon, Flex, Text } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { BlockIcon, CheckmarkCircleIcon, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 
 import styled from 'styled-components'
 import { getRewardGroupAchievements, useModCompetitionRewards } from '../../../helpers'
@@ -20,7 +20,7 @@ const ModUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformatio
   const { t } = useTranslation()
   const { userRewardGroup, userCakeRewards, userDarRewards, userPointReward, canClaimNFT } = userTradingInformation
   const canClaimSpecialNFT = useCanClaimSpecialNFT()
-  const { cakeReward, dollarValueOfTokensReward } = useModCompetitionRewards({
+  const { cakeReward, darReward, dollarValueOfTokensReward } = useModCompetitionRewards({
     userCakeRewards,
     userDarRewards,
   })
@@ -42,6 +42,7 @@ const ModUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformatio
           <BoldTd>
             <Flex flexDirection="column">
               <Text bold>{cakeReward.toFixed(4)} CAKE</Text>
+              <Text bold>{darReward.toFixed(4)} DAR</Text>
               <UserPrizeGridDollar dollarValueOfTokensReward={dollarValueOfTokensReward} />
             </Flex>
           </BoldTd>

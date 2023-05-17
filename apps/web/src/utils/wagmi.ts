@@ -1,6 +1,6 @@
-import { BinanceWalletConnector } from '@baseswap/wagmi/connectors/binanceWallet'
-import { BloctoConnector } from '@baseswap/wagmi/connectors/blocto'
-import { mainnet, baseGoerli } from '@baseswap/wagmi/chains'
+import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
+import { BloctoConnector } from '@pancakeswap/wagmi/connectors/blocto'
+import { cmpMainnet, zeta, linea, bsc, mainnet } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -10,7 +10,7 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
-const CHAINS = [baseGoerli]
+const CHAINS = [linea]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null
@@ -49,6 +49,9 @@ const getNodeRealUrl = (networkName: string) => {
 export const { provider, chains } = configureChains(CHAINS, [
   jsonRpcProvider({
     rpc: (chain) => {
+      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === bsc.id) {
+        return { http: process.env.NEXT_PUBLIC_NODE_PRODUCTION }
+      }
       if (process.env.NODE_ENV === 'test' && chain.id === mainnet.id) {
         return { http: 'https://cloudflare-eth.com' }
       }

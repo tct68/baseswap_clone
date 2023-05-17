@@ -1,5 +1,5 @@
 {
-  "name": "@baseswap/awgmi",
+  "name": "@pancakeswap/awgmi",
   "license": "MIT",
   "version": "0.0.10",
   "main": "./dist/index.js",
@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "dev": "tsup --watch",
-    "build": " dist && tsup",
+    "build": "rm -rf dist && tsup",
     "test": "vitest --run",
     "prepublishOnly": "yarn run build"
   },

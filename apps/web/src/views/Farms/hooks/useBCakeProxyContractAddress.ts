@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import { NO_PROXY_CONTRACT } from 'config/constants'
 import { useBCakeFarmBoosterContract } from 'hooks/useContract'
 import { FetchStatus } from 'config/constants/types'
-import { bCakeSupportedChainId } from '@baseswap/farms/src/index'
+import { bCakeSupportedChainId } from '@pancakeswap/farms/src/index'
 
 export const useBCakeProxyContractAddress = (account?: string, chainId?: number) => {
   const bCakeFarmBoosterContract = useBCakeFarmBoosterContract()

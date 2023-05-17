@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { Flex, Skeleton, Text } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Skeleton, Text } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useContext } from 'react'
@@ -49,7 +49,7 @@ const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
     <Action>
       <Flex>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
-          TWSS
+          LINE
         </Text>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {t('Earned')}

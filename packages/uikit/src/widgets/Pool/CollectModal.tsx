@@ -1,6 +1,6 @@
-import { useTranslation } from "@baseswap/localization";
-import { AutoRenewIcon, Button, Flex, Heading, Modal, Text } from "@baseswap/uikit";
-import { formatNumber } from "@baseswap/utils/formatBalance";
+import { useTranslation } from "@pancakeswap/localization";
+import { AutoRenewIcon, Button, Flex, Heading, Modal, Text } from "@pancakeswap/uikit";
+import { formatNumber } from "@pancakeswap/utils/formatBalance";
 import { useTheme } from "styled-components";
 import getThemeValue from "../../util/getThemeValue";
 

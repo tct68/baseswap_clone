@@ -1,11 +1,17 @@
-import { ChainId } from '@baseswap/sdk'
-import { TokenAddressMap } from '@baseswap/token-lists'
+import { ChainId } from '@pancakeswap/sdk'
+import { TokenAddressMap } from '@pancakeswap/token-lists'
 
 /**
  * An empty result, useful as a default.
  */
 export const EMPTY_LIST: TokenAddressMap<ChainId> = {
-  [ChainId.BASE_GOERLI]: {},
+  [ChainId.ETHEREUM]: {},
+  [ChainId.RINKEBY]: {},
+  [ChainId.GOERLI]: {},
+  [ChainId.BSC]: {},
+  [ChainId.BSC_TESTNET]: {},
+  [ChainId.CMP]: {},
+  [ChainId.LINEA_TESTNET]: {},
 }
 
 export function serializeTokens(unserializedTokens) {

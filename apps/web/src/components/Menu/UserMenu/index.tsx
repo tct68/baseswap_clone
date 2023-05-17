@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { ChainId } from '@baseswap/sdk'
+import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@pancakeswap/sdk'
 import {
   Box,
   Flex,
@@ -10,15 +10,17 @@ import {
   UserMenuDivider,
   UserMenuItem,
   UserMenuVariant,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Trans from 'components/Trans'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
 import NextLink from 'next/link'
 import { useEffect, useState } from 'react'
+import { useProfile } from 'state/profile/hooks'
 import { usePendingTransactions } from 'state/transactions/hooks'
 import { useAccount } from 'wagmi'
+import ProfileUserMenuItem from './ProfileUserMenuItem'
 import WalletModal, { WalletView } from './WalletModal'
 import WalletUserMenuItem from './WalletUserMenuItem'
 
@@ -28,9 +30,12 @@ const UserMenu = () => {
   const { chainId, isWrongNetwork } = useActiveChainId()
   const { logout } = useAuth()
   const { hasPendingTransactions, pendingNumber } = usePendingTransactions()
+  const { isInitialized, isLoading, profile } = useProfile()
   const [onPresentWalletModal] = useModal(<WalletModal initialView={WalletView.WALLET_INFO} />)
   const [onPresentTransactionModal] = useModal(<WalletModal initialView={WalletView.TRANSACTIONS} />)
   const [onPresentWrongNetworkModal] = useModal(<WalletModal initialView={WalletView.WRONG_NETWORK} />)
+  const hasProfile = isInitialized && !!profile
+  const avatarSrc = profile?.nft?.image?.thumbnail
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
 
@@ -62,10 +67,15 @@ const UserMenu = () => {
         </UserMenuItem>
         <UserMenuDivider />
         <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
-          <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.BASE_GOERLI}>
+          <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.LINEA_TESTNET}>
             {t('Your NFTs')}
           </UserMenuItem>
         </NextLink>
+        <ProfileUserMenuItem
+          isLoading={isLoading}
+          hasProfile={hasProfile}
+          disabled={isWrongNetwork || chainId !== ChainId.LINEA_TESTNET}
+        />
         <UserMenuDivider />
         <UserMenuItem as="button" onClick={logout}>
           <Flex alignItems="center" justifyContent="space-between" width="100%">
@@ -79,7 +89,7 @@ const UserMenu = () => {
 
   if (account) {
     return (
-      <UIKitUserMenu account={account} text={userMenuText} variant={userMenuVariable}>
+      <UIKitUserMenu account={account} avatarSrc={avatarSrc} text={userMenuText} variant={userMenuVariable}>
         {({ isOpen }) => (isOpen ? <UserMenuItems /> : null)}
       </UIKitUserMenu>
     )

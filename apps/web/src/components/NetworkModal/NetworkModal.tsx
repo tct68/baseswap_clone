@@ -1,7 +1,7 @@
-import { ModalV2 } from '@baseswap/uikit'
+import { ModalV2 } from '@pancakeswap/uikit'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { CHAIN_IDS } from 'utils/wagmi'
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 import { useNetwork } from 'wagmi'
 import { atom, useAtom } from 'jotai'
@@ -18,7 +18,7 @@ export const NetworkModal = ({ pageSupportedChains = SUPPORT_ONLY_BSC }: { pageS
   const [dismissWrongNetwork, setDismissWrongNetwork] = useAtom(hideWrongNetworkModalAtom)
 
   const isBNBOnlyPage = useMemo(() => {
-    return pageSupportedChains?.length === 1 && pageSupportedChains[0] === ChainId.BASE_GOERLI
+    return pageSupportedChains?.length === 1 && pageSupportedChains[0] === ChainId.LINEA_TESTNET
   }, [pageSupportedChains])
 
   const isPageNotSupported = useMemo(

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { useTranslation } from "@baseswap/localization";
+import { useTranslation } from "@pancakeswap/localization";
 import BigNumber from "bignumber.js";
-import { BIG_ZERO } from "@baseswap/utils/bigNumber";
+import { BIG_ZERO } from "@pancakeswap/utils/bigNumber";
 import { DeserializedPool } from "./types";
 import {
   Text,

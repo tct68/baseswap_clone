@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect, useCallback, Dispatch, SetStateAction } from 'react'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { createChart, IChartApi } from 'lightweight-charts'
 import { format } from 'date-fns'
 import { useTheme } from 'styled-components'
 import { CandleChartLoader } from 'views/Info/components/ChartLoaders'
-import { baseColors, lightColors, darkColors } from '@baseswap/ui/tokens/colors'
+import { baseColors, lightColors, darkColors } from '@pancakeswap/ui/tokens/colors'
 
 const CANDLE_CHART_HEIGHT = 250
 

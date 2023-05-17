@@ -1,5 +1,5 @@
 {
-  "name": "@baseswap/sdk",
+  "name": "@pancakeswap/sdk",
   "license": "MIT",
   "version": "3.1.1",
   "description": "🛠 An SDK for building applications on top of Pancakeswap.",
@@ -23,10 +23,10 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "test": "jest",
     "prepublishOnly": "yarn run build",
-    "clean": "rimraf node_modules  dist .turbo"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@baseswap/swap-sdk-core": "*",
+    "@pancakeswap/swap-sdk-core": "*",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.4",

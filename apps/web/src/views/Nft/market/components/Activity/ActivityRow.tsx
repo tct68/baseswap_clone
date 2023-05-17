@@ -10,9 +10,9 @@ import {
   Skeleton,
   useMatchBreakpoints,
   NextLinkFromReactRouter,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { Activity, NftToken } from 'state/nftMarket/types'
-import { Price, Currency } from '@baseswap/sdk'
+import { Price, Currency } from '@pancakeswap/sdk'
 import { getBlockExploreLink, isAddress } from 'utils'
 import ProfileCell from 'views/Nft/market/components/ProfileCell'
 import { useActiveChainId } from 'hooks/useActiveChainId'

@@ -1,7 +1,7 @@
 import { BSC_BLOCK_TIME } from 'config'
-import { useTranslation, TranslateFunction } from '@baseswap/localization'
+import { useTranslation, TranslateFunction } from '@pancakeswap/localization'
 import styled from 'styled-components'
-import { Card, Flex, Box, InfoIcon, Text, useTooltip } from '@baseswap/uikit'
+import { Card, Flex, Box, InfoIcon, Text, useTooltip } from '@pancakeswap/uikit'
 import { useSubgraphHealthIndicatorManager } from 'state/user/hooks'
 import useSubgraphHealth, { SubgraphStatus } from 'hooks/useSubgraphHealth'
 

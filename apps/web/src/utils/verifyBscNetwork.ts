@@ -1,5 +1,5 @@
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 
 export const verifyBscNetwork = (chainId: number) => {
-  return chainId === ChainId.BASE_GOERLI || chainId === ChainId.BASE_GOERLI
+  return chainId === ChainId.BSC || chainId === ChainId.LINEA_TESTNET
 }

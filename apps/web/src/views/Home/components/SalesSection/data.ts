@@ -1,4 +1,4 @@
-import { TranslateFunction } from '@baseswap/localization'
+import { TranslateFunction } from '@pancakeswap/localization'
 import { SalesSectionProps } from '.'
 
 export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
@@ -29,11 +29,11 @@ export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
 })
 
 export const bridgeSectionData = (t: TranslateFunction): SalesSectionProps => ({
-  headingText: t('Trade your favorite NFT items'),
+  headingText: t('Earn extra income.'),
   bodyText: t(
-    'Towerswap provides NFT marketplace service, ' +
-      'Everyone can buy, sell and trade their NFT here. Towerswap does not charge a listing fee. ' +
-      'a fee of 2% of each trade will be taken to buy back SNAP tokens and burned. ',
+    'Get additional income through the features that we have provided, ' +
+      'We have prepared farming and staking features so that the tokens that you have work for you,' +
+      'to choose where their tokens will be stored and we have prepared a place. ',
   ),
   reverse: true,
   primaryButton: {

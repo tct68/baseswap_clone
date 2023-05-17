@@ -1,9 +1,9 @@
 import { useState, useContext } from 'react'
 import styled from 'styled-components'
 import useTheme from 'hooks/useTheme'
-import { ButtonMenu, ButtonMenuItem } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
-import replaceBrowserHistory from '@baseswap/utils/replaceBrowserHistory'
+import { ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'
 import { SwapFeaturesContext } from '../SwapFeaturesContext'
 
 export enum SwapType {

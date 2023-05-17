@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { Flex, Link, Skeleton, Text, TimerIcon, Balance, Pool } from '@baseswap/uikit'
+import { Flex, Link, Skeleton, Text, TimerIcon, Balance, Pool } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { useCurrentBlock } from 'state/block/hooks'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { getPoolBlockInfo } from 'views/Pools/helpers'
-import { Token } from '@baseswap/sdk'
+import { Token } from '@pancakeswap/sdk'
 
 interface FinishCellProps {
   pool: Pool.DeserializedPool<Token>

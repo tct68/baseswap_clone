@@ -11,10 +11,10 @@ import {
   Text,
   useModal,
   useToast,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { Proposal } from 'state/types'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import CastVoteModal from '../components/CastVoteModal'
 

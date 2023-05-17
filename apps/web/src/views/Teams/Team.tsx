@@ -1,6 +1,6 @@
-import { ChevronLeftIcon, Flex, Text } from '@baseswap/uikit'
+import { ChevronLeftIcon, Flex, Text } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import TeamCard from './components/TeamCard'

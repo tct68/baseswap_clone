@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
-import { Text } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
-import { getFullDisplayBalance } from '@baseswap/utils/formatBalance'
+import { Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 
 interface VestingAvailableToClaimProps {
   amountToReceive: BigNumber

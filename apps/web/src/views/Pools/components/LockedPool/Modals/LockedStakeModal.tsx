@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Modal, Box } from '@baseswap/uikit'
+import { Modal, Box } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import _toNumber from 'lodash/toNumber'
 import BigNumber from 'bignumber.js'
 import { GenericModalProps } from '../types'
@@ -24,7 +24,7 @@ const LockedStakeModal: React.FC<React.PropsWithChildren<GenericModalProps>> = (
 
   return (
     <RoiCalculatorModalProvider lockedAmount={lockedAmount}>
-      <Modal title={t('Lock SNAP')} onDismiss={onDismiss} headerBackground={theme.colors.gradientCardHeader}>
+      <Modal title={t('Lock TW')} onDismiss={onDismiss} headerBackground={theme.colors.gradientCardHeader}>
         <Box mb="16px">
           <BalanceField
             stakingAddress={stakingToken.address}

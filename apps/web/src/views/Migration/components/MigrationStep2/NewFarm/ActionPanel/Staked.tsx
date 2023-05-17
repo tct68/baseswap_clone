@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { useTranslation } from '@baseswap/localization'
-import { Heading, Text, Balance } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Heading, Text, Balance } from '@pancakeswap/uikit'
 import { ActionContainer, ActionContent, ActionTitles } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import { EarnedProps } from 'views/Migration/components/Farm/Cells/Earned'
@@ -37,7 +37,7 @@ const Staked: React.FC<React.PropsWithChildren<StakedProps>> = ({ earned, farm }
     <Container>
       <ActionTitles>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
-          {`SNAP ${t('Earned')}`}
+          {`TW ${t('Earned')}`}
         </Text>
       </ActionTitles>
       <ActionContent>

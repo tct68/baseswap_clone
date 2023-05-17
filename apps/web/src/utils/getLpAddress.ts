@@ -1,9 +1,9 @@
-import { ERC20Token, Pair, ChainId } from '@baseswap/sdk'
+import { ERC20Token, Pair, ChainId } from '@pancakeswap/sdk'
 import { isAddress } from 'utils'
 import memoize from 'lodash/memoize'
 
 const getLpAddress = memoize(
-  (token1: string | ERC20Token, token2: string | ERC20Token, chainId: number = ChainId.BASE_GOERLI) => {
+  (token1: string | ERC20Token, token2: string | ERC20Token, chainId: number = ChainId.LINEA_TESTNET) => {
     let token1AsTokenInstance = token1
     let token2AsTokenInstance = token2
     if (!token1 || !token2) {
@@ -14,14 +14,14 @@ const getLpAddress = memoize(
       if (!checksummedToken1Address) {
         return null
       }
-      token1AsTokenInstance = new ERC20Token(chainId, checksummedToken1Address, 18, 'Tower-LP')
+      token1AsTokenInstance = new ERC20Token(chainId, checksummedToken1Address, 18, 'Line-LP')
     }
     if (typeof token2 === 'string' || token2 instanceof String) {
       const checksummedToken2Address = isAddress(token2)
       if (!checksummedToken2Address) {
         return null
       }
-      token2AsTokenInstance = new ERC20Token(chainId, checksummedToken2Address, 18, 'Tower-LP')
+      token2AsTokenInstance = new ERC20Token(chainId, checksummedToken2Address, 18, 'Line-LP')
     }
     return Pair.getAddress(token1AsTokenInstance as ERC20Token, token2AsTokenInstance as ERC20Token)
   },

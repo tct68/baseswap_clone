@@ -1,4 +1,4 @@
-import { Currency } from '@baseswap/sdk'
+import { Currency } from '@pancakeswap/sdk'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'

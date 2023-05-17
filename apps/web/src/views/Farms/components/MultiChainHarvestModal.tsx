@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react'
-import { ChainId, Token } from '@baseswap/sdk'
+import { ChainId, Token } from '@pancakeswap/sdk'
 import { BigNumber } from 'bignumber.js'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
 import useCatchTxError from 'hooks/useCatchTxError'
 import styled from 'styled-components'
@@ -21,9 +21,9 @@ import {
   useToast,
   FlexGap,
   Balance,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { ChainLogo } from 'components/Logo/ChainLogo'
-import { getBalanceAmount } from '@baseswap/utils/formatBalance'
+import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 import { LightGreyCard } from 'components/Card'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { useFarmCProxyAddress } from 'views/Farms/hooks/useFarmCProxyAddress'
@@ -69,7 +69,7 @@ const MultiChainHarvestModal: React.FC<MultiChainHarvestModalProp> = ({
   const displayBalance = earnings.toFixed(5, BigNumber.ROUND_DOWN)
 
   const isTestnet = farmFetcher.isTestnet(chainId)
-  const network = isTestnet ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI
+  const network = isTestnet ? ChainId.BSC : ChainId.LINEA_TESTNET
   const isBscNetwork = useMemo(() => chainId === network, [chainId, network])
 
   const handleCancel = useCallback(() => {
@@ -86,7 +86,7 @@ const MultiChainHarvestModal: React.FC<MultiChainHarvestModalProp> = ({
       toastSuccess(
         `${t('Harvested')}!`,
         <ToastDescriptionWithTx txHash={receipt.transactionHash}>
-          {t('Your %symbol% earnings have been sent to your wallet!', { symbol: 'TWS' })}
+          {t('Your %symbol% earnings have been sent to your wallet!', { symbol: 'LINE' })}
         </ToastDescriptionWithTx>,
       )
       handleCancel()
@@ -120,7 +120,7 @@ const MultiChainHarvestModal: React.FC<MultiChainHarvestModalProp> = ({
               <FlexGap gap="12px">
                 <FlexGap gap="6px">
                   <ChainLogo chainId={chainId} /> <ArrowForwardIcon color="#D67E0A" />
-                  <ChainLogo chainId={ChainId.BASE_GOERLI} />
+                  <ChainLogo chainId={ChainId.LINEA_TESTNET} />
                 </FlexGap>
                 <span>{t('Harvest on BNB Smart Chain')}</span>
               </FlexGap>
@@ -130,7 +130,7 @@ const MultiChainHarvestModal: React.FC<MultiChainHarvestModalProp> = ({
         <LightGreyCard padding="16px">
           <Box mb="8px">
             <Text fontSize="12px" color="secondary" bold as="span">
-              {t('TWSS')}
+              {t('LINE')}
             </Text>
             <Text fontSize="12px" color="textSubtle" ml="4px" bold as="span">
               {t('Earned')}

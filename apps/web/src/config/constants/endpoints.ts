@@ -1,14 +1,17 @@
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 
 export const GRAPH_API_PROFILE = 'https://api.thegraph.com/subgraphs/name/pancakeswap/profile'
 export const GRAPH_API_PREDICTION_BNB = 'https://api.thegraph.com/subgraphs/name/pancakeswap/prediction-v2'
 export const GRAPH_API_PREDICTION_CAKE = 'https://api.thegraph.com/subgraphs/name/pancakeswap/prediction-cake'
+
+export const GRAPH_API_LOTTERY = 'https://api.thegraph.com/subgraphs/name/pancakeswap/lottery'
 export const SNAPSHOT_BASE_URL = process.env.NEXT_PUBLIC_SNAPSHOT_BASE_URL
 // export const API_PROFILE = 'https://profile.pancakeswap.com'
 export const API_PROFILE = 'https://api.thegraph.com/subgraphs/name/smartdev1990/profile'
 export const API_NFT = 'https://nft.pancakeswap.com/api/v1'
 export const SNAPSHOT_API = `${SNAPSHOT_BASE_URL}/graphql`
 export const SNAPSHOT_HUB_API = `${SNAPSHOT_BASE_URL}/api/message`
+export const GRAPH_API_POTTERY = 'https://api.thegraph.com/subgraphs/name/smartdev1990/pottery'
 
 /**
  * V1 will be deprecated but is still used to claim old rounds
@@ -36,9 +39,11 @@ export const ACCESS_RISK_API = 'https://red.alert.pancakeswap.com/red-api'
 export const CELER_API = 'https://api.celerscan.com/scan'
 
 export const INFO_CLIENT_WITH_CHAIN = {
-  [ChainId.BASE_GOERLI]: INFO_CLIENT,
+  [ChainId.LINEA_TESTNET]: INFO_CLIENT,
+  [ChainId.ETHEREUM]: INFO_CLIENT_ETH,
 }
 
 export const BLOCKS_CLIENT_WITH_CHAIN = {
-  [ChainId.BASE_GOERLI]: BLOCKS_CLIENT,
+  [ChainId.LINEA_TESTNET]: BLOCKS_CLIENT,
+  [ChainId.ETHEREUM]: BLOCKS_CLIENT_ETH,
 }

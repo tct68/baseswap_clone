@@ -1,4 +1,4 @@
-import { useTranslation } from "@baseswap/localization";
+import { useTranslation } from "@pancakeswap/localization";
 import { createElement } from "react";
 
 import { Button, Text, Flex, Heading, Balance } from "../../../components";

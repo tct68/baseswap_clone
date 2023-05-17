@@ -1,6 +1,37 @@
-import { mainnet, goerli, localhost } from 'wagmi/chains'
+import { rinkeby, mainnet, goerli } from 'wagmi/chains'
 import { Chain } from 'wagmi'
-import { ChainId } from '@baseswap/sdk'
+
+export const avalandche: Chain = {
+  id: 43114,
+  name: 'Avalanche C-Chain',
+  network: 'avalanche',
+  rpcUrls: {
+    default: 'https://rpc.ankr.com/avalanche',
+  },
+  nativeCurrency: { name: 'Avalanche', symbol: 'AVAX', decimals: 18 },
+  blockExplorers: {
+    default: {
+      name: 'snowtrace',
+      url: 'https://snowtrace.io/',
+    },
+  },
+}
+
+export const linea: Chain = {
+  id: 59140,
+  name: 'Linea Testnet',
+  network: 'Linea',
+  rpcUrls: {
+    default: 'https://rpc.goerli.linea.build/',
+  },
+  nativeCurrency: { name: 'Ethereum', symbol: 'ETH', decimals: 18 },
+  blockExplorers: {
+    default: {
+      name: 'LineaScan',
+      url: 'https://explorer.goerli.linea.build/',
+    },
+  },
+}
 
 export const zeta: Chain = {
   id: 7001,
@@ -18,26 +49,146 @@ export const zeta: Chain = {
   },
 }
 
-export const baseGoerli: Chain = {
-  id: ChainId.BASE_GOERLI,
-  name: 'Base Goerli',
-  network: 'base_goerli',
+export const avalandcheFuji: Chain = {
+  id: 43113,
+  name: 'Avalanche Fuji',
+  network: 'avalanche-fuji',
   rpcUrls: {
-    public: 'https://goerli.base.org',
-    default: 'https://goerli.base.org',
+    default: 'https://rpc.ankr.com/avalanche_fuji',
+  },
+  nativeCurrency: { name: 'Avalanche', symbol: 'AVAX', decimals: 18 },
+  blockExplorers: {
+    default: {
+      name: 'snowtrace',
+      url: 'https://testnet.snowtrace.io/',
+    },
+  },
+  testnet: true,
+}
+
+export const fantomOpera: Chain = {
+  id: 250,
+  name: 'Fantom Opera',
+  network: 'fantom',
+  nativeCurrency: { name: 'Fantom', symbol: 'FTM', decimals: 18 },
+  rpcUrls: {
+    default: 'https://rpc.ftm.tools',
   },
   blockExplorers: {
-    default: { name: 'Base Goerli Explorer', url: 'https://goerli.basescan.org' },
-  },
-  nativeCurrency: {
-    name: 'Wrapped ETH',
-    symbol: 'ETH',
-    decimals: 18,
-  },
-  multicall: {
-    address: '0xca11bde05977b3631167028862be2a173976ca11',
-    blockCreated: 4244264,
+    default: {
+      name: 'FTMScan',
+      url: 'https://ftmscan.com',
+    },
   },
 }
 
-export { mainnet, goerli, localhost }
+export const fantomTestnet: Chain = {
+  id: 4002,
+  name: 'Fantom Testnet',
+  network: 'fantom-testnet',
+  nativeCurrency: { name: 'Fantom', symbol: 'FTM', decimals: 18 },
+  rpcUrls: {
+    default: 'https://rpc.testnet.fantom.network',
+  },
+  blockExplorers: {
+    default: {
+      name: 'FTMScan',
+      url: 'https://testnet.ftmscan.com',
+    },
+  },
+  testnet: true,
+}
+
+const bscExplorer = { name: 'BscScan', url: 'https://bscscan.com' }
+
+export const bsc: Chain = {
+  id: 56,
+  name: 'BNB Smart Chain',
+  network: 'bsc',
+  rpcUrls: {
+    public: 'https://bsc-dataseed1.binance.org',
+    default: 'https://bsc-dataseed1.binance.org',
+  },
+  blockExplorers: {
+    default: bscExplorer,
+    etherscan: bscExplorer,
+  },
+  nativeCurrency: {
+    name: 'Binance Chain Native Token',
+    symbol: 'BNB',
+    decimals: 18,
+  },
+  multicall: {
+    address: '0x3dc18345e131a673e11401696a35e7927673eeea',
+    blockCreated: 15921452,
+  },
+}
+
+export const bscTest: Chain = {
+  id: 97,
+  name: 'BNB Smart Chain Testnet',
+  network: 'bsc-testnet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Binance Chain Native Token',
+    symbol: 'tBNB',
+  },
+  rpcUrls: {
+    public: 'https://data-seed-prebsc-1-s3.binance.org:8545',
+    default: 'https://data-seed-prebsc-1-s3.binance.org:8545',
+  },
+  blockExplorers: {
+    default: { name: 'BscScan', url: 'https://testnet.bscscan.com' },
+  },
+  multicall: {
+    address: '0x3dc18345e131a673e11401696a35e7927673eeea',
+    blockCreated: 17422483,
+  },
+  testnet: true,
+}
+
+export const cmpTestnet: Chain = {
+  id: 512512,
+  name: 'Caduceus Testnet',
+  network: 'cmp_testnet',
+  rpcUrls: {
+    public: 'https://galaxy.block.caduceus.foundation',
+    default: 'https://galaxy.block.caduceus.foundation',
+  },
+  blockExplorers: {
+    default: { name: 'CMP_Testnet Explorer', url: 'https://galaxy.scan.caduceus.foundation' },
+  },
+  nativeCurrency: {
+    name: 'Cadeceus',
+    symbol: 'CMP',
+    decimals: 18,
+  },
+  multicall: {
+    address: '0x3dc18345e131a673e11401696a35e7927673eeea',
+    blockCreated: 10275844,
+  },
+}
+
+export const cmpMainnet: Chain = {
+  id: 256256,
+  name: 'Caduceus Mainnet',
+  network: 'cmp_mainnet',
+  rpcUrls: {
+    public: 'https://mainnet.block.caduceus.foundation',
+    default: 'https://mainnet.block.caduceus.foundation',
+  },
+  blockExplorers: {
+    default: { name: 'CMP_MAINNET Explorer', url: 'https://mainnet.scan.caduceus.foundation' },
+  },
+  nativeCurrency: {
+    name: 'Cadeceus',
+    symbol: 'CMP',
+    decimals: 18,
+  },
+  multicall: {
+    address: '0x3dc18345e131a673e11401696a35e7927673eeea',
+    blockCreated: 10275844,
+  },
+}
+
+export { rinkeby, mainnet, goerli }

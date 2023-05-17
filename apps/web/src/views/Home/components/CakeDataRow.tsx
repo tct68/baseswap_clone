@@ -1,12 +1,12 @@
-import { Flex, Heading, Skeleton, Text, Balance } from '@baseswap/uikit'
+import { Flex, Heading, Skeleton, Text, Balance } from '@pancakeswap/uikit'
 import cakeAbi from 'config/abi/cake.json'
-import { baseGoerliTokens } from '@baseswap/tokens'
-import { useTranslation } from '@baseswap/localization'
-import { useIntersectionObserver } from '@baseswap/hooks'
+import { testnetTokens } from '@pancakeswap/tokens'
+import { useTranslation } from '@pancakeswap/localization'
+import { useIntersectionObserver } from '@pancakeswap/hooks'
 import { useEffect, useState } from 'react'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import styled from 'styled-components'
-import { formatBigNumber, formatLocalisedCompactNumber } from '@baseswap/utils/formatBalance'
+import { formatBigNumber, formatLocalisedCompactNumber } from '@pancakeswap/utils/formatBalance'
 import { multicallv3 } from 'utils/multicall'
 import { getCakeVaultAddress } from 'utils/addressHelpers'
 import useSWR from 'swr'
@@ -88,10 +88,10 @@ const CakeDataRow = () => {
   } = useSWR(
     loadData ? ['cakeDataRow'] : null,
     async () => {
-      const totalSupplyCall = { abi: cakeAbi, address: baseGoerliTokens.tw.address, name: 'totalSupply' }
+      const totalSupplyCall = { abi: cakeAbi, address: testnetTokens.line.address, name: 'totalSupply' }
       const burnedTokenCall = {
         abi: cakeAbi,
-        address: baseGoerliTokens.tw.address,
+        address: testnetTokens.line.address,
         name: 'balanceOf',
         params: ['0x000000000000000000000000000000000000dEaD'],
       }

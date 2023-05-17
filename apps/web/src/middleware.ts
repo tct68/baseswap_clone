@@ -32,6 +32,8 @@ export const config = {
     '/remove',
     '/prediction',
     '/find',
+    '/limit-orders',
+    '/lottery',
     '/nfts',
     '/info/:path*',
   ],

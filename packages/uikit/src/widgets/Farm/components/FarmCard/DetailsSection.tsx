@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useTranslation } from "@baseswap/localization";
+import { useTranslation } from "@pancakeswap/localization";
 import { Text } from "../../../../components/Text";
 import { Flex } from "../../../../components/Box";
 import { Skeleton } from "../../../../components/Skeleton";

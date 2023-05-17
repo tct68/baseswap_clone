@@ -1,11 +1,11 @@
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import { useIsTransactionPending } from 'state/transactions/hooks'
-import { getFullDisplayBalance } from '@baseswap/utils/formatBalance'
+import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { useAppDispatch } from 'state'
 import { updateUserBalance } from 'state/pools'
-import { ChainId, Native } from '@baseswap/sdk'
-import { SNAP } from '@baseswap/tokens'
-import tryParseAmount from '@baseswap/utils/tryParseAmount'
+import { ChainId, Native } from '@pancakeswap/sdk'
+import { LINE } from '@pancakeswap/tokens'
+import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { useTradeExactOut } from 'hooks/Trades'
 import { useSwapCallback } from 'hooks/useSwapCallback'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
@@ -21,9 +21,9 @@ export const useExtendEnable = () => {
   const isTransactionPending = useIsTransactionPending(transactionHash)
   const swapAmount = useMemo(() => getFullDisplayBalance(ENABLE_EXTEND_LOCK_AMOUNT), [])
 
-  const parsedAmount = tryParseAmount(swapAmount, SNAP[chainId])
+  const parsedAmount = tryParseAmount(swapAmount, LINE[chainId])
 
-  const trade = useTradeExactOut(Native.onChain(ChainId.BASE_GOERLI), parsedAmount)
+  const trade = useTradeExactOut(Native.onChain(ChainId.LINEA_TESTNET), parsedAmount)
 
   const swapCalls = useSwapCallArguments(trade, INITIAL_ALLOWED_SLIPPAGE, null)
 

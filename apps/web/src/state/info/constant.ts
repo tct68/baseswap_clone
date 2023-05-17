@@ -1,7 +1,7 @@
 import { BLOCKS_CLIENT, BLOCKS_CLIENT_ETH, INFO_CLIENT, INFO_CLIENT_ETH } from 'config/constants/endpoints'
 import { infoClientETH, infoClient, infoStableSwapClient } from 'utils/graphql'
 
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import { ETH_TOKEN_BLACKLIST, PCS_ETH_START, PCS_V2_START, TOKEN_BLACKLIST } from 'config/constants/info'
 
 export type MultiChainName = 'BSC' | 'ETH'
@@ -22,11 +22,13 @@ export const multiChainStartTime = {
 }
 
 export const multiChainId = {
-  BASE_GOERLI: ChainId.BASE_GOERLI
+  BSC: ChainId.BSC,
+  ETH: ChainId.ETHEREUM,
 }
 
 export const multiChainPaths = {
-  [ChainId.BASE_GOERLI]: '/eth',
+  [ChainId.BSC]: '',
+  [ChainId.ETHEREUM]: '/eth',
 }
 
 export const multiChainQueryClient = {

@@ -1,9 +1,9 @@
 import { MaxUint256, Zero } from '@ethersproject/constants'
 import { formatEther, parseUnits } from '@ethersproject/units'
-import { TranslateFunction, useTranslation } from '@baseswap/localization'
-import { ChainId } from '@baseswap/sdk'
-import { baseGoerliTokens } from '@baseswap/tokens'
-import { InjectedModalProps, useToast } from '@baseswap/uikit'
+import { TranslateFunction, useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@pancakeswap/sdk'
+import { testnetTokens } from '@pancakeswap/tokens'
+import { InjectedModalProps, useToast } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
@@ -13,8 +13,8 @@ import useTheme from 'hooks/useTheme'
 import useTokenBalance, { useGetBnbBalance } from 'hooks/useTokenBalance'
 import { useEffect, useState } from 'react'
 import { NftToken } from 'state/nftMarket/types'
-import { ethersToBigNumber } from '@baseswap/utils/bigNumber'
-import { getBalanceNumber } from '@baseswap/utils/formatBalance'
+import { ethersToBigNumber } from '@pancakeswap/utils/bigNumber'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { requiresApproval } from 'utils/requiresApproval'
 import ApproveAndConfirmStage from '../shared/ApproveAndConfirmStage'
 import ConfirmStage from '../shared/ConfirmStage'
@@ -47,7 +47,7 @@ const BuyModal: React.FC<React.PropsWithChildren<BuyModalProps>> = ({ nftToBuy, 
   const { callWithGasPrice } = useCallWithGasPrice()
 
   const { account, chainId } = useActiveWeb3React()
-  const wbnbAddress = chainId === ChainId.BASE_GOERLI ? TESTNET_WBNB_NFT_ADDRESS : baseGoerliTokens.wcmp.address
+  const wbnbAddress = chainId === ChainId.LINEA_TESTNET ? TESTNET_WBNB_NFT_ADDRESS : testnetTokens.weth.address
   const wbnbContractReader = useERC20(wbnbAddress, false)
   const wbnbContractApprover = useERC20(wbnbAddress)
   const nftMarketContract = useNftMarketContract()

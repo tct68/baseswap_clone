@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
-import { formatBigNumber } from '@baseswap/utils/formatBalance'
-import { Button, Flex, Text, InjectedModalProps, Message, MessageText } from '@baseswap/uikit'
+import { formatBigNumber } from '@pancakeswap/utils/formatBalance'
+import { Button, Flex, Text, InjectedModalProps, Message, MessageText } from '@pancakeswap/uikit'
 import { getPancakeProfileAddress } from 'utils/addressHelpers'
 import { useCake } from 'hooks/useContract'
 import { useGetCakeBalance } from 'hooks/useTokenBalance'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import useGetProfileCosts from 'views/Profile/hooks/useGetProfileCosts'
 import { FetchStatus } from 'config/constants/types'
 import { requiresApproval } from 'utils/requiresApproval'
@@ -95,7 +95,7 @@ const StartPage: React.FC<React.PropsWithChildren<StartPageProps>> = ({ goToAppr
         <>
           <Message variant="warning" mb="16px">
             <MessageText>
-              {t("Before editing your profile, please make sure you've claimed all the unspent SNAP from previous IFOs!")}
+              {t("Before editing your profile, please make sure you've claimed all the unspent TW from previous IFOs!")}
             </MessageText>
           </Message>
           <Button

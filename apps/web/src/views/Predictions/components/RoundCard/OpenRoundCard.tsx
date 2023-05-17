@@ -1,4 +1,4 @@
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -8,7 +8,7 @@ import {
   PlayCircleOutlineIcon,
   useToast,
   useTooltip,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'

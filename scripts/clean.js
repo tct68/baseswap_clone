@@ -17,7 +17,9 @@ const cleanTests = (dir) => {
     const files = findAllFileInFolder(dir, '.test.ts')
     if (files) {
         files.forEach(x => {
-            unlinkSync(join(dir, x), (c) => {
+            const file = join(dir, x)
+            console.log('Deleted ', file);
+            unlinkSync(file, (c) => {
                 console.log('Deleted ', x);
             })
         })

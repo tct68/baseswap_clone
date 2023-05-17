@@ -11,11 +11,11 @@ import {
   VisibilityOff,
   VisibilityOn,
   NextLinkFromReactRouter as ReactRouterLink,
-} from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import { getBlockExploreLink, isAddress } from 'utils'
-import { formatNumber } from '@baseswap/utils/formatBalance'
-import truncateHash from '@baseswap/utils/truncateHash'
+import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import truncateHash from '@pancakeswap/utils/truncateHash'
 import { Achievement, Profile } from 'state/types'
 import { useAccount } from 'wagmi'
 import { useMemo } from 'react'

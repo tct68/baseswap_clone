@@ -11,13 +11,13 @@ import {
   BinanceIcon,
   Skeleton,
   useModal,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useProfile } from 'state/profile/hooks'
 import { NftLocation, NftToken, Collection } from 'state/nftMarket/types'
-import { formatNumber } from '@baseswap/utils/formatBalance'
+import { formatNumber } from '@pancakeswap/utils/formatBalance'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { isAddress } from 'utils'
 import { CollectibleRowContainer, SmallRoundedImage } from './styles'
 import ProfileNftModal from '../../../components/ProfileNftModal'

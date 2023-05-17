@@ -1,6 +1,6 @@
-import { Currency, CurrencyAmount, JSBI, Native, Token } from '@baseswap/sdk'
+import { Currency, CurrencyAmount, JSBI, Native, Token } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
-import { useWeb3React } from '@baseswap/wagmi'
+import { useWeb3React } from '@pancakeswap/wagmi'
 import ERC20_INTERFACE from 'config/abi/erc20'
 import { useAllTokens } from 'hooks/Tokens'
 import { useMulticallContract } from 'hooks/useContract'

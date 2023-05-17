@@ -1,4 +1,4 @@
-import { fetchAnsAddress, FetchAnsAddressArgs, FetchAnsAddressResult } from '@baseswap/awgmi/core'
+import { fetchAnsAddress, FetchAnsAddressArgs, FetchAnsAddressResult } from '@pancakeswap/awgmi/core'
 
 import { QueryConfig, QueryFunctionArgs } from '../types'
 import { useNetwork } from './useNetwork'

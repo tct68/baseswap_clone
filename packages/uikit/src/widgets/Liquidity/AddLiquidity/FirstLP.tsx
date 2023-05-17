@@ -1,4 +1,4 @@
-import { useTranslation } from "@baseswap/localization";
+import { useTranslation } from "@pancakeswap/localization";
 
 import { Message, Text, Column } from "../../../components";
 

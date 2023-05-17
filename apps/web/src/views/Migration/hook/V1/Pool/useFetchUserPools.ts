@@ -5,7 +5,7 @@ import { SerializedPool } from 'state/types'
 import { transformPool } from 'state/pools/helpers'
 import { getCakeContract } from 'utils/contractHelpers'
 import { PoolCategory } from 'config/constants/types'
-import { baseGoerliTokens } from '@baseswap/tokens'
+import { testnetTokens } from '@pancakeswap/tokens'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { fetchUserStakeBalances, fetchUserPendingRewards } from './fetchPoolsUser'
 
@@ -19,13 +19,13 @@ const cakeContract = getCakeContract()
 const initialData = {
   data: {
     sousId: 0,
-    stakingToken: baseGoerliTokens.tw.serialize,
-    earningToken: baseGoerliTokens.tw.serialize,
+    stakingToken: testnetTokens.line.serialize,
+    earningToken: testnetTokens.line.serialize,
     contractAddress: {
       97: '',
       56: '',
       256256: '0xd964CB5A5cE6B7c8fA26796760F8A5AeE9bee1a1',
-      7001: '',
+      59140: '',
     },
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '100',

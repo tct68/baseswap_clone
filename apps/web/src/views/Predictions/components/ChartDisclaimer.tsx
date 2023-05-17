@@ -10,9 +10,9 @@ import {
   Heading,
   Checkbox,
   Box,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { useUserPredictionChartDisclaimerShow } from 'state/user/hooks'
 
 const Ul = styled.ul`

@@ -1,15 +1,35 @@
-import { ChainId, JSBI, Percent, Token, WNATIVE } from '@baseswap/sdk'
+import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { USDC, USDT, BUSD, WBTC_BASE } from '@baseswap/tokens'
+import { bscTokens, bscTestnetTokens, USDC, USDT, BUSD, WBTC_ETH } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.BASE_GOERLI]: '0x09FB691A786284e99D122D2B68dE40D253fec299',
+  [ChainId.ETHEREUM]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
+  [ChainId.RINKEBY]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
+  [ChainId.GOERLI]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
+  [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
+  [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
+  [ChainId.CMP]: '0xb0240848456412D1a33792DF4A1178053b9aecAa',
+  [ChainId.LINEA_TESTNET]: '0x80902dd68366e498be8113Eb961247d6182b0a1b',
 }
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
-  [ChainId.BASE_GOERLI]: [WNATIVE[ChainId.BASE_GOERLI], USDC[ChainId.BASE_GOERLI], BUSD[ChainId.BASE_GOERLI]],
+  [ChainId.ETHEREUM]: [WNATIVE[ChainId.ETHEREUM], USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WBTC_ETH],
+  [ChainId.RINKEBY]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
+  [ChainId.GOERLI]: [WNATIVE[ChainId.RINKEBY], USDC[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
+  [ChainId.BSC]: [
+    bscTokens.wbnb,
+    bscTokens.cake,
+    bscTokens.busd,
+    bscTokens.usdt,
+    bscTokens.btcb,
+    bscTokens.eth,
+    bscTokens.usdc,
+  ],
+  [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
+  [ChainId.LINEA_TESTNET]: [],
+  [ChainId.CMP]: [],
 }
 
 /**
@@ -17,32 +37,56 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
  * @example { [WBTC.address]: [renBTC], [renBTC.address]: [WBTC] }
  */
 export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
+  [ChainId.BSC]: {
+    // SNFTS-SFUND
+    [bscTokens.snfts.address]: [bscTokens.sfund],
+  },
 }
 
 /**
  * Some tokens can only be swapped via certain pairs, so we override the list of bases that are considered for these
  * tokens.
- * @example [AMPL.address]: [DAI, WNATIVE[ChainId.BASE_GOERLI]]
+ * @example [AMPL.address]: [DAI, WNATIVE[ChainId.BSC]]
  */
 export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
+  [ChainId.BSC]: {},
 }
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], WBTC_BASE],
+  [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WNATIVE[ChainId.ETHEREUM], WBTC_ETH],
+  [ChainId.RINKEBY]: [USDC[ChainId.RINKEBY], WNATIVE[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
+  [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
+  [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
+  [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
+  [ChainId.LINEA_TESTNET]: [],
+  [ChainId.CMP]: [],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI], WBTC_BASE],
+  [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], WNATIVE[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WBTC_ETH],
+  [ChainId.RINKEBY]: [USDC[ChainId.RINKEBY], WNATIVE[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
+  [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
+  [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
+  [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
+  [ChainId.LINEA_TESTNET]: [],
+  [ChainId.CMP]: [],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
-  [ChainId.BASE_GOERLI]: [
-    [WNATIVE[ChainId.BASE_GOERLI], USDC[ChainId.BASE_GOERLI]],
-    [WBTC_BASE, WNATIVE[ChainId.BASE_GOERLI]],
-    [WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
+  [ChainId.ETHEREUM]: [
+    [WNATIVE[ChainId.ETHEREUM], USDC[ChainId.ETHEREUM]],
+    [WBTC_ETH, WNATIVE[ChainId.ETHEREUM]],
+    [WNATIVE[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM]],
   ],
+  [ChainId.BSC]: [
+    [bscTokens.cake, bscTokens.wbnb],
+    [bscTokens.busd, bscTokens.usdt],
+    [bscTokens.dai, bscTokens.usdt],
+  ],
+  [ChainId.LINEA_TESTNET]: [],
+  [ChainId.CMP]: [],
 }
 
 export const BIG_INT_ZERO = JSBI.BigInt(0)
@@ -73,7 +117,7 @@ export const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(BASE_FEE)
 // BNB
 export const DEFAULT_INPUT_CURRENCY = 'BNB'
 // CAKE
-export const DEFAULT_OUTPUT_CURRENCY = '0x09FB691A786284e99D122D2B68dE40D253fec299'
+export const DEFAULT_OUTPUT_CURRENCY = '0x2B184fAc05306115F21ee7B8eA04EA2B2FFCB3b0'
 
 // Handler string is passed to Gelato to use PCS router
 export const GELATO_HANDLER = 'pancakeswap'

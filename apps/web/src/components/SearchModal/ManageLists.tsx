@@ -1,6 +1,6 @@
-import { useTranslation } from '@baseswap/localization'
-import { Button, CheckmarkIcon, CogIcon, Input, LinkExternal, Text, Toggle, useTooltip } from '@baseswap/uikit'
-import { TokenList, Version } from '@baseswap/token-lists'
+import { useTranslation } from '@pancakeswap/localization'
+import { Button, CheckmarkIcon, CogIcon, Input, LinkExternal, Text, Toggle, useTooltip } from '@pancakeswap/uikit'
+import { TokenList, Version } from '@pancakeswap/token-lists'
 import Card from 'components/Card'
 import { UNSUPPORTED_LIST_URLS } from 'config/constants/lists'
 import { useAtomValue } from 'jotai'
@@ -13,8 +13,8 @@ import {
   disableList,
   enableList,
   removeList,
-} from '@baseswap/token-lists/react'
-import uriToHttp from '@baseswap/utils/uriToHttp'
+} from '@pancakeswap/token-lists/react'
+import uriToHttp from '@pancakeswap/utils/uriToHttp'
 
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { selectorByUrlsAtom, useActiveListUrls, useAllLists, useIsListActive } from '../../state/lists/hooks'

@@ -1,4 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@pancakeswap/sdk'
 import {
   Box,
   Flex,
@@ -9,7 +10,7 @@ import {
   Text,
   ThemeSwitcher,
   Toggle,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { SUPPORT_ZAP } from 'config/constants/supportChains'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useTheme from 'hooks/useTheme'
@@ -27,6 +28,7 @@ import {
 import { useStableSwapByDefault } from 'state/user/smartRouter'
 import styled from 'styled-components'
 import ExpertModal from './ExpertModal'
+import GasSettings from './GasSettings'
 import TransactionSettings from './TransactionSettings'
 import { SettingsMode } from './types'
 
@@ -152,6 +154,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                   }}
                 />
               </Flex>
+              {chainId === ChainId.LINEA_TESTNET && <GasSettings />}
             </Flex>
           </>
         )}
@@ -161,6 +164,9 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
               <Text bold textTransform="uppercase" fontSize="18px" color="secondary" mb="24px">
                 {t('Swaps & Liquidity')}
               </Text>
+              <Flex justifyContent="space-between" alignItems="center" mb="24px">
+                {chainId === ChainId.LINEA_TESTNET && <GasSettings />}
+              </Flex>
               <TransactionSettings />
             </Flex>
             {SUPPORT_ZAP.includes(chainId) && (

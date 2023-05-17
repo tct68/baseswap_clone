@@ -10,9 +10,9 @@ import {
   Box,
   Flex,
   ExpandableLabel,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { TeamRanksProps } from '../../../types'
 import TopTradersGrid from './TopTradersGrid'
 

@@ -1,4 +1,4 @@
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import {
   BalanceInput,
   Box,
@@ -11,14 +11,14 @@ import {
   useRoiCalculatorReducer,
   CalculatorMode,
   EditingCurrency,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import { useEffect, useMemo, useState } from 'react'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import styled, { useTheme } from 'styled-components'
-import { getBalanceNumber } from '@baseswap/utils/formatBalance'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useBCakeTooltipContent } from 'views/Farms/components/BCakeBoosterCard'
 import { useUserLockedCakeStatus } from 'views/Farms/hooks/useUserLockedCakeStatus'
 import { weeksToSeconds } from 'views/Pools/components/utils/formatSecondsToWeeks'
@@ -45,7 +45,7 @@ const BCakeCalculator: React.FC<React.PropsWithChildren<BCakeCalculatorProps>> =
   targetInputBalance,
   earningTokenPrice,
   initialState,
-  stakingTokenSymbol = 'TWS',
+  stakingTokenSymbol = 'LINE',
   lpTotalSupply,
   setBCakeMultiplier,
 }) => {
@@ -96,7 +96,7 @@ const BCakeCalculator: React.FC<React.PropsWithChildren<BCakeCalculatorProps>> =
     targetRef: myBalanceTargetRef,
     tooltip: myBalanceTooltip,
     tooltipVisible: myBalanceTooltipVisible,
-  } = useTooltip(t('Boost multiplier calculation does not include profit from TWS staking pool'), {
+  } = useTooltip(t('Boost multiplier calculation does not include profit from LINE staking pool'), {
     placement: 'bottom-start',
   })
   const theme = useTheme()

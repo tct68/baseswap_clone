@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { Card, Farm as FarmUI, Flex, Skeleton, Text, ExpandableSectionButton } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Card, Farm as FarmUI, Flex, Skeleton, Text, ExpandableSectionButton } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { multiChainPaths } from 'state/info/constant'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
@@ -70,7 +70,7 @@ const FarmCard: React.FC<React.PropsWithChildren<FarmCardProps>> = ({
       : ''
 
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('TOWER', '')
-  const earnLabel = farm.dual ? farm.dual.earnLabel : t('TWS + Fees')
+  const earnLabel = farm.dual ? farm.dual.earnLabel : t('LINE + Fees')
 
   const liquidityUrlPathParts = getLiquidityUrlPathParts({
     quoteTokenAddress: farm.quoteToken.address,
@@ -79,7 +79,7 @@ const FarmCard: React.FC<React.PropsWithChildren<FarmCardProps>> = ({
   })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
   const { lpAddress, stableSwapAddress } = farm
-  const isPromotedFarm = farm.token.symbol === 'TWS'
+  const isPromotedFarm = farm.token.symbol === 'LINE'
   const { stakedBalance, proxy, tokenBalance } = farm.userData
 
   const infoUrl = useMemo(() => {

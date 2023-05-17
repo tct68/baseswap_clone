@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request'
-import { Pair } from '@baseswap/sdk'
+import { Pair, ChainId } from '@pancakeswap/sdk'
 import useSWRImmutable from 'swr/immutable'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
 import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
@@ -23,7 +23,7 @@ interface PoolReserveVolumeResponse {
 
 export const useLPApr = (pair?: Pair) => {
   const { data: poolData } = useSWRImmutable(
-    null, // pair && pair.chainId === ChainId.BASE_GOERLI ? ['LP7dApr', pair.liquidityToken.address] : null,
+    null, // pair && pair.chainId === ChainId.BSC ? ['LP7dApr', pair.liquidityToken.address] : null,
     async () => {
       const timestampsArray = getDeltaTimestamps()
       const blocks = await getBlocksFromTimestamps(timestampsArray, 'desc', 1000)

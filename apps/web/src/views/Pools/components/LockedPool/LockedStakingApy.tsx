@@ -1,14 +1,14 @@
 import { useMemo, memo } from 'react'
 import { getVaultPosition, VaultPosition } from 'utils/cakePool'
 
-import { Flex, Text, Box, TooltipText, useTooltip, HelpIcon, BalanceWithLoading } from '@baseswap/uikit'
+import { Flex, Text, Box, TooltipText, useTooltip, HelpIcon, BalanceWithLoading } from '@pancakeswap/uikit'
 import { LightGreyCard } from 'components/Card'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { useVaultApy } from 'hooks/useVaultApy'
 import Divider from 'components/Divider'
 import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
-import isUndefinedOrNull from '@baseswap/utils/isUndefinedOrNull'
-import { getBalanceNumber, getFullDisplayBalance } from '@baseswap/utils/formatBalance'
+import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
+import { getBalanceNumber, getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import BurningCountDown from './Common/BurningCountDown'
 import LockedActions from './Common/LockedActions'
 import YieldBoostRow from './Common/YieldBoostRow'
@@ -84,7 +84,7 @@ const LockedStakingApy: React.FC<React.PropsWithChildren<LockedStakingApyProps>>
       <Flex justifyContent="space-between" mb="16px">
         <Box>
           <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-            {t('SNAP locked')}
+            {t('TW locked')}
           </Text>
           <BalanceWithLoading color="text" bold fontSize="16px" value={currentLockedAmount} decimals={5} />
           <BalanceWithLoading
@@ -141,7 +141,7 @@ const LockedStakingApy: React.FC<React.PropsWithChildren<LockedStakingApyProps>>
       )}
       <Flex alignItems="center" justifyContent="space-between">
         <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-          {t('Recent TWS profit')}
+          {t('Recent LINE profit')}
         </Text>
         <BalanceWithLoading color="text" bold fontSize="16px" value={earningTokenBalance} decimals={5} />
       </Flex>

@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import styled from 'styled-components'
-import { ChainId, Token } from '@baseswap/sdk'
+import { ChainId, Token } from '@pancakeswap/sdk'
 import { useActiveChainId } from 'hooks/useActiveChainId'
-import { Flex, Box, SwapVertIcon, IconButton, Pool } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
-import { useIntersectionObserver } from '@baseswap/hooks'
+import { Flex, Box, SwapVertIcon, IconButton, Pool } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { useIntersectionObserver } from '@pancakeswap/hooks'
 import useGetTopFarmsByApr from 'views/Home/hooks/useGetTopFarmsByApr'
 import useGetTopPoolsByApr from 'views/Home/hooks/useGetTopPoolsByApr'
 import { vaultPoolConfig } from 'config/constants/pools'
@@ -70,7 +70,7 @@ const FarmsPoolsRow = () => {
       <Flex flexDirection="column" mt="24px">
         <Flex mb="24px">
           <RowHeading text={showFarms ? t('Top Farms') : t('Top Syrup Pools')} />
-          {chainId === ChainId.BASE_GOERLI && (
+          {chainId === ChainId.BSC && (
             <IconButton
               variant="text"
               height="100%"
@@ -98,7 +98,7 @@ const FarmsPoolsRow = () => {
               />
             ))}
           </Grid>
-          {chainId === ChainId.BASE_GOERLI && (
+          {chainId === ChainId.BSC && (
             <Grid>
               {topPools.map((topPool, index) => (
                 <TopFarmPool

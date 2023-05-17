@@ -9,10 +9,10 @@ import {
   // TradingViewIcon,
   // LineGraphIcon,
   // useMatchBreakpoints,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
 // import { TradingViewLabel } from 'components/TradingView'
-// import { useTranslation } from '@baseswap/localization'
+// import { useTranslation } from '@pancakeswap/localization'
 import { ChartViewMode } from 'state/user/actions'
 import { useExchangeChartViewManager } from 'state/user/hooks'
 // import styled from 'styled-components'

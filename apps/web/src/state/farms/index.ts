@@ -1,6 +1,6 @@
-import { getFarmConfig } from '@baseswap/farms/constants'
-import { createFarmFetcher, SerializedFarm, SerializedFarmsState } from '@baseswap/farms'
-import { ChainId } from '@baseswap/sdk'
+import { getFarmConfig } from '@pancakeswap/farms/constants'
+import { createFarmFetcher, SerializedFarm, SerializedFarmsState } from '@pancakeswap/farms'
+import { ChainId } from '@pancakeswap/sdk'
 import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit'
 import type {
   UnknownAsyncThunkFulfilledAction,
@@ -15,7 +15,7 @@ import stringify from 'fast-json-stable-stringify'
 import keyBy from 'lodash/keyBy'
 import type { AppState } from 'state'
 import { getMasterChefAddress } from 'utils/addressHelpers'
-import { getBalanceAmount } from '@baseswap/utils/formatBalance'
+import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 import multicall, { multicallv2 } from 'utils/multicall'
 import { chains } from 'utils/wagmi'
 import splitProxyFarms from 'views/Farms/components/YieldBooster/helpers/splitProxyFarms'
@@ -40,7 +40,7 @@ const fetchFetchPublicDataOld = async ({ pids, chainId }): Promise<[SerializedFa
     multicall(masterchefABI, [
       {
         // BSC only
-        address: getMasterChefAddress(ChainId.BASE_GOERLI),
+        address: getMasterChefAddress(ChainId.LINEA_TESTNET),
         name: 'cakePerBlock',
         params: [true],
       },
@@ -248,7 +248,7 @@ export const fetchFarmUserDataAsync = createAsyncThunk<
     if (state.farms.chainId !== chainId) {
       await dispatch(fetchInitialFarmsData({ chainId }))
     }
-    const poolLength = state.farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.BASE_GOERLI))
+    const poolLength = state.farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.LINEA_TESTNET))
     const farmsConfig = await getFarmConfig(chainId)
     const farmsCanFetch = farmsConfig.filter(
       (farmConfig) => pids.includes(farmConfig.pid) && poolLength > farmConfig.pid,

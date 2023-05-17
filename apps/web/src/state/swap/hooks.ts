@@ -1,7 +1,7 @@
-import { useTranslation } from '@baseswap/localization'
-import { Currency, CurrencyAmount, Trade, TradeType } from '@baseswap/sdk'
-import { SNAP, BUSD } from '@baseswap/tokens'
-import tryParseAmount from '@baseswap/utils/tryParseAmount'
+import { useTranslation } from '@pancakeswap/localization'
+import { Currency, CurrencyAmount, Trade, TradeType } from '@pancakeswap/sdk'
+import { LINE, USDT } from '@pancakeswap/tokens'
+import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import IPancakePairABI from 'config/abi/IPancakePair.json'
 import { DEFAULT_INPUT_CURRENCY, DEFAULT_OUTPUT_CURRENCY } from 'config/constants/exchange'
 import { useTradeExactIn, useTradeExactOut } from 'hooks/Trades'
@@ -33,6 +33,7 @@ import {
 import { SwapState } from './reducer'
 import { derivedPairByDataIdSelector, pairByDataIdSelector } from './selectors'
 import { PairDataTimeWindowEnum } from './types'
+import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 
 export function useSwapState(): AppState['swap'] {
   return useSelector<AppState, AppState['swap']>((state) => state.swap)
@@ -63,8 +64,9 @@ export function useSingleTokenSwapInfo(
   outputCurrencyId: string | undefined,
   outputCurrency: Currency | undefined,
 ): { [key: string]: number } {
-  const token0Address = getTokenAddress(inputCurrencyId)
-  const token1Address = getTokenAddress(outputCurrencyId)
+  const { chainId } = useActiveWeb3React()
+  const token0Address = getTokenAddress(inputCurrencyId, chainId)
+  const token1Address = getTokenAddress(outputCurrencyId, chainId)
 
   const parsedAmount = tryParseAmount('1', inputCurrency ?? undefined)
 
@@ -237,7 +239,7 @@ export function useDefaultsFromURLSearch():
 
   useEffect(() => {
     if (!chainId || !native) return
-    const parsed = queryParametersToSwapState(query, native.symbol, SNAP[chainId]?.address ?? BUSD[chainId]?.address)
+    const parsed = queryParametersToSwapState(query, native.symbol, LINE[chainId]?.address ?? USDT[chainId]?.address)
 
     dispatch(
       replaceSwapState({

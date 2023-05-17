@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Box, Text, Flex, Link, useTooltip, LightBulbIcon } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { Box, Text, Flex, Link, useTooltip, LightBulbIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import { TransactionDetails } from 'state/transactions/reducer'
 import { FarmTransactionStatus, NonBscFarmStepType } from 'state/transactions/actions'
 
@@ -72,7 +72,7 @@ const FarmResult: React.FC<React.PropsWithChildren<FarmInfoProps>> = ({ pickedDa
         <LinkStyle href="/pools?chainId=56">{t('Pools')}</LinkStyle>
         {t('and')}
         <LinkStyle href="/prediction?chainId=56">{t('Win')}</LinkStyle>
-        {t('with your SNAP earned.')}
+        {t('with your LINE earned.')}
       </ListStyle>
     </Flex>,
     { placement: 'top' },

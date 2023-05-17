@@ -1,6 +1,6 @@
-import type { FarmConfigBaseProps, SerializedFarmConfig } from '@baseswap/farms'
-import { ChainId, Currency, Token, Trade, TradeType } from '@baseswap/sdk'
-import { TradeWithStableSwap } from '@baseswap/smart-router/evm'
+import type { FarmConfigBaseProps, SerializedFarmConfig } from '@pancakeswap/farms'
+import { ChainId, Currency, Token, Trade, TradeType } from '@pancakeswap/sdk'
+import { TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import BigNumber from 'bignumber.js'
 import { StableTrade } from 'views/Swap/StableSwap/hooks/useStableTradeExactIn'
 // a list of tokens by chain
@@ -19,8 +19,8 @@ export type TranslatableText =
       }
     }
 export interface Address {
-  7001?: string
-  256256: string
+  56?: string
+  59140: string
   [chainId: number]: string
 }
 
@@ -105,6 +105,29 @@ export type PageMeta = {
   title: string
   description?: string
   image?: string
+}
+
+export enum LotteryStatus {
+  PENDING = 'pending',
+  OPEN = 'open',
+  CLOSE = 'close',
+  CLAIMABLE = 'claimable',
+}
+
+export interface LotteryTicket {
+  id: string
+  number: string
+  status: boolean
+  rewardBracket?: number
+  roundId?: string
+  cakeReward?: string
+}
+
+export interface LotteryTicketClaimData {
+  ticketsWithUnclaimedRewards: LotteryTicket[]
+  allWinningTickets: LotteryTicket[]
+  cakeTotal: BigNumber
+  roundId: string
 }
 
 // Farm Auction

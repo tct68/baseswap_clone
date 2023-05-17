@@ -10,15 +10,15 @@ import {
   TokenPairImage as UITokenPairImage,
   Balance,
   Pool,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useVaultPoolByKey, useIfoCredit } from 'state/pools/hooks'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { VaultKey } from 'state/types'
-import { getBalanceNumber } from '@baseswap/utils/formatBalance'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useConfig } from 'views/Ifos/contexts/IfoContext'
 import { CakeVaultDetail } from 'views/Pools/components/CakeVaultCard'
-import { Token } from '@baseswap/sdk'
+import { Token } from '@pancakeswap/sdk'
 
 const StyledCardMobile = styled(Card)`
   max-width: 400px;

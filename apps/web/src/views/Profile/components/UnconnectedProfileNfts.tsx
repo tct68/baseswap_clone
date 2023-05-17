@@ -1,6 +1,6 @@
-import { Grid, Text, Flex } from '@baseswap/uikit'
+import { Grid, Text, Flex } from '@pancakeswap/uikit'
 import { NftToken } from 'state/nftMarket/types'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { CollectibleLinkCard } from '../../Nft/market/components/CollectibleCard'
 import GridPlaceholder from '../../Nft/market/components/GridPlaceholder'
 import NoNftsImage from '../../Nft/market/components/Activity/NoNftsImage'

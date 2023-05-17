@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Fraction, JSBI, Percent, TradeType, ChainId } from '@baseswap/sdk'
-import { TradeWithStableSwap, Trade, isStableSwapPair } from '@baseswap/smart-router/evm'
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, TradeType, ChainId } from '@pancakeswap/sdk'
+import { TradeWithStableSwap, Trade, isStableSwapPair } from '@pancakeswap/smart-router/evm'
 
 import { BIPS_BASE, INPUT_FRACTION_AFTER_FEE, ONE_HUNDRED_PERCENT } from 'config/constants/exchange'
 import { Field } from 'state/swap/actions'
@@ -11,7 +11,13 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import { ChainMap } from 'config/constants/types'
 
 export const SMART_ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.BASE_GOERLI]: '0xbb38062B022c7d51E16Cd547264887b1950c1a32',
+  [ChainId.ETHEREUM]: '',
+  [ChainId.RINKEBY]: '',
+  [ChainId.GOERLI]: '',
+  [ChainId.BSC]: '0x2f22e47CA7C5e07F77785f616cEeE80c5E84127C',
+  [ChainId.BSC_TESTNET]: '0xCF457465fC0E98a50Bc3E1b3DDAAF1373622f059',
+  [ChainId.CMP]: '0xbb38062B022c7d51E16Cd547264887b1950c1a32',
+  [ChainId.LINEA_TESTNET]: '',
 }
 
 export function useSmartRouterContract() {

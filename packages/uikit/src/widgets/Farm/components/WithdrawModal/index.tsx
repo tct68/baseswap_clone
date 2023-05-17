@@ -1,7 +1,7 @@
 import BigNumber from "bignumber.js";
 import { useCallback, useMemo, useState } from "react";
-import { useTranslation } from "@baseswap/localization";
-import { getFullDisplayBalance } from "@baseswap/utils/formatBalance";
+import { useTranslation } from "@pancakeswap/localization";
+import { getFullDisplayBalance } from "@pancakeswap/utils/formatBalance";
 import { Button } from "../../../../components/Button";
 import { AutoRenewIcon } from "../../../../components/Svg";
 import { Message, MessageText } from "../../../../components/Message";

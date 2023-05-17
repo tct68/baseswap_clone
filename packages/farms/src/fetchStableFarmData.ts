@@ -1,6 +1,6 @@
 import { parseUnits } from '@ethersproject/units'
-import { Call, MultiCallV2 } from '@baseswap/multicall'
-import { ChainId } from '@baseswap/sdk'
+import { Call, MultiCallV2 } from '@pancakeswap/multicall'
+import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import { SerializedStableFarmConfig } from './types'
 
@@ -34,7 +34,7 @@ const stableSwapAbi = [
 
 export async function fetchStableFarmData(
   farms: SerializedStableFarmConfig[],
-  chainId = ChainId.BASE_GOERLI,
+  chainId = ChainId.LINEA_TESTNET,
   multicallv2: MultiCallV2,
 ) {
   const calls: Call[] = farms.flatMap((f) => [

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
-import { Box, Grid, GridProps, Heading, Message, MessageText } from '@baseswap/uikit'
+import { Box, Grid, GridProps, Heading, Message, MessageText } from '@pancakeswap/uikit'
 import DELIST_COLLECTIONS from 'config/constants/nftsCollections/delist'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 
 interface MarketPageTitleProps extends GridProps {
   title: string

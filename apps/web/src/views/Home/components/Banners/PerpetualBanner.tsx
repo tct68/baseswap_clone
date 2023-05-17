@@ -1,8 +1,10 @@
-import { ArrowForwardIcon, Button, Text, Link, useMatchBreakpoints, useIsomorphicEffect } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { ArrowForwardIcon, Button, Text, Link, useMatchBreakpoints, useIsomorphicEffect } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/legacy/image'
 import { memo, useMemo, useRef } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
+import { perpLangMap } from 'utils/getPerpetualLanguageCode'
+import { perpTheme } from 'utils/getPerpetualTheme'
 import { perpetualImage, perpetualMobileImage } from './images'
 import * as S from './Styled'
 
@@ -38,10 +40,11 @@ const PerpetualBanner = () => {
     currentLanguage: { code },
   } = useTranslation()
   const { isDesktop, isMobile } = useMatchBreakpoints()
+  const { isDark } = useTheme()
 
   const perpetualUrl = useMemo(
     () => `https://towerswap.finance/farms`,
-    [],
+    [code, isDark],
   )
   const headerRef = useRef<HTMLDivElement>(null)
 

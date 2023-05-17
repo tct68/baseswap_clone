@@ -9,11 +9,11 @@ import {
   useTooltip,
   LinkExternal,
   useMatchBreakpoints,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import _isEmpty from 'lodash/isEmpty'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 
 const Container = styled.div`
   margin-right: 4px;
@@ -31,7 +31,7 @@ const BoosterTooltip = () => {
   return (
     <>
       {t(
-        `Boost multiplier is calculated based on the staking conditions from both Farms and fixed-term TWS syrup pool and will be automatically updated upon user actions.`,
+        `Boost multiplier is calculated based on the staking conditions from both Farms and fixed-term LINE syrup pool and will be automatically updated upon user actions.`,
       )}
       <LinkExternal href="https://towerswap.gitbook.io/towerswap-finance/product/yield-farming" external>
         {t('Learn More')}

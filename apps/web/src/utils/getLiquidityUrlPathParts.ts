@@ -1,6 +1,6 @@
 // Constructing the two forward-slash-separated parts of the 'Add Liquidity' URL
 // Each part of the url represents a different side of the LP pair.
-import { NATIVE, WNATIVE } from '@baseswap/sdk'
+import { NATIVE, WNATIVE } from '@pancakeswap/sdk'
 
 const getLiquidityUrlPathParts = ({
   quoteTokenAddress,

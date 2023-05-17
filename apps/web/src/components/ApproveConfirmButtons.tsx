@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { ChevronRightIcon, Button as UIKitButton, AutoRenewIcon, ChevronDownIcon, Box, Flex } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { ChevronRightIcon, Button as UIKitButton, AutoRenewIcon, ChevronDownIcon, Box, Flex } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 
 export enum ButtonArrangement {
   ROW = 'row',

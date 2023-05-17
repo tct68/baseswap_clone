@@ -1,4 +1,4 @@
-import { vars } from "@baseswap/ui/css/vars.css";
+import { vars } from "@pancakeswap/ui/css/vars.css";
 import React from "react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
@@ -6,9 +6,9 @@ import { SvgProps } from "../types";
 const Logo: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   return (
     <div {...props}>
-      <img src="/images/logo.png" alt="IceCream" width="32px" style={{ verticalAlign: "middle" }} />
-      <span style={{ verticalAlign: "middle", color: "#09e4c7", fontSize: "1.2rem", fontWeight: "bold" }}>
-        TowerSwap
+      <img src="/images/256256/logo.png" alt="IceCream" width="32px" style={{ verticalAlign: "middle" }} />
+      <span style={{ verticalAlign: "middle", color: "black", fontSize: "1.6rem", fontWeight: "bold" }}>
+        LINESWAP
       </span>
     </div>
   );

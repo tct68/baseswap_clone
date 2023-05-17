@@ -8,18 +8,18 @@ import {
   Skeleton,
   Text,
   CopyAddress,
-} from '@baseswap/uikit'
-import { ChainId, WNATIVE } from '@baseswap/sdk'
+} from '@pancakeswap/uikit'
+import { ChainId, WNATIVE } from '@pancakeswap/sdk'
 import { FetchStatus } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import useAuth from 'hooks/useAuth'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import useTokenBalance, { useGetCakeBalance } from 'hooks/useTokenBalance'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 
 import { getBlockExploreLink, getBlockExploreName } from 'utils'
-import { formatBigNumber, getFullDisplayBalance } from '@baseswap/utils/formatBalance'
+import { formatBigNumber, getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { useBalance } from 'wagmi'
 // import CakeBenefitsCard from './CakeBenefitsCard'
 
@@ -37,12 +37,12 @@ interface WalletInfoProps {
 const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss }) => {
   const { t } = useTranslation()
   const { account, chainId, chain } = useActiveWeb3React()
-  const isBSC = chainId === ChainId.BASE_GOERLI
-  const bnbBalance = useBalance({ addressOrName: account, chainId: ChainId.BASE_GOERLI })
+  const isBSC = chainId === ChainId.LINEA_TESTNET
+  const bnbBalance = useBalance({ addressOrName: account, chainId: ChainId.LINEA_TESTNET })
   const nativeBalance = useBalance({ addressOrName: account, enabled: !isBSC })
   const native = useNativeCurrency()
   const wNativeToken = !isBSC ? WNATIVE[chainId] : null
-  const wBNBToken = WNATIVE[ChainId.BASE_GOERLI]
+  const wBNBToken = WNATIVE[ChainId.LINEA_TESTNET]
   const { balance: wNativeBalance, fetchStatus: wNativeFetchStatus } = useTokenBalance(wNativeToken?.address)
   const { balance: wBNBBalance, fetchStatus: wBNBFetchStatus } = useTokenBalance(wBNBToken?.address, true)
   const { balance: cakeBalance, fetchStatus: cakeFetchStatus } = useGetCakeBalance()
@@ -115,17 +115,17 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
       <Box mb="24px">
         <Flex justifyContent="space-between" alignItems="center" mb="8px">
           <Flex bg={COLORS.BNB} borderRadius="16px" pl="4px" pr="8px" py="2px">
-            <ChainLogo chainId={ChainId.BASE_GOERLI} />
+            <ChainLogo chainId={ChainId.LINEA_TESTNET} />
             <Text color="white" ml="4px">
               Caduceus Chain
             </Text>
           </Flex>
-          <LinkExternal href={getBlockExploreLink(account, 'address', ChainId.BASE_GOERLI)}>
-            {getBlockExploreName(ChainId.BASE_GOERLI)}
+          <LinkExternal href={getBlockExploreLink(account, 'address', ChainId.LINEA_TESTNET)}>
+            {getBlockExploreName(ChainId.LINEA_TESTNET)}
           </LinkExternal>
         </Flex>
         <Flex alignItems="center" justifyContent="space-between">
-          <Text color="textSubtle">CMP {t('Balance')}</Text>
+          <Text color="textSubtle">ETH {t('Balance')}</Text>
           {!bnbBalance.isFetched ? (
             <Skeleton height="22px" width="60px" />
           ) : (
@@ -134,7 +134,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
         </Flex>
         {wBNBBalance.gt(0) && (
           <Flex alignItems="center" justifyContent="space-between">
-            <Text color="textSubtle">WCMP {t('Balance')}</Text>
+            <Text color="textSubtle">WETH {t('Balance')}</Text>
             {wBNBFetchStatus !== FetchStatus.Fetched ? (
               <Skeleton height="22px" width="60px" />
             ) : (
@@ -143,7 +143,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
           </Flex>
         )}
         <Flex alignItems="center" justifyContent="space-between">
-          <Text color="textSubtle">{t('SNAP Balance')}</Text>
+          <Text color="textSubtle">{t('LINE Balance')}</Text>
           {cakeFetchStatus !== FetchStatus.Fetched ? (
             <Skeleton height="22px" width="60px" />
           ) : (

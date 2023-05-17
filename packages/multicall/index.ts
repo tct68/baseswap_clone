@@ -1,12 +1,18 @@
 import { Interface, Fragment } from '@ethersproject/abi'
 import { CallOverrides, Contract } from '@ethersproject/contracts'
 import { Provider } from '@ethersproject/providers'
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 
 import multicallAbi from './Multicall.json'
 
 export const multicallAddresses = {
-  [ChainId.BASE_GOERLI]: '0xcA11bde05977b3631167028862bE2a173976CA11',
+  1: '0xcA11bde05977b3631167028862bE2a173976CA1',
+  56: '0xcA11bde05977b3631167028862bE2a173976CA1',
+  97: '0xcA11bde05977b3631167028862bE2a173976CA1',
+  5: '0xcA11bde05977b3631167028862bE2a173976CA1',
+  4: '0xcA11bde05977b3631167028862bE2a173976CA1',
+  256256: '0x3dc18345e131a673e11401696a35e7927673eeea',
+  59140: '0xBF30437EC19b29989bff51D026b4042DD4e43Bb2',
 }
 
 export const getMulticallContract = (chainId: ChainId, provider: Provider) => {
@@ -58,7 +64,7 @@ export type MultiCall = <T = any>(abi: any[], calls: Call[], chainId?: ChainId) 
 export function createMulticall<TProvider extends Provider>(
   provider: ({ chainId }: { chainId?: number | undefined }) => TProvider,
 ) {
-  const multicall: MultiCall = async (abi: any[], calls: Call[], chainId = ChainId.BASE_GOERLI) => {
+  const multicall: MultiCall = async (abi: any[], calls: Call[], chainId = ChainId.LINEA_TESTNET) => {
     const multi = getMulticallContract(chainId, provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
     const itf = new Interface(abi)
@@ -77,7 +83,7 @@ export function createMulticall<TProvider extends Provider>(
   const multicallv2: MultiCallV2 = async ({
     abi,
     calls,
-    chainId = ChainId.BASE_GOERLI,
+    chainId = ChainId.LINEA_TESTNET,
     options,
     provider: _provider,
   }) => {
@@ -100,7 +106,7 @@ export function createMulticall<TProvider extends Provider>(
     return res as any
   }
 
-  const multicallv3 = async ({ calls, chainId = ChainId.BASE_GOERLI, allowFailure, overrides }: MulticallV3Params) => {
+  const multicallv3 = async ({ calls, chainId = ChainId.LINEA_TESTNET, allowFailure, overrides }: MulticallV3Params) => {
     const multi = getMulticallContract(chainId, provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
     const interfaceCache = new WeakMap()

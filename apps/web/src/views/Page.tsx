@@ -1,6 +1,6 @@
-import { useTranslation } from '@baseswap/localization'
-import { Swap } from '@baseswap/uikit'
-import { ChainId } from '@baseswap/sdk'
+import { useTranslation } from '@pancakeswap/localization'
+import { Swap } from '@pancakeswap/uikit'
+import { ChainId } from '@pancakeswap/sdk'
 import { PageMeta } from 'components/Layout/Page'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { EXCHANGE_HELP_URLS } from 'config/constants'
@@ -22,8 +22,8 @@ const Page: React.FC<
 }) => {
   const { t } = useTranslation()
   const { chainId } = useActiveChainId()
-  const isBSC = chainId === ChainId.BASE_GOERLI
-  const externalText = isBSC ? t('Bridge your Asset to CMP chain') : ''
+  const isBSC = chainId === ChainId.LINEA_TESTNET
+  const externalText = isBSC ? t('Bridge your Asset to LINEA_TESTNET chain') : ''
   const externalLinkUrl = isBSC ? 'https://app.multichain.org/#/router' : ''
 
   return (

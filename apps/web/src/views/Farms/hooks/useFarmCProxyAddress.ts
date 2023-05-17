@@ -1,10 +1,10 @@
 import useSWR from 'swr'
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import { fetchCProxyAddress } from 'state/farms/fetchFarmUser'
 import { farmFetcher } from 'state/farms'
 
 export const useFarmCProxyAddress = (account?: string, chainId?: number) => {
-  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI
+  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.BSC : ChainId.LINEA_TESTNET
   const { data } = useSWR(account && chainId && ['cProxyAddress', account, chainId], async () =>
     fetchCProxyAddress(account, multiCallChainId),
   )

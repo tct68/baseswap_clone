@@ -1,8 +1,8 @@
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
-import { useTranslation } from '@baseswap/localization'
-import { Currency, CurrencyAmount, Trade, TradeType } from '@baseswap/sdk'
-import { useToast } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Currency, CurrencyAmount, Trade, TradeType } from '@pancakeswap/sdk'
+import { useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { ROUTER_ADDRESS } from 'config/constants/exchange'
 import { useCallback, useMemo } from 'react'
@@ -11,6 +11,7 @@ import { Field } from '../state/swap/actions'
 import { useHasPendingApproval, useTransactionAdder } from '../state/transactions/hooks'
 import { calculateGasMargin } from '../utils'
 import { computeSlippageAdjustedAmounts } from '../utils/exchange'
+import useGelatoLimitOrdersLib from './limitOrders/useGelatoLimitOrdersLib'
 import { useCallWithGasPrice } from './useCallWithGasPrice'
 import { useTokenContract } from './useContract'
 import useTokenAllowance from './useTokenAllowance'
@@ -138,4 +139,11 @@ export function useApproveCallbackFromTrade(
   )
 
   return useApproveCallback(amountToApprove, ROUTER_ADDRESS[chainId])
+}
+
+// Wraps useApproveCallback in the context of a Gelato Limit Orders
+export function useApproveCallbackFromInputCurrencyAmount(currencyAmountIn: CurrencyAmount<Currency> | undefined) {
+  const gelatoLibrary = useGelatoLimitOrdersLib()
+
+  return useApproveCallback(currencyAmountIn, gelatoLibrary?.erc20OrderRouter.address ?? undefined)
 }

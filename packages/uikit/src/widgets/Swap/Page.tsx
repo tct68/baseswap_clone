@@ -1,4 +1,4 @@
-import { AtomBox, AtomBoxProps } from "@baseswap/ui";
+import { AtomBox, AtomBoxProps } from "@pancakeswap/ui";
 import { ReactNode } from "react";
 import { SwapFooter } from "./Footer";
 import { pageVariants } from "./SwapWidget.css";

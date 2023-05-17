@@ -7,7 +7,7 @@ import { getCompleteAccountNftData } from 'state/nftMarket/helpers'
 import useSWR from 'swr'
 import { FetchStatus } from 'config/constants/types'
 import { laggyMiddleware } from 'hooks/useSWRContract'
-import { usePreviousValue } from '@baseswap/hooks'
+import { usePreviousValue } from '@pancakeswap/hooks'
 import { isAddress } from 'utils'
 
 export const useNftsForAddress = (account: string, profile: Profile, isProfileFetching: boolean) => {

@@ -1,12 +1,12 @@
 import BigNumber from 'bignumber.js'
-import { useTranslation } from '@baseswap/localization'
-import { getBalanceAmount } from '@baseswap/utils/formatBalance'
+import { useTranslation } from '@pancakeswap/localization'
+import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 
 import { useMemo } from 'react'
 
 export const useUserEnoughCakeValidator = (cakeAmount: string, stakingTokenBalance: BigNumber) => {
   const { t } = useTranslation()
-  const errorMessage = t('Insufficient SNAP balance')
+  const errorMessage = t('Insufficient TW balance')
 
   const userNotEnoughCake = useMemo(() => {
     if (new BigNumber(cakeAmount).gt(getBalanceAmount(stakingTokenBalance, 18))) return true

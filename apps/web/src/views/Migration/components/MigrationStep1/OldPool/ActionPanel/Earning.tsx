@@ -1,12 +1,12 @@
 import React from 'react'
-import { Text, Flex, Heading, useMatchBreakpoints, Balance, Pool } from '@baseswap/uikit'
+import { Text, Flex, Heading, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { getBalanceNumber } from '@baseswap/utils/formatBalance'
-import { useTranslation } from '@baseswap/localization'
-import { BIG_ZERO } from '@baseswap/utils/bigNumber'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { useTranslation } from '@pancakeswap/localization'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { ActionContainer, ActionTitles, ActionContent } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
-import { Token } from '@baseswap/sdk'
+import { Token } from '@pancakeswap/sdk'
 
 const Container = styled(ActionContainer)`
   flex: 2;

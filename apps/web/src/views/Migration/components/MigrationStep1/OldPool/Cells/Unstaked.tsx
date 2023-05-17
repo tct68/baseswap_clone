@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Token } from '@baseswap/sdk'
-import { Pool } from '@baseswap/uikit'
+import { Token } from '@pancakeswap/sdk'
+import { Pool } from '@pancakeswap/uikit'
 
 import UnstakeButton from '../UnstakeButton'
 

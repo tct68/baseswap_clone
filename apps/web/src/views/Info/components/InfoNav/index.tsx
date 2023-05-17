@@ -8,10 +8,10 @@ import {
   UserMenuItem,
   Text,
   NextLinkFromReactRouter,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useCallback } from 'react'
-import { ChainId } from '@baseswap/sdk'
-import { useTranslation } from '@baseswap/localization'
+import { ChainId } from '@pancakeswap/sdk'
+import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Search from 'views/Info/components/InfoSearch'
@@ -20,7 +20,7 @@ import { multiChainId, multiChainPaths } from 'state/info/constant'
 import { chains } from 'utils/wagmi'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { useAccount } from 'wagmi'
-import { mainnet } from '@baseswap/wagmi/chains'
+import { bsc, mainnet } from '@pancakeswap/wagmi/chains'
 
 const NavWrapper = styled(Flex)`
   background: ${({ theme }) => theme.colors.gradientCardHeader};
@@ -75,7 +75,7 @@ const InfoNav: React.FC<{ isStableSwap: boolean }> = ({ isStableSwap }) => {
   )
 }
 
-const targetChains = [mainnet]
+const targetChains = [mainnet, bsc]
 
 export const NetworkSwitcher: React.FC<{ activeIndex: number }> = ({ activeIndex }) => {
   const { t } = useTranslation()

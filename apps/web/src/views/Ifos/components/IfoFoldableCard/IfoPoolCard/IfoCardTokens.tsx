@@ -14,15 +14,15 @@ import {
   MessageText,
   ErrorIcon,
   BalanceWithLoading,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
-import { Token } from '@baseswap/sdk'
+import { Token } from '@pancakeswap/sdk'
 import { Ifo, PoolIds } from 'config/constants/types'
-import { baseGoerliTokens } from '@baseswap/tokens'
+import { bscTokens } from '@pancakeswap/tokens'
 import { cakeBnbLpToken } from 'config/constants/ifo'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
-import { useTranslation } from '@baseswap/localization'
-import { getBalanceNumber, formatNumber } from '@baseswap/utils/formatBalance'
+import { useTranslation } from '@pancakeswap/localization'
+import { getBalanceNumber, formatNumber } from '@pancakeswap/utils/formatBalance'
 import { useIfoCredit } from 'state/pools/hooks'
 import { TokenImage, TokenPairImage } from 'components/TokenImage'
 import { EnableStatus } from '../types'
@@ -78,7 +78,7 @@ const CommitTokenSection: React.FC<React.PropsWithChildren<TokenSectionProps & {
   ...props
 }) => {
   if (commitToken.equals(cakeBnbLpToken)) {
-    return <TokenSection primaryToken={baseGoerliTokens.tw} secondaryToken={baseGoerliTokens.usdt} {...props} />
+    return <TokenSection primaryToken={bscTokens.cake} secondaryToken={bscTokens.wbnb} {...props} />
   }
   return <TokenSection primaryToken={commitToken} {...props} />
 }

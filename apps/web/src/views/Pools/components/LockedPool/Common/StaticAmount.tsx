@@ -1,6 +1,6 @@
-import { Text, Flex, Image, Box, BalanceWithLoading } from '@baseswap/uikit'
+import { Text, Flex, Image, Box, BalanceWithLoading } from '@pancakeswap/uikit'
 import Divider from 'components/Divider'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { StaticAmountPropsType } from '../types'
 
 const StaticAmount: React.FC<React.PropsWithChildren<StaticAmountPropsType>> = ({
@@ -14,7 +14,7 @@ const StaticAmount: React.FC<React.PropsWithChildren<StaticAmountPropsType>> = (
   return (
     <>
       <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-        {t('Add SNAP to lock')}
+        {t('Add TW to lock')}
       </Text>
       <Flex alignItems="center" justifyContent="space-between" mb="16px">
         <Box>

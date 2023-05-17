@@ -1,11 +1,11 @@
 import masterchefABI from 'config/abi/masterchef.json'
 import chunk from 'lodash/chunk'
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import { multicallv2 } from 'utils/multicall'
-import { BIG_ZERO } from '@baseswap/utils/bigNumber'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { farmFetcher } from 'state/farms'
-import { SerializedFarm } from '@baseswap/farms'
+import { SerializedFarm } from '@pancakeswap/farms'
 import { SerializedFarmConfig } from '../../config/constants/types'
 import { getMasterChefAddress } from '../../utils/addressHelpers'
 
@@ -31,7 +31,7 @@ export const fetchMasterChefFarmPoolLength = async (chainId: number) => {
 
 const masterChefFarmCalls = async (farm: SerializedFarm) => {
   const { pid, quoteToken } = farm
-  const multiCallChainId = farmFetcher.isTestnet(quoteToken.chainId) ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI
+  const multiCallChainId = farmFetcher.isTestnet(quoteToken.chainId) ? ChainId.BSC : ChainId.LINEA_TESTNET
   const masterChefAddress = getMasterChefAddress(multiCallChainId)
   const masterChefPid = pid
 
@@ -57,7 +57,7 @@ export const fetchMasterChefData = async (farms: SerializedFarmConfig[], chainId
     .filter((masterChefCall) => masterChefCall[0] !== null && masterChefCall[1] !== null)
     .flat()
 
-  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.BASE_GOERLI : ChainId.BASE_GOERLI
+  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.BSC : ChainId.LINEA_TESTNET
   const masterChefMultiCallResult = await multicallv2({
     abi: masterchefABI,
     calls: masterChefAggregatedCalls,

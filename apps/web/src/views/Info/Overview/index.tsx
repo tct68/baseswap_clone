@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { Card, Flex, Heading, Message, MessageText } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Card, Flex, Heading, Message, MessageText } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
 import { useMemo } from 'react'
 import { checkIsStableSwap } from 'state/info/constant'

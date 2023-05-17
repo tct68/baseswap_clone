@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { LinkExternal, ModalV2 } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { LinkExternal, ModalV2 } from '@pancakeswap/uikit'
 import DisclaimerModal from 'components/DisclaimerModal'
 import { ConnectorNames, getDocLink } from 'config/wallet'
 import { ExtendEthereum } from 'global'
@@ -38,7 +38,7 @@ function BloctoWarning() {
         header={
           <>
             {t(
-              'Crosschain farming on Ethereum does NOT support Blocto wallet, as you won’t be able to harvest TWS rewards.',
+              'Crosschain farming on Ethereum does NOT support Blocto wallet, as you won’t be able to harvest LINE rewards.',
             )}
             <LinkExternal href={getDocLink(code)} mt="4px">
               {t('Check out our wallet guide for the list of supported wallets.')}

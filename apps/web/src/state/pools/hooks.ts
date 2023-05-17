@@ -7,10 +7,10 @@ import { useFastRefreshEffect, useSlowRefreshEffect } from 'hooks/useRefreshEffe
 import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
 import { FAST_INTERVAL } from 'config/constants'
 import useSWRImmutable from 'swr/immutable'
-import { getFarmConfig } from '@baseswap/farms/constants'
+import { getFarmConfig } from '@pancakeswap/farms/constants'
 import { livePools } from 'config/constants/pools'
-import { Pool } from '@baseswap/uikit'
-import { Token } from '@baseswap/sdk'
+import { Pool } from '@pancakeswap/uikit'
+import { Token } from '@pancakeswap/sdk'
 
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import {
@@ -48,8 +48,8 @@ const getActiveFarms = async (chainId: number) => {
     .filter(
       ({ token, pid, quoteToken }) =>
         pid !== 0 &&
-        ((token.symbol === 'SNAP' && quoteToken.symbol === 'WCMP') ||
-          (token.symbol === 'USDT' && quoteToken.symbol === 'WCMP') ||
+        ((token.symbol === 'LINE' && quoteToken.symbol === 'WETH') ||
+          (token.symbol === 'USDT' && quoteToken.symbol === 'WETH') ||
           lPoolAddresses.find((poolAddress) => poolAddress === token.address)),
     )
     .map((farm) => farm.pid)
@@ -61,8 +61,8 @@ const getCakePriceFarms = async (chainId: number) => {
     .filter(
       ({ token, pid, quoteToken }) =>
         pid !== 0 &&
-        ((token.symbol === 'SNAP' && quoteToken.symbol === 'WCMP') ||
-          (token.symbol === 'USDT' && quoteToken.symbol === 'WCMP')),
+        ((token.symbol === 'LINE' && quoteToken.symbol === 'WETH') ||
+          (token.symbol === 'USDT' && quoteToken.symbol === 'WETH')),
     )
     .map((farm) => farm.pid)
 }

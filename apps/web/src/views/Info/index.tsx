@@ -1,6 +1,6 @@
-import { useTranslation } from '@baseswap/localization'
-import { ChainId } from '@baseswap/sdk'
-import { SubMenuItems } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@pancakeswap/sdk'
+import { SubMenuItems } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useEffect } from 'react'
 import { useGetChainName } from 'state/info/hooks'
@@ -16,8 +16,10 @@ export const InfoPageLayout = ({ children }) => {
   const { t } = useTranslation()
 
   useEffect(() => {
-    if (account && chainId === ChainId.BASE_GOERLI && router.query.chainName === 'eth')
+    if (account && chainId === ChainId.LINEA_TESTNET && router.query.chainName === 'eth')
       router.replace('/info', undefined, { shallow: true })
+    if (account && chainId === ChainId.ETHEREUM && router.query.chainName !== 'eth')
+      router.replace('/info/eth', undefined, { shallow: true })
   }, [chainId, account, chainName, router])
 
   const isStableSwap = router.query.type === 'stableSwap'

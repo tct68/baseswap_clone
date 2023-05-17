@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTranslation } from '@baseswap/localization'
-import { Flex, Text, HelpIcon, useTooltip, Pool } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Text, HelpIcon, useTooltip, Pool } from '@pancakeswap/uikit'
 
 const StyledCell = styled(Pool.BaseCell)`
   display: none;
@@ -38,11 +38,11 @@ const Multiplier: React.FC<React.PropsWithChildren<MultiplierProps>> = ({ multip
     <>
       <Text>
         {t(
-          'The Multiplier represents the proportion of SNAP rewards each farm receives, as a proportion of the SNAP produced each block.',
+          'The Multiplier represents the proportion of TW rewards each farm receives, as a proportion of the TW produced each block.',
         )}
       </Text>
       <Text my="24px">
-        {t('For example, if a 1x farm received 1 SNAP per block, a 40x farm would receive 40 SNAP per block.')}
+        {t('For example, if a 1x farm received 1 TW per block, a 40x farm would receive 40 TW per block.')}
       </Text>
       <Text>{t('This amount is already included in all APR calculations for the farm.')}</Text>
     </>

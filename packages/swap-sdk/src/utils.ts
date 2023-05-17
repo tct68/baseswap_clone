@@ -2,7 +2,7 @@ import { getAddress } from '@ethersproject/address'
 import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import warning from 'tiny-warning'
-import { BigintIsh, Currency, CurrencyAmount, Percent, Price } from '@baseswap/swap-sdk-core'
+import { BigintIsh, Currency, CurrencyAmount, Percent, Price } from '@pancakeswap/swap-sdk-core'
 
 // warns if addresses are not checksummed
 export function validateAndParseAddress(address: string): string {

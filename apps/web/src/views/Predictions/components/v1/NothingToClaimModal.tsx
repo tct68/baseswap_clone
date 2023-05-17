@@ -12,8 +12,8 @@ import {
   ModalCloseButton,
   Button,
   AutoRenewIcon,
-} from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import { getAllV1History } from './helpers'
 
 const Modal = styled(ModalContainer)`

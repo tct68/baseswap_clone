@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { Button, Flex, Heading, TooltipText, useToast, useTooltip, useModal, Balance } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Button, Flex, Heading, TooltipText, useToast, useTooltip, useModal, Balance } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { ToastDescriptionWithTx } from 'components/Toast'
@@ -7,9 +7,9 @@ import useCatchTxError from 'hooks/useCatchTxError'
 
 import { TransactionResponse } from '@ethersproject/providers'
 import { usePriceCakeBusd } from 'state/farms/hooks'
-import { BIG_ZERO } from '@baseswap/utils/bigNumber'
-import { getBalanceAmount } from '@baseswap/utils/formatBalance'
-import { Token } from '@baseswap/sdk'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
+import { Token } from '@pancakeswap/sdk'
 import MultiChainHarvestModal from 'views/Farms/components/MultiChainHarvestModal'
 
 interface FarmCardActionsProps {
@@ -46,7 +46,7 @@ const HarvestAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = (
   const tooltipBalance = rawEarningsBalance.isGreaterThan(new BigNumber(0.00001)) ? displayBalance : '< 0.00001'
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     `${tooltipBalance} ${t(
-      `TWS has been harvested to the farm booster contract and will be automatically sent to your wallet upon the next harvest.`,
+      `LINE has been harvested to the farm booster contract and will be automatically sent to your wallet upon the next harvest.`,
     )}`,
     {
       placement: 'bottom',
@@ -69,7 +69,7 @@ const HarvestAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = (
       toastSuccess(
         `${t('Harvested')}!`,
         <ToastDescriptionWithTx txHash={receipt.transactionHash}>
-          {t('Your %symbol% earnings have been sent to your wallet!', { symbol: 'TWS' })}
+          {t('Your %symbol% earnings have been sent to your wallet!', { symbol: 'LINE' })}
         </ToastDescriptionWithTx>,
       )
       onDone?.()

@@ -1,4 +1,4 @@
-import { ContextApi } from '@baseswap/localization'
+import { ContextApi } from '@pancakeswap/localization'
 
 type FAQsType = {
   t: ContextApi['t']

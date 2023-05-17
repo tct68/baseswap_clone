@@ -1,7 +1,7 @@
-import { Button, Flex, Heading, NextLinkFromReactRouter } from '@baseswap/uikit'
+import { Button, Flex, Heading, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/legacy/image'
 import styled, { keyframes } from 'styled-components'
 import bunnyImage from '../../../../public/images/home/lunar-bunny/astronaut-bunni.png'
@@ -120,10 +120,10 @@ const Hero = () => {
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <Heading scale="xxl" color="white" mb="24px">
-            {t('Tower Swap Exchange')}
+          <Heading scale="xxl" color="black" mb="24px">
+            {t('LineSwap')}
           </Heading>
-          <Heading scale="md" color="white" mb="24px">
+          <Heading scale="md" color="black" mb="24px">
             {t(
               'Decentralized Exchange Made For Everybody. Swap, Farm, Stake, Earn passive income and increase your financial freedom by trade on TowerSwap exchange.',
             )}

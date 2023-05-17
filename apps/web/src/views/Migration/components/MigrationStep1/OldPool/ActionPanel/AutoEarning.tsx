@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Heading, useMatchBreakpoints, Balance } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { Text, Flex, Heading, useMatchBreakpoints, Balance } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import { ActionContainer, ActionTitles, ActionContent } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
 
 const Container = styled(ActionContainer)`

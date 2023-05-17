@@ -1,7 +1,8 @@
-import { ChainId, Pair, ERC20Token } from '@baseswap/sdk'
-import { deserializeToken } from '@baseswap/token-lists'
+import { ChainId, Pair, ERC20Token } from '@pancakeswap/sdk'
+import { deserializeToken } from '@pancakeswap/token-lists'
+import { differenceInDays } from 'date-fns'
 import flatMap from 'lodash/flatMap'
-import { getFarmConfig } from '@baseswap/farms/constants'
+import { getFarmConfig } from '@pancakeswap/farms/constants'
 import { useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from 'config/constants/exchange'
@@ -9,7 +10,7 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useSWRImmutable from 'swr/immutable'
 import { useFeeData } from 'wagmi'
 import { useOfficialsAndUserAddedTokens } from 'hooks/Tokens'
-import { useWeb3LibraryContext } from '@baseswap/wagmi'
+import { useWeb3LibraryContext } from '@pancakeswap/wagmi'
 import useSWR from 'swr'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { AppState, useAppDispatch } from '../../index'
@@ -38,6 +39,7 @@ import {
   updateUserPredictionAcceptedRisk,
   updateUserUsernameVisibility,
   updateUserExpertModeAcknowledgementShow,
+  hidePhishingWarningBanner,
   setIsExchangeChartDisplayed,
   ChartViewMode,
   setChartViewMode,
@@ -60,6 +62,23 @@ export function useAudioModeManager(): [boolean, () => void] {
   }, [audioPlay, dispatch])
 
   return [audioPlay, toggleSetAudioMode]
+}
+
+export function usePhishingBannerManager(): [boolean, () => void] {
+  const dispatch = useAppDispatch()
+  const hideTimestampPhishingWarningBanner = useSelector<
+    AppState,
+    AppState['user']['hideTimestampPhishingWarningBanner']
+  >((state) => state.user.hideTimestampPhishingWarningBanner)
+  const now = Date.now()
+  const showPhishingWarningBanner = hideTimestampPhishingWarningBanner
+    ? differenceInDays(now, hideTimestampPhishingWarningBanner) >= 1
+    : true
+  const hideBanner = useCallback(() => {
+    dispatch(hidePhishingWarningBanner())
+  }, [dispatch])
+
+  return [showPhishingWarningBanner, hideBanner]
 }
 
 // Get user preference for exchange price chart
@@ -394,7 +413,7 @@ export function useGasPrice(chainIdOverride?: number): string {
   const { data: bscProviderGasPrice = GAS_PRICE_GWEI.default } = useSWR(
     library &&
       library.provider &&
-      chainId === ChainId.BASE_GOERLI &&
+      chainId === ChainId.LINEA_TESTNET &&
       userGas === GAS_PRICE_GWEI.rpcDefault && ['bscProviderGasPrice', library.provider],
     async () => {
       const gasPrice = await library.getGasPrice()
@@ -407,13 +426,13 @@ export function useGasPrice(chainIdOverride?: number): string {
   )
   const { data } = useFeeData({
     chainId,
-    enabled: chainId !== ChainId.BASE_GOERLI && chainId !== ChainId.BASE_GOERLI,
+    enabled: chainId !== ChainId.LINEA_TESTNET && chainId !== ChainId.LINEA_TESTNET,
     watch: true,
   })
-  if (chainId === ChainId.BASE_GOERLI) {
+  if (chainId === ChainId.LINEA_TESTNET) {
     return userGas === GAS_PRICE_GWEI.rpcDefault ? bscProviderGasPrice : userGas
   }
-  if (chainId === ChainId.BASE_GOERLI) {
+  if (chainId === ChainId.LINEA_TESTNET) {
     return GAS_PRICE_GWEI.testnet
   }
   if (chain?.testnet) {
@@ -460,7 +479,7 @@ export function usePairAdder(): (pair: Pair) => void {
  * @param tokenB the other token
  */
 export function toV2LiquidityToken([tokenA, tokenB]: [ERC20Token, ERC20Token]): ERC20Token {
-  return new ERC20Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'Tower LPs', 'Towerswap-LP')
+  return new ERC20Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'LineSwap LPs', 'Line-LP')
 }
 
 /**

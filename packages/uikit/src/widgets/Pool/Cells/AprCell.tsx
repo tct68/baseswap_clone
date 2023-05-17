@@ -1,7 +1,7 @@
-import { BIG_ZERO } from "@baseswap/utils/bigNumber";
-import { Text, useMatchBreakpoints, Pool } from "@baseswap/uikit";
+import { BIG_ZERO } from "@pancakeswap/utils/bigNumber";
+import { Text, useMatchBreakpoints, Pool } from "@pancakeswap/uikit";
 import BigNumber from "bignumber.js";
-import { useTranslation } from "@baseswap/localization";
+import { useTranslation } from "@pancakeswap/localization";
 import { createElement, FunctionComponent } from "react";
 
 interface AprCellProps<T> {

@@ -1,6 +1,7 @@
 import { TransactionResponse } from '@ethersproject/providers'
 import { useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'
+import { Order } from '@gelatonetwork/limit-orders-lib'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import pickBy from 'lodash/pickBy'
 import mapValues from 'lodash/mapValues'
@@ -29,6 +30,7 @@ export function useTransactionAdder(): (
     approval?: { tokenAddress: string; spender: string }
     claim?: { recipient: string }
     type?: TransactionType
+    order?: Order
     nonBscFarm?: NonBscFarmTransactionType
   },
 ) => void {
@@ -44,6 +46,7 @@ export function useTransactionAdder(): (
         approval,
         claim,
         type,
+        order,
         nonBscFarm,
       }: {
         summary?: string
@@ -51,6 +54,7 @@ export function useTransactionAdder(): (
         claim?: { recipient: string }
         approval?: { tokenAddress: string; spender: string }
         type?: TransactionType
+        order?: Order
         nonBscFarm?: NonBscFarmTransactionType
       } = {},
     ) => {
@@ -71,6 +75,7 @@ export function useTransactionAdder(): (
           translatableSummary,
           claim,
           type,
+          order,
           nonBscFarm,
         }),
       )

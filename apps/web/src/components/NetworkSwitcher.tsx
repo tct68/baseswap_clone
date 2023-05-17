@@ -1,5 +1,5 @@
-import { useTranslation } from '@baseswap/localization'
-import { ChainId, NATIVE } from '@baseswap/sdk'
+import { useTranslation } from '@pancakeswap/localization'
+import { ChainId, NATIVE } from '@pancakeswap/sdk'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -12,7 +12,7 @@ import {
   UserMenuDivider,
   UserMenuItem,
   useTooltip,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import { useAccount, useNetwork } from 'wagmi'
 import { useActiveChainId, useLocalNetworkChain } from 'hooks/useActiveChainId'
 import { useNetworkConnectorUpdater } from 'hooks/useActiveWeb3React'
@@ -22,7 +22,14 @@ import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
 import { useMemo } from 'react'
 import { useRouter } from 'next/router'
 import { chains } from 'utils/wagmi'
+import Image from 'next/image'
+
 import { ChainLogo } from './Logo/ChainLogo'
+
+const AptosChain = {
+  id: 1,
+  name: 'Aptos',
+}
 
 const NetworkSelect = ({ switchNetwork, chainId }) => {
   const { t } = useTranslation()
@@ -67,7 +74,7 @@ const WrongNetworkSelect = ({ switchNetwork, chainId }) => {
     },
   )
   const { chain } = useNetwork()
-  const localChainId = useLocalNetworkChain() || ChainId.BASE_GOERLI
+  const localChainId = useLocalNetworkChain() || ChainId.LINEA_TESTNET
   const [, setSessionChainId] = useSessionChainId()
 
   const localChainName = chains.find((c) => c.id === localChainId)?.name ?? 'BSC'

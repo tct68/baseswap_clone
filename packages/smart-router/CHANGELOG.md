@@ -1,4 +1,4 @@
-# @baseswap/smart-router
+# @pancakeswap/smart-router
 
 ## 0.6.0
 
@@ -30,7 +30,7 @@
 
 - 1e4a4b27c: Fix missing dependencies
 - Updated dependencies [1e4a4b27c]
-  - @baseswap/multicall@0.0.2
+  - @pancakeswap/multicall@0.0.2
 
 ## 0.2.0
 

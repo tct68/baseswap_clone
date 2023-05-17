@@ -1,4 +1,4 @@
-import { useModal, useMatchBreakpoints } from '@baseswap/uikit'
+import { useModal, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { PageMeta } from 'components/Layout/Page'
 import { useEffect, useRef } from 'react'

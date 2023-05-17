@@ -1,5 +1,5 @@
-import { Flex, Text } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import { BNBAmountLabel } from './styles'
 import { CollectionCard } from './index'
 

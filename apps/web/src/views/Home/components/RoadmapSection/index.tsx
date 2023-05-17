@@ -1,5 +1,5 @@
-import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@baseswap/uikit'
-import { useTranslation } from '@baseswap/localization'
+import { Text, Heading, Card, CardHeader, CardBody, CircleOutlineIcon, Flex } from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
 import { LandingBodyWrapper } from '../styles'
 import config from './config'
 
@@ -10,7 +10,7 @@ const FaqSection = () => {
     <LandingBodyWrapper>
       <LandingBodyWrapper>
         <Flex flexDirection="column">
-          <Heading scale="xl" color="#caf3f4" display="block" marginLeft="40px">
+          <Heading scale="xl" color="black" display="block" marginLeft="40px">
             {t('Roadmap')}
           </Heading>
           <Flex flexDirection="column">
@@ -43,7 +43,7 @@ const FaqSection = () => {
                 </div>
                 <Card marginY="8px" style={{ flexGrow: '1' }}>
                   <CardHeader>
-                    <Heading scale="lg" color="secondary">
+                    <Heading scale="lg" color="white">
                       {roadblock.title}
                     </Heading>
                   </CardHeader>

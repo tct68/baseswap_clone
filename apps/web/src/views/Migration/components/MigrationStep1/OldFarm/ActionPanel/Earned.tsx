@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { useTranslation } from '@baseswap/localization'
-import { Flex, Heading, Text, useMatchBreakpoints, Balance } from '@baseswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Heading, Text, useMatchBreakpoints, Balance } from '@pancakeswap/uikit'
 import { ActionContainer, ActionContent, ActionTitles } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
 import { usePriceCakeBusd } from 'state/farmsV1/hooks'
 import { EarnedProps } from '../../../Farm/Cells/Earned'
@@ -30,7 +30,7 @@ const Earned: React.FC<React.PropsWithChildren<EarnedProps>> = ({ earnings }) =>
   if (isMobile) {
     return (
       <Flex justifyContent="space-between">
-        <Text>{`SNAP ${t('Earned')}`}</Text>
+        <Text>{`TW ${t('Earned')}`}</Text>
         <Flex height="20px" alignItems="center">
           {Number(displayBalance) ? (
             <Balance fontSize="16px" value={Number(displayBalance)} />
@@ -46,7 +46,7 @@ const Earned: React.FC<React.PropsWithChildren<EarnedProps>> = ({ earnings }) =>
     <Container>
       <ActionTitles>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
-          {`SNAP ${t('Earned')}`}
+          {`TW ${t('Earned')}`}
         </Text>
       </ActionTitles>
       <ActionContent>

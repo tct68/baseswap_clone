@@ -1,12 +1,12 @@
-import { Trade, TradeType, CurrencyAmount, Currency } from '@baseswap/sdk'
-import { Button, Text, ErrorIcon, ArrowDownIcon } from '@baseswap/uikit'
+import { Trade, TradeType, CurrencyAmount, Currency } from '@pancakeswap/sdk'
+import { Button, Text, ErrorIcon, ArrowDownIcon } from '@pancakeswap/uikit'
 import { Field } from 'state/swap/actions'
-import { useTranslation } from '@baseswap/localization'
+import { useTranslation } from '@pancakeswap/localization'
 import { basisPointsToPercent } from 'utils/exchange'
 import { AutoColumn } from 'components/Layout/Column'
 import { CurrencyLogo } from 'components/Logo'
 import { RowBetween, RowFixed } from 'components/Layout/Row'
-import truncateHash from '@baseswap/utils/truncateHash'
+import truncateHash from '@pancakeswap/utils/truncateHash'
 import { TruncatedText, SwapShowAcceptChanges } from '../../components/styleds'
 
 export default function StableSwapModalHeader({

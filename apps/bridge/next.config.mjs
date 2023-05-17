@@ -4,13 +4,13 @@ import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
 
 const withVanillaExtract = createVanillaExtractPlugin()
 const withTH = transpileModules([
-  '@baseswap/uikit',
-  '@baseswap/wagmi',
-  '@baseswap/sdk',
-  '@baseswap/ui',
-  '@baseswap/hooks',
-  '@baseswap/localization',
-  '@baseswap/utils',
+  '@pancakeswap/uikit',
+  '@pancakeswap/wagmi',
+  '@pancakeswap/sdk',
+  '@pancakeswap/ui',
+  '@pancakeswap/hooks',
+  '@pancakeswap/localization',
+  '@pancakeswap/utils',
 ])
 
 /** @type {import('next').NextConfig} */

@@ -1,5 +1,5 @@
 import { useCallback, useState, useRef, useEffect } from 'react'
-import { Currency, Token } from '@baseswap/sdk'
+import { Currency, Token } from '@pancakeswap/sdk'
 import {
   ModalContainer,
   ModalHeader,
@@ -12,11 +12,11 @@ import {
   Button,
   useMatchBreakpoints,
   MODAL_SWIPE_TO_CLOSE_VELOCITY,
-} from '@baseswap/uikit'
+} from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { usePreviousValue } from '@baseswap/hooks'
-import { TokenList } from '@baseswap/token-lists'
-import { useTranslation } from '@baseswap/localization'
+import { usePreviousValue } from '@pancakeswap/hooks'
+import { TokenList } from '@pancakeswap/token-lists'
+import { useTranslation } from '@pancakeswap/localization'
 import CurrencySearch from './CurrencySearch'
 import ImportToken from './ImportToken'
 import Manage from './Manage'

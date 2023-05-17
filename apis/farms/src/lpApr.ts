@@ -1,11 +1,11 @@
 /* eslint-disable no-restricted-syntax */
-import { ChainId } from '@baseswap/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import BigNumber from 'bignumber.js'
 import { gql, GraphQLClient } from 'graphql-request'
 import getUnixTime from 'date-fns/getUnixTime'
 import sub from 'date-fns/sub'
-import { AprMap } from '@baseswap/farms'
+import { AprMap } from '@pancakeswap/farms'
 
 interface BlockResponse {
   blocks: {
@@ -19,11 +19,21 @@ const LP_HOLDERS_FEE = 0.0017
 const WEEKS_IN_A_YEAR = 52.1429
 
 const BLOCKS_CLIENT_WITH_CHAIN = {
-  [ChainId.BASE_GOERLI]: 'https://api.thegraph.com/subgraphs/name/smartdev1990/blocks',
+  [ChainId.BSC]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/blocks',
+  [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
+  [ChainId.BSC_TESTNET]: '',
+  [ChainId.GOERLI]: '',
+  [ChainId.RINKEBY]: '',
+  [ChainId.CMP_TESTNET]: 'https://api.thegraph.com/subgraphs/name/smartdev1990/blocks',
 }
 
 const INFO_CLIENT_WITH_CHAIN = {
-  [ChainId.BASE_GOERLI]: 'https://api.thegraph.com/subgraphs/name/smartdev1990/exchangev2',
+  [ChainId.BSC]: 'https://proxy-worker.pancake-swap.workers.dev/bsc-exchange',
+  [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth',
+  [ChainId.BSC_TESTNET]: '',
+  [ChainId.GOERLI]: '',
+  [ChainId.RINKEBY]: '',
+  [ChainId.CMP_TESTNET]: 'https://api.thegraph.com/subgraphs/name/smartdev1990/exchangev2',
 }
 
 const blockClientWithChain = (chainId: ChainId) => {
@@ -47,7 +57,7 @@ const getWeekAgoTimestamp = () => {
   return getUnixTime(weekAgo)
 }
 
-const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.BASE_GOERLI) => {
+const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.CMP_TESTNET) => {
   try {
     const { blocks } = await blockClientWithChain(chainId).request<BlockResponse>(
       `query getBlock($timestampGreater: Int!, $timestampLess: Int!) {
@@ -216,7 +226,7 @@ export const updateLPsAPR = async (chainId: number, allFarms: any[]) => {
 
   try {
     if (stableFarms?.length) {
-      const stableAprs: BigNumber[] = await Promise.all(stableFarms.map((f) => getAprsForStableFarm(f)))
+      const stableAprs: BigNumber[] = await Promise.all(stableFarms.map((f) => getAprsForStableFarm(f, chainId)))
 
       const stableAprsMap = stableAprs.reduce(
         (result, apr, index) => ({

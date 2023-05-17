@@ -2,16 +2,16 @@ import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import useSWR from 'swr'
 import { useIfoCreditAddressContract } from 'hooks/useContract'
-import { ChainId } from '@baseswap/sdk'
-import { getBalanceNumber } from '@baseswap/utils/formatBalance'
-import { useTranslation } from '@baseswap/localization'
+import { ChainId } from '@pancakeswap/sdk'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { useTranslation } from '@pancakeswap/localization'
 import { useChainCurrentBlock } from 'state/block/hooks'
 import { getVaultPosition, VaultPosition } from 'utils/cakePool'
 import { getCakeVaultAddress, getAddress } from 'utils/addressHelpers'
 import { multicallv2 } from 'utils/multicall'
 import { getActivePools } from 'utils/calls'
 import cakeVaultAbi from 'config/abi/cakeVaultV2.json'
-import { BIG_ZERO } from '@baseswap/utils/bigNumber'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { convertSharesToCake } from '../../../../views/Pools/helpers'
 import { getScores } from '../../../../views/Voting/getScores'
 import { PANCAKE_SPACE } from '../../../../views/Voting/config'
@@ -24,7 +24,7 @@ const useCakeBenefits = () => {
   } = useTranslation()
   const ifoCreditAddressContract = useIfoCreditAddressContract()
   const cakeVaultAddress = getCakeVaultAddress()
-  const currentBscBlock = useChainCurrentBlock(ChainId.BASE_GOERLI)
+  const currentBscBlock = useChainCurrentBlock(ChainId.LINEA_TESTNET)
 
   const { data, status } = useSWR(account && currentBscBlock && ['cakeBenefits', account], async () => {
     const userVaultCalls = ['userInfo', 'calculatePerformanceFee', 'calculateOverdueFee'].map((method) => ({
@@ -71,12 +71,12 @@ const useCakeBenefits = () => {
       iCake = getBalanceNumber(new BigNumber(credit.toString())).toLocaleString('en', { maximumFractionDigits: 3 })
 
       const eligiblePools = await getActivePools(currentBscBlock)
-      const poolAddresses = eligiblePools.map(({ contractAddress }) => getAddress(contractAddress, ChainId.BASE_GOERLI))
+      const poolAddresses = eligiblePools.map(({ contractAddress }) => getAddress(contractAddress, ChainId.LINEA_TESTNET))
 
       const [cakeVaultBalance, total] = await getScores(
         PANCAKE_SPACE,
         [strategies.cakePoolBalanceStrategy('v1'), strategies.createTotalStrategy(poolAddresses, 'v1')],
-        ChainId.BASE_GOERLI.toString(),
+        ChainId.LINEA_TESTNET.toString(),
         [account],
         currentBscBlock,
       )

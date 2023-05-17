@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { useTranslation } from '@baseswap/localization'
-import { Button, Text, Link, HelpIcon, Message, MessageText } from '@baseswap/uikit'
-import { ChainId } from '@baseswap/sdk'
+import { useTranslation } from '@pancakeswap/localization'
+import { Button, Text, Link, HelpIcon, Message, MessageText } from '@pancakeswap/uikit'
+import { ChainId } from '@pancakeswap/sdk'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
 
 const StyledLink = styled(Link)`
@@ -20,7 +20,7 @@ const WalletWrongNetwork: React.FC<React.PropsWithChildren<WalletWrongNetworkPro
   const { switchNetworkAsync, canSwitch } = useSwitchNetwork()
 
   const handleSwitchNetwork = async (): Promise<void> => {
-    await switchNetworkAsync(ChainId.BASE_GOERLI)
+    await switchNetworkAsync(ChainId.LINEA_TESTNET)
     onDismiss?.()
   }
 

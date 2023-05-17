@@ -4,10 +4,10 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import type { Provider } from '@ethersproject/providers'
-import { ChainId, Currency } from '@baseswap/sdk'
-import { zeta } from '@baseswap/wagmi/chains'
+import { ChainId, Currency } from '@pancakeswap/sdk'
+import { cmpTestnet } from '@pancakeswap/wagmi/chains'
 import memoize from 'lodash/memoize'
-import { TokenAddressMap } from '@baseswap/token-lists'
+import { TokenAddressMap } from '@pancakeswap/token-lists'
 import { chains } from './wagmi'
 
 // returns the checksummed address if the address is valid, otherwise returns false
@@ -24,9 +24,9 @@ export function getBlockExploreLink(
   type: 'transaction' | 'token' | 'address' | 'block' | 'countdown',
   chainIdOverride?: number,
 ): string {
-  const chainId = chainIdOverride || ChainId.BASE_GOERLI
+  const chainId = chainIdOverride || ChainId.LINEA_TESTNET
   const chain = chains.find((c) => c.id === chainId)
-  if (!chain) return zeta.blockExplorers.default.url
+  if (!chain) return cmpTestnet.blockExplorers.default.url
   switch (type) {
     case 'transaction': {
       return `${chain.blockExplorers.default.url}/tx/${data}`
@@ -47,14 +47,14 @@ export function getBlockExploreLink(
 }
 
 export function getBlockExploreName(chainIdOverride?: number) {
-  const chainId = chainIdOverride || ChainId.BASE_GOERLI
+  const chainId = chainIdOverride || ChainId.LINEA_TESTNET
   const chain = chains.find((c) => c.id === chainId)
 
-  return chain?.blockExplorers?.default.name || zeta.blockExplorers.default.name
+  return chain?.blockExplorers?.default.name || cmpTestnet.blockExplorers.default.name
 }
 
 export function getBscScanLinkForNft(collectionAddress: string, tokenId: string): string {
-  return `${zeta.blockExplorers.default.url}/token/${collectionAddress}?a=${tokenId}`
+  return `${cmpTestnet.blockExplorers.default.url}/token/${collectionAddress}?a=${tokenId}`
 }
 
 // add 10%
